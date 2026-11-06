@@ -26,15 +26,32 @@ jobs:
         env:
           EVENT_NAME: ${{ github.event_name }}
         run: |
-          HOUR=$(TZ=America/Chicago date +%H)
-          MINUTE=$(TZ=America/Chicago date +%M)
-          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
-            echo "run=true" >> "$GITHUB_OUTPUT"
-          elif { [ "$HOUR" = "10" ] && [ "$MINUTE" = "30" ]; } || { [ "$HOUR" = "14" ] && [ "$MINUTE" = "00" ]; }; then
-            echo "run=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "run=false" >> "$GITHUB_OUTPUT"
-          fi
+          python3 - <<'PY'
+          import os
+          from datetime import datetime
+          from zoneinfo import ZoneInfo
+
+          now = datetime.now(ZoneInfo("America/Chicago"))
+          minutes = now.hour * 60 + now.minute
+
+          # Accept scheduled runs delayed by up to 45 minutes.
+          morning = 10 * 60 + 30 <= minutes <= 11 * 60 + 15
+          afternoon = 14 * 60 <= minutes <= 14 * 60 + 45
+
+          should_run = (
+              os.environ["EVENT_NAME"] == "workflow_dispatch"
+              or morning
+              or afternoon
+          )
+
+          print("Central time:", now.isoformat())
+          print("Collect splits:", should_run)
+
+          with open(os.environ["GITHUB_OUTPUT"], "a") as output:
+              output.write(
+                  "run=" + str(should_run).lower() + "\n"
+              )
+          PY
 
       - name: Collect and save splits
         if: steps.timing.outputs.run == 'true'
