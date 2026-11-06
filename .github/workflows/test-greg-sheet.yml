@@ -39,9 +39,9 @@ jobs:
               earliest = 9 * 60 + 30
               latest = 10 * 60 + 15
 
-          if not (earliest <= minutes <= latest):
-              print("Outside scheduled collection window")
-              raise SystemExit(0)
+              if not (earliest <= minutes <= latest):
+                  print("Outside scheduled collection window")
+                  raise SystemExit(0)
 
           today = now.strftime("%Y-%m-%d")
           output = pathlib.Path("greg-lines") / today / "lines.csv"
