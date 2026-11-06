@@ -34,8 +34,8 @@ jobs:
           minutes = now.hour * 60 + now.minute
 
           # Accept scheduled runs delayed by up to 45 minutes.
-          morning = 10 * 60 + 30 <= minutes <= 11 * 60 + 15
-          afternoon = 14 * 60 <= minutes <= 14 * 60 + 45
+          morning = 10 * 60 + 15 <= minutes <= 11 * 60
+          afternoon = 13 * 60 + 45 <= minutes <= 14 * 60 + 30
 
           should_run = (
               os.environ["EVENT_NAME"] == "workflow_dispatch"
