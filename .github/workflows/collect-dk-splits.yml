@@ -3,11 +3,10 @@ name: Collect DraftKings Betting Splits
 on:
   workflow_dispatch:
   schedule:
-    - cron: '30 15 * * *'
-    - cron: '30 16 * * *'
-    - cron: '0 19 * * *'
-    - cron: '0 20 * * *'
-
+    - cron: '15 15 * * *'
+    - cron: '15 16 * * *'
+    - cron: '45 18 * * *'
+    - cron: '45 19 * * *'
 permissions:
   contents: write
 
