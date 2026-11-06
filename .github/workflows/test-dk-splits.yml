@@ -7,7 +7,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Inspect NCAA basketball market tables
+      - name: Parse NCAA basketball betting splits
         run: |
           python3 - <<'PY'
           import re
@@ -19,84 +19,106 @@ jobs:
           BASE = "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/"
           SPORT = "92483"
 
-          class Reader(HTMLParser):
+          class TextReader(HTMLParser):
               def __init__(self):
                   super().__init__()
                   self.parts = []
-                  self.rows = []
-                  self.current = None
-                  self.in_cell = False
+                  self.skip = 0
 
               def handle_starttag(self, tag, attrs):
-                  if tag == "tr":
-                      self.current = []
-                  if tag in ("td", "th"):
-                      self.in_cell = True
-                      self.parts = []
-
-              def handle_data(self, data):
-                  if self.in_cell:
-                      self.parts.append(data)
+                  if tag in ("script", "style"):
+                      self.skip += 1
 
               def handle_endtag(self, tag):
-                  if tag in ("td", "th") and self.in_cell:
-                      value = " ".join(" ".join(self.parts).split())
-                      if self.current is not None:
-                          self.current.append(value)
-                      self.in_cell = False
-                  if tag == "tr" and self.current is not None:
-                      if self.current:
-                          self.rows.append(self.current)
-                      self.current = None
+                  if tag in ("script", "style") and self.skip:
+                      self.skip -= 1
 
-          for market in ["Moneyline", "Spread"]:
-              print("\n" + "=" * 55)
-              print("MARKET:", market)
-              for period in ["today", "n7days"]:
-                  params = {
-                      "tb_eg": SPORT,
-                      "tb_emt": market,
-                      "tb_edate": period,
-                      "itm_content": "NCAA Basketball"
-                  }
-                  url = BASE + "?" + urlencode(params)
-                  print("\nDATE FILTER:", period)
-                  print("URL:", url)
-                  try:
-                      request = urllib.request.Request(
-                          url, headers={"User-Agent": "Mozilla/5.0"}
-                      )
-                      with urllib.request.urlopen(request, timeout=30) as response:
-                          html = response.read().decode("utf-8", "replace")
-                          print("HTTP:", response.status)
-                      reader = Reader()
-                      reader.feed(html)
-                      print("HTML bytes:", len(html))
-                      print("HTML table rows:", len(reader.rows))
-                      for row in reader.rows[:12]:
-                          print("ROW:", repr(row)[:500])
+              def handle_data(self, data):
+                  if not self.skip:
+                      value = " ".join(data.split())
+                      if value:
+                          self.parts.append(value)
 
-                      text = re.sub(
-                          r"<(script|style)\b[^>]*>.*?</\1>",
-                          " ", html, flags=re.I | re.S
-                      )
-                      text = unescape(re.sub(r"<[^>]+>", " ", text))
-                      text = " ".join(text.split())
+          def download(market):
+              params = {
+                  "tb_eg": SPORT,
+                  "tb_emt": market,
+                  "tb_edate": "today",
+                  "itm_content": "NCAA Basketball"
+              }
+              url = BASE + "?" + urlencode(params)
+              request = urllib.request.Request(
+                  url, headers={"User-Agent": "Mozilla/5.0"}
+              )
+              with urllib.request.urlopen(request, timeout=30) as response:
+                  html = response.read().decode("utf-8", "replace")
+              parser = TextReader()
+              parser.feed(html)
+              return unescape(" ".join(parser.parts))
 
-                      for term in ["Matchup", "Bets %", "Handle %",
-                                   "No games", "No events", "Updated"]:
-                          print(term, "occurrences:",
-                                len(re.findall(re.escape(term), text, re.I)))
+          def extract(text, market):
+              # Inspect the text around each market selection.
+              # We only accept percentages immediately following
+              # a recognizable market selection and odds.
+              pattern = re.compile(
+                  r"(?P<team>[A-Za-z][A-Za-z0-9 .&'()/-]{1,65}?)"
+                  r"\s+(?P<line>[+−-]\d+(?:\.\d+)?)"
+                  r"\s+(?P<price>[+−-]\d+)?"
+                  r"\s+(?P<handle>\d{1,3})%"
+                  r"\s+(?P<bets>\d{1,3})%",
+                  re.I
+              )
+              records = []
+              for match in pattern.finditer(text):
+                  d = match.groupdict()
+                  handle = int(d["handle"])
+                  bets = int(d["bets"])
+                  if handle > 100 or bets > 100:
+                      continue
+                  records.append({
+                      "team": " ".join(d["team"].split()),
+                      "line": d["line"],
+                      "handle": handle,
+                      "bets": bets,
+                      "difference": handle - bets
+                  })
+              return records
 
-                      for term in ["Bets %", "Handle %"]:
-                          hits = list(re.finditer(re.escape(term), text, re.I))
-                          if hits:
-                              hit = hits[-1]
-                              print("LAST", term, "CONTEXT:",
-                                    text[max(0,hit.start()-120):hit.end()+450])
+          markets = {}
+          for market in ("Moneyline", "Spread"):
+              text = download(market)
+              records = extract(text, market)
+              markets[market] = records
+              print("\nMARKET:", market)
+              print("TEXT LENGTH:", len(text))
+              print("CANDIDATE RECORDS:", len(records))
+              for record in records[:20]:
+                  print(record)
+              print("FIRST TABLE CONTEXT:")
+              marker = text.find("Selection Odds Handle Bets")
+              if marker >= 0:
+                  print(text[marker:marker+1100])
+              else:
+                  print("Table marker not found")
 
-                  except Exception as error:
-                      print("ERROR:", repr(error))
+          print("\nCROSS-MARKET CANDIDATES")
+          moneyline = {r["team"].lower(): r for r in markets["Moneyline"]}
+          spread = {r["team"].lower(): r for r in markets["Spread"]}
 
-          print("\nTest finished. Actual percentages must be verified.")
+          matched = set(moneyline) & set(spread)
+          print("MATCHED TEAM NAMES:", len(matched))
+
+          for team in sorted(matched):
+              ml = moneyline[team]
+              sp = spread[team]
+              qualifies = ml["difference"] > 0 and sp["difference"] > 0
+              print({
+                  "team": ml["team"],
+                  "ml_handle_minus_bets": ml["difference"],
+                  "spread_handle_minus_bets": sp["difference"],
+                  "stage2_candidate": qualifies
+              })
+
+          print("\nNOTE: Candidate records are not yet")
+          print("validated against game boundaries or home/away.")
           PY
