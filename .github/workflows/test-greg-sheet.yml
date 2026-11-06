@@ -1,0 +1,21 @@
+name: Test Greg's Spreadsheet
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Greg's spreadsheet
+        run: |
+          curl -fLsS --max-time 30             "https://docs.google.com/spreadsheets/d/1WcpH4nYnwXRLEWz8VCgVsVkzu2Y4-wueb1zGZf1KOlM/export?format=csv"             -o greg.csv
+
+          python3 - <<'PY'
+          import csv
+          with open("greg.csv", encoding="utf-8-sig") as f:
+              rows = list(csv.reader(f))
+          print("Rows retrieved:", len(rows))
+          print("First rows:", rows[:3])
+          assert rows, "Spreadsheet is empty"
+          PY
