@@ -32,7 +32,10 @@ jobs:
 
           now = datetime.now(ZoneInfo("America/Chicago"))
           minutes = now.hour * 60 + now.minute
-
+          
+          morning = 9 * 60 + 45 <= minutes <= 12 * 60
+          afternoon = 13 * 60 + 15 <= minutes <= 16 * 60
+          
           # Accept scheduled runs delayed by up to 45 minutes.
           morning = 10 * 60 + 15 <= minutes <= 11 * 60
           afternoon = 13 * 60 + 45 <= minutes <= 14 * 60 + 30
