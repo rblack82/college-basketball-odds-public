@@ -34,9 +34,14 @@ jobs:
 
           now = datetime.datetime.now(ZoneInfo("America/Chicago"))
 
-          if os.environ["EVENT_NAME"] == "schedule" and now.hour != 9:
-              print("Skipping inactive daylight-saving cron slot")
-              raise SystemExit(0)
+          if os.environ["EVENT_NAME"] == "schedule":
+              minutes = now.hour * 60 + now.minute
+              earliest = 9 * 60 + 30
+              latest = 10 * 60 + 15
+
+          if not earliest <= minutes <= latest:
+             print("Outside the 9:30–10:15 AM Central collection window")
+             raise SystemExit(0)
 
           today = now.strftime("%Y-%m-%d")
           output = pathlib.Path("greg-lines") / today / "lines.csv"
