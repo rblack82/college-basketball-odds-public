@@ -1,0 +1,779 @@
+{
+  "collected_at_central": "2026-11-05T23:58:41.227574-06:00",
+  "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/",
+  "sport_id": "92483",
+  "moneyline_games": 35,
+  "spread_games": 34,
+  "games": [
+    {
+      "away": "Arkansas State",
+      "home": "Alabama",
+      "moneyline": {
+        "away": "Arkansas State",
+        "home": "Alabama",
+        "line": "-10000",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "spread": {
+        "away": "Arkansas State",
+        "home": "Alabama",
+        "line": "-25.5",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Arkansas-Pine Bluff",
+      "home": "Baylor",
+      "moneyline": null,
+      "spread": {
+        "away": "Arkansas-Pine Bluff",
+        "home": "Baylor",
+        "line": "-36.5",
+        "handle_pct": 99,
+        "bets_pct": 95,
+        "difference": 4
+      },
+      "status": "PENDING"
+    },
+    {
+      "away": "Austin Peay",
+      "home": "Kennesaw State",
+      "moneyline": {
+        "away": "Austin Peay",
+        "home": "Kennesaw State",
+        "line": "-250",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "spread": {
+        "away": "Austin Peay",
+        "home": "Kennesaw State",
+        "line": "-5.5",
+        "handle_pct": 100,
+        "bets_pct": 50,
+        "difference": 50
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "California Baptist",
+      "home": "Oregon State",
+      "moneyline": {
+        "away": "California Baptist",
+        "home": "Oregon State",
+        "line": "-3200",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "spread": {
+        "away": "California Baptist",
+        "home": "Oregon State",
+        "line": "-18.5",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Central Arkansas",
+      "home": "Ole Miss",
+      "moneyline": null,
+      "spread": {
+        "away": "Central Arkansas",
+        "home": "Ole Miss",
+        "line": "-19.5",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "status": "PENDING"
+    },
+    {
+      "away": "CSUN",
+      "home": "Kansas State",
+      "moneyline": {
+        "away": "CSUN",
+        "home": "Kansas State",
+        "line": "-650",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "spread": {
+        "away": "CSUN",
+        "home": "Kansas State",
+        "line": "-10.5",
+        "handle_pct": 6,
+        "bets_pct": 50,
+        "difference": -44
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Delaware",
+      "home": "Wisconsin",
+      "moneyline": {
+        "away": "Delaware",
+        "home": "Wisconsin",
+        "line": "-9000",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "spread": {
+        "away": "Delaware",
+        "home": "Wisconsin",
+        "line": "-24.5",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Detroit Mercy",
+      "home": "Marquette",
+      "moneyline": {
+        "away": "Detroit Mercy",
+        "home": "Marquette",
+        "line": "-100000",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "spread": {
+        "away": "Detroit Mercy",
+        "home": "Marquette",
+        "line": "-32.5",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Eastern Michigan",
+      "home": "Xavier",
+      "moneyline": {
+        "away": "Eastern Michigan",
+        "home": "Xavier",
+        "line": "-8000",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "spread": {
+        "away": "Eastern Michigan",
+        "home": "Xavier",
+        "line": "-23.5",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Eastern Washington",
+      "home": "Oregon",
+      "moneyline": {
+        "away": "Eastern Washington",
+        "home": "Oregon",
+        "line": "-2400",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "spread": {
+        "away": "Eastern Washington",
+        "home": "Oregon",
+        "line": "-16.5",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "ETSU",
+      "home": "NC State",
+      "moneyline": {
+        "away": "ETSU",
+        "home": "NC State",
+        "line": "-2100",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "spread": {
+        "away": "ETSU",
+        "home": "NC State",
+        "line": "-16.5",
+        "handle_pct": 0,
+        "bets_pct": 0,
+        "difference": 0
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Florida Atlantic",
+      "home": "Wright State",
+      "moneyline": {
+        "away": "Florida Atlantic",
+        "home": "Wright State",
+        "line": "-166",
+        "handle_pct": 6,
+        "bets_pct": 50,
+        "difference": -44
+      },
+      "spread": null,
+      "status": "PENDING"
+    },
+    {
+      "away": "Georgia Southern",
+      "home": "Georgia Tech",
+      "moneyline": {
+        "away": "Georgia Southern",
+        "home": "Georgia Tech",
+        "line": "-2100",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "spread": null,
+      "status": "PENDING"
+    },
+    {
+      "away": "Idaho",
+      "home": "Colorado State",
+      "moneyline": {
+        "away": "Idaho",
+        "home": "Colorado State",
+        "line": "-2400",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "spread": {
+        "away": "Idaho",
+        "home": "Colorado State",
+        "line": "-16.5",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Idaho State",
+      "home": "Wyoming",
+      "moneyline": {
+        "away": "Idaho State",
+        "home": "Wyoming",
+        "line": "-3600",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "spread": null,
+      "status": "PENDING"
+    },
+    {
+      "away": "Indiana State",
+      "home": "Ball State",
+      "moneyline": {
+        "away": "Indiana State",
+        "home": "Ball State",
+        "line": "-155",
+        "handle_pct": 97,
+        "bets_pct": 43,
+        "difference": 54
+      },
+      "spread": null,
+      "status": "PENDING"
+    },
+    {
+      "away": "James Madison",
+      "home": "Kentucky",
+      "moneyline": null,
+      "spread": {
+        "away": "James Madison",
+        "home": "Kentucky",
+        "line": "-25.5",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "status": "PENDING"
+    },
+    {
+      "away": "Middle Tennessee",
+      "home": "Kansas",
+      "moneyline": {
+        "away": "Middle Tennessee",
+        "home": "Kansas",
+        "line": "-50000",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "spread": {
+        "away": "Middle Tennessee",
+        "home": "Kansas",
+        "line": "-29.5",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Missouri",
+      "home": "Saint Louis",
+      "moneyline": {
+        "away": "Missouri",
+        "home": "Saint Louis",
+        "line": "+124",
+        "handle_pct": 0,
+        "bets_pct": 17,
+        "difference": -17
+      },
+      "spread": {
+        "away": "Missouri",
+        "home": "Saint Louis",
+        "line": "+2.5",
+        "handle_pct": 0,
+        "bets_pct": 0,
+        "difference": 0
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "North Dakota State",
+      "home": "San Francisco",
+      "moneyline": {
+        "away": "North Dakota State",
+        "home": "San Francisco",
+        "line": "-425",
+        "handle_pct": 15,
+        "bets_pct": 60,
+        "difference": -45
+      },
+      "spread": {
+        "away": "North Dakota State",
+        "home": "San Francisco",
+        "line": "-9.5",
+        "handle_pct": 0,
+        "bets_pct": 0,
+        "difference": 0
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Northeastern",
+      "home": "Virginia",
+      "moneyline": null,
+      "spread": {
+        "away": "Northeastern",
+        "home": "Virginia",
+        "line": "-34.5",
+        "handle_pct": 17,
+        "bets_pct": 41,
+        "difference": -24
+      },
+      "status": "PENDING"
+    },
+    {
+      "away": "Northern Colorado",
+      "home": "Arizona State",
+      "moneyline": {
+        "away": "Northern Colorado",
+        "home": "Arizona State",
+        "line": "-3200",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "spread": {
+        "away": "Northern Colorado",
+        "home": "Arizona State",
+        "line": "-18.5",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Northern Kentucky",
+      "home": "Texas A&M",
+      "moneyline": {
+        "away": "Northern Kentucky",
+        "home": "Texas A&M",
+        "line": "-20000",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "spread": {
+        "away": "Northern Kentucky",
+        "home": "Texas A&M",
+        "line": "-26.5",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Oakland",
+      "home": "Stanford",
+      "moneyline": {
+        "away": "Oakland",
+        "home": "Stanford",
+        "line": "-1350",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "spread": {
+        "away": "Oakland",
+        "home": "Stanford",
+        "line": "-14.5",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Omaha",
+      "home": "BYU",
+      "moneyline": null,
+      "spread": {
+        "away": "Omaha",
+        "home": "BYU",
+        "line": "-31.5",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "status": "PENDING"
+    },
+    {
+      "away": "Portland",
+      "home": "UT Arlington",
+      "moneyline": {
+        "away": "Portland",
+        "home": "UT Arlington",
+        "line": "+102",
+        "handle_pct": 0,
+        "bets_pct": 50,
+        "difference": -50
+      },
+      "spread": null,
+      "status": "PENDING"
+    },
+    {
+      "away": "Robert Morris",
+      "home": "Illinois Chicago",
+      "moneyline": {
+        "away": "Robert Morris",
+        "home": "Illinois Chicago",
+        "line": "-700",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "spread": {
+        "away": "Robert Morris",
+        "home": "Illinois Chicago",
+        "line": "-10.5",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Saint Thomas MN",
+      "home": "Minnesota",
+      "moneyline": {
+        "away": "Saint Thomas MN",
+        "home": "Minnesota",
+        "line": "-1600",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "spread": {
+        "away": "Saint Thomas MN",
+        "home": "Minnesota",
+        "line": "-14.5",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Southern Illinois",
+      "home": "UMKC",
+      "moneyline": {
+        "away": "Southern Illinois",
+        "home": "UMKC",
+        "line": "+120",
+        "handle_pct": 0,
+        "bets_pct": 0,
+        "difference": 0
+      },
+      "spread": null,
+      "status": "PENDING"
+    },
+    {
+      "away": "Southern Miss",
+      "home": "Iowa State",
+      "moneyline": {
+        "away": "Southern Miss",
+        "home": "Iowa State",
+        "line": "-100000",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "spread": {
+        "away": "Southern Miss",
+        "home": "Iowa State",
+        "line": "-30.5",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Stony Brook",
+      "home": "Northwestern",
+      "moneyline": {
+        "away": "Stony Brook",
+        "home": "Northwestern",
+        "line": "-1350",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "spread": {
+        "away": "Stony Brook",
+        "home": "Northwestern",
+        "line": "-13.5",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Tarleton State",
+      "home": "San Diego",
+      "moneyline": {
+        "away": "Tarleton State",
+        "home": "San Diego",
+        "line": "-250",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "spread": null,
+      "status": "PENDING"
+    },
+    {
+      "away": "Troy",
+      "home": "Florida State",
+      "moneyline": {
+        "away": "Troy",
+        "home": "Florida State",
+        "line": "-8000",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "spread": {
+        "away": "Troy",
+        "home": "Florida State",
+        "line": "-22.5",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "UConn",
+      "home": "Michigan",
+      "moneyline": {
+        "away": "UConn",
+        "home": "Michigan",
+        "line": "+245",
+        "handle_pct": 13,
+        "bets_pct": 17,
+        "difference": -4
+      },
+      "spread": {
+        "away": "UConn",
+        "home": "Michigan",
+        "line": "+7.5",
+        "handle_pct": 6,
+        "bets_pct": 16,
+        "difference": -10
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "UMass",
+      "home": "Boston College",
+      "moneyline": {
+        "away": "UMass",
+        "home": "Boston College",
+        "line": "-245",
+        "handle_pct": 80,
+        "bets_pct": 87,
+        "difference": -7
+      },
+      "spread": {
+        "away": "UMass",
+        "home": "Boston College",
+        "line": "-6.5",
+        "handle_pct": 4,
+        "bets_pct": 31,
+        "difference": -27
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "UNC Greensboro",
+      "home": "Elon",
+      "moneyline": {
+        "away": "UNC Greensboro",
+        "home": "Elon",
+        "line": "-425",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "spread": {
+        "away": "UNC Greensboro",
+        "home": "Elon",
+        "line": "-9.5",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Valparaiso",
+      "home": "Purdue",
+      "moneyline": {
+        "away": "Valparaiso",
+        "home": "Purdue",
+        "line": "-3600",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "spread": {
+        "away": "Valparaiso",
+        "home": "Purdue",
+        "line": "-19.5",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "West Florida",
+      "home": "FIU",
+      "moneyline": null,
+      "spread": {
+        "away": "West Florida",
+        "home": "FIU",
+        "line": "-14.5",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "status": "PENDING"
+    },
+    {
+      "away": "Wofford",
+      "home": "North Carolina",
+      "moneyline": {
+        "away": "Wofford",
+        "home": "North Carolina",
+        "line": "-8000",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "spread": {
+        "away": "Wofford",
+        "home": "North Carolina",
+        "line": "-22.5",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Yale",
+      "home": "UCF",
+      "moneyline": {
+        "away": "Yale",
+        "home": "UCF",
+        "line": "-520",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "spread": {
+        "away": "Yale",
+        "home": "UCF",
+        "line": "-9.5",
+        "handle_pct": 0,
+        "bets_pct": 0,
+        "difference": 0
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Youngstown State",
+      "home": "Ohio State",
+      "moneyline": {
+        "away": "Youngstown State",
+        "home": "Ohio State",
+        "line": "-20000",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "spread": {
+        "away": "Youngstown State",
+        "home": "Ohio State",
+        "line": "-25.5",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "status": "FAIL"
+    }
+  ]
+}
