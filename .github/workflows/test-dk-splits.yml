@@ -7,7 +7,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Parse NCAA basketball betting splits
+      - name: Parse NCAA basketball games
         run: |
           python3 - <<'PY'
           import re
@@ -19,7 +19,7 @@ jobs:
           BASE = "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/"
           SPORT = "92483"
 
-          class TextReader(HTMLParser):
+          class Reader(HTMLParser):
               def __init__(self):
                   super().__init__()
                   self.parts = []
@@ -46,79 +46,126 @@ jobs:
                   "tb_edate": "today",
                   "itm_content": "NCAA Basketball"
               }
-              url = BASE + "?" + urlencode(params)
               request = urllib.request.Request(
-                  url, headers={"User-Agent": "Mozilla/5.0"}
+                  BASE + "?" + urlencode(params),
+                  headers={"User-Agent": "Mozilla/5.0"}
               )
               with urllib.request.urlopen(request, timeout=30) as response:
                   html = response.read().decode("utf-8", "replace")
-              parser = TextReader()
+              parser = Reader()
               parser.feed(html)
               return unescape(" ".join(parser.parts))
 
-          def extract(text, market):
-              # Inspect the text around each market selection.
-              # We only accept percentages immediately following
-              # a recognizable market selection and odds.
-              pattern = re.compile(
-                  r"(?P<team>[A-Za-z][A-Za-z0-9 .&'()/-]{1,65}?)"
-                  r"\s+(?P<line>[+−-]\d+(?:\.\d+)?)"
-                  r"\s+(?P<price>[+−-]\d+)?"
-                  r"\s+(?P<handle>\d{1,3})%"
-                  r"\s+(?P<bets>\d{1,3})%",
-                  re.I
-              )
-              records = []
-              for match in pattern.finditer(text):
-                  d = match.groupdict()
-                  handle = int(d["handle"])
-                  bets = int(d["bets"])
+          # Matchups have a visible away @ home heading,
+          # followed by a date and market selection rows.
+          GAME = re.compile(
+              r"(?P<away>[A-Za-z][A-Za-z0-9 .&'()/-]{1,55}?)"
+              r"\s+@\s+"
+              r"(?P<home>[A-Za-z][A-Za-z0-9 .&'()/-]{1,55}?)"
+              r"\s+(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)"
+              r"\s+\d{1,2}/\d{1,2}"
+              r"\s+·\s+\d{1,2}:\d{2}"
+              r"\s+(?:AM|PM)\s+ET",
+              re.I
+          )
+
+          def extract(market):
+              text = download(market)
+              matches = list(GAME.finditer(text))
+              results = {}
+
+              for index, match in enumerate(matches):
+                  away = match.group("away").strip()
+                  home = match.group("home").strip()
+                  end = matches[index+1].start() if index+1 < len(matches) else len(text)
+                  block = text[match.end():end]
+
+                  header = "Selection Odds Handle Bets " + market
+                  start = block.find(header)
+                  if start < 0:
+                      continue
+
+                  selection = block[start+len(header):]
+                  selection = selection.split("Advertisement")[0]
+
+                  # Normalize Unicode minus for parsing.
+                  selection = selection.replace("−", "-")
+
+                  # Capture home-team selection specifically.
+                  escaped = re.escape(home)
+                  if market == "Moneyline":
+                      pattern = (
+                          r"(?:^|\s)" + escaped +
+                          r"\s+([+-]\d+)\s+(\d{1,3})%\s+(\d{1,3})%"
+                      )
+                  else:
+                      pattern = (
+                          r"(?:^|\s)" + escaped +
+                          r"\s+([+-]\d+(?:\.\d+)?)"
+                          r"\s+([+-]\d+)"
+                          r"\s+(\d{1,3})%\s+(\d{1,3})%"
+                      )
+
+                  found = re.search(pattern, selection, re.I)
+                  if not found:
+                      continue
+
+                  groups = found.groups()
+                  handle = int(groups[-2])
+                  bets = int(groups[-1])
                   if handle > 100 or bets > 100:
                       continue
-                  records.append({
-                      "team": " ".join(d["team"].split()),
-                      "line": d["line"],
+
+                  key = (away.lower(), home.lower())
+                  results[key] = {
+                      "away": away,
+                      "home": home,
+                      "line": groups[0],
                       "handle": handle,
                       "bets": bets,
                       "difference": handle - bets
-                  })
-              return records
+                  }
 
-          markets = {}
-          for market in ("Moneyline", "Spread"):
-              text = download(market)
-              records = extract(text, market)
-              markets[market] = records
               print("\nMARKET:", market)
-              print("TEXT LENGTH:", len(text))
-              print("CANDIDATE RECORDS:", len(records))
-              for record in records[:20]:
-                  print(record)
-              print("FIRST TABLE CONTEXT:")
-              marker = text.find("Selection Odds Handle Bets")
-              if marker >= 0:
-                  print(text[marker:marker+1100])
-              else:
-                  print("Table marker not found")
+              print("MATCHUP HEADINGS:", len(matches))
+              print("HOME RECORDS PARSED:", len(results))
+              for item in list(results.values())[:12]:
+                  print(item)
 
-          print("\nCROSS-MARKET CANDIDATES")
-          moneyline = {r["team"].lower(): r for r in markets["Moneyline"]}
-          spread = {r["team"].lower(): r for r in markets["Spread"]}
+              if not results and matches:
+                  first = matches[0]
+                  print("DEBUG FIRST MATCHUP:", first.groupdict())
+                  print("DEBUG FIRST BLOCK:", text[first.end():first.end()+450])
 
-          matched = set(moneyline) & set(spread)
-          print("MATCHED TEAM NAMES:", len(matched))
+              return results
 
-          for team in sorted(matched):
-              ml = moneyline[team]
-              sp = spread[team]
-              qualifies = ml["difference"] > 0 and sp["difference"] > 0
-              print({
-                  "team": ml["team"],
-                  "ml_handle_minus_bets": ml["difference"],
-                  "spread_handle_minus_bets": sp["difference"],
-                  "stage2_candidate": qualifies
-              })
+          moneyline = extract("Moneyline")
+          spread = extract("Spread")
 
-          print("\nNOTE: Candidate records are not yet")
-          print("validated against game boundaries or home/away.")
+          print("\nCROSS-MARKET HOME TEAM RESULTS")
+          common = sorted(set(moneyline) & set(spread))
+          print("MATCHED GAMES:", len(common))
+
+          passing = []
+          for key in common:
+              ml = moneyline[key]
+              sp = spread[key]
+              qualifies = (
+                  ml["difference"] > 0 and
+                  sp["difference"] > 0
+              )
+              # Final model also requires home-favorite
+              # status and Stage 1 line movement.
+              result = {
+                  "game": ml["away"] + " @ " + ml["home"],
+                  "ml_difference": ml["difference"],
+                  "spread_difference": sp["difference"],
+                  "passes_splits_only": qualifies
+              }
+              print(result)
+              if qualifies:
+                  passing.append(result)
+
+          print("\nSPLITS-ONLY PASSING GAMES:", len(passing))
+          print("Not final betting picks.")
           PY
