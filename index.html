@@ -44,7 +44,7 @@ $('date').value=centralDate();$('refresh').addEventListener('click',load);$('dat
       const response = await fetch(WORKER, {
         method: "POST",
         headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({passcode})
+        body: JSON.stringify({pin: passcode})
       });
 
       const result = await response.json();
