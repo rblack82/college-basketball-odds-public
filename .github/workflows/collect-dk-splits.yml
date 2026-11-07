@@ -20,40 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Check Central time
-        id: timing
-        env:
-          EVENT_NAME: ${{ github.event_name }}
-        run: |
-          python3 - <<'PY'
-          import os
-          from datetime import datetime
-          from zoneinfo import ZoneInfo
-
-          now = datetime.now(ZoneInfo("America/Chicago"))
-          minutes = now.hour * 60 + now.minute
-          
-          # Accept scheduled runs delayed by up to 45 minutes.
-          morning = 10 * 60 + 15 <= minutes <= 11 * 60
-          afternoon = 13 * 60 + 45 <= minutes <= 14 * 60 + 30
-
-          should_run = (
-              os.environ["EVENT_NAME"] == "workflow_dispatch"
-              or morning
-              or afternoon
-          )
-
-          print("Central time:", now.isoformat())
-          print("Collect splits:", should_run)
-
-          with open(os.environ["GITHUB_OUTPUT"], "a") as output:
-              output.write(
-                  "run=" + str(should_run).lower() + "\n"
-              )
-          PY
-
       - name: Collect and save splits
-        if: steps.timing.outputs.run == 'true'
         run: |
           python3 - <<'PY'
           import json
@@ -251,7 +218,6 @@ jobs:
           PY
 
       - name: Commit results
-        if: steps.timing.outputs.run == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
