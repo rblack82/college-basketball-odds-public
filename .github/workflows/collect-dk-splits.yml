@@ -186,7 +186,7 @@ jobs:
 
               if moneyline is None or spread is None:
                   status = "PENDING"
-              elif moneyline["difference"] > 0 and spread["difference"] > 0:
+              elif moneyline["difference"] >= 0 and spread["difference"] >= 0:
                   status = "PASS"
               else:
                   status = "FAIL"
