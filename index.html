@@ -37,7 +37,7 @@ $('date').value=centralDate();$('refresh').addEventListener('click',load);$('dat
     "box-shadow:0 4px 16px #0005;cursor:pointer";
 
   button.onclick = async () => {
-    const passcode = prompt("Enter your private refresh passcode:");
+    const passcode = prompt("Enter your administrator PIN or individual 4-digit user PIN:");
     if (passcode === null) return;
     if (!passcode) {
       alert("Passcode required.");
@@ -62,8 +62,14 @@ $('date').value=centralDate();$('refresh').addEventListener('click',load);$('dat
                         "Refresh request failed.");
       }
 
-      alert(result.message ||
-            "Collectors requested. Allow time for GitHub Actions to finish.");
+      const quotaMessage = result.remaining === null
+        ? "Administrator: unlimited daily refreshes."
+        : Number.isInteger(result.remaining) && Number.isInteger(result.limit)
+          ? result.remaining + " of " + result.limit + " refreshes remaining today (Central)."
+          : "";
+      alert((result.message || "Collectors requested.") +
+            (quotaMessage ? String.fromCharCode(10) + quotaMessage : "") +
+            String.fromCharCode(10) + "Refresh the report after the GitHub jobs finish.");
     } catch (error) {
       alert("Refresh failed: " + error.message);
     } finally {
