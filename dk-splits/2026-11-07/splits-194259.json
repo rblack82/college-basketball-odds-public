@@ -1,0 +1,114 @@
+{
+  "collected_at_central": "2026-11-07T19:42:59.928157-06:00",
+  "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/",
+  "sport_id": "92483",
+  "moneyline_games": 5,
+  "spread_games": 5,
+  "games": [
+    {
+      "away": "Fresno State",
+      "home": "UC San Diego",
+      "moneyline": {
+        "away": "Fresno State",
+        "home": "UC San Diego",
+        "line": "-650",
+        "handle_pct": 84,
+        "bets_pct": 97,
+        "difference": -13
+      },
+      "spread": {
+        "away": "Fresno State",
+        "home": "UC San Diego",
+        "line": "-10.5",
+        "handle_pct": 65,
+        "bets_pct": 83,
+        "difference": -18
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Portland State",
+      "home": "Seattle",
+      "moneyline": {
+        "away": "Portland State",
+        "home": "Seattle",
+        "line": "-625",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "spread": {
+        "away": "Portland State",
+        "home": "Seattle",
+        "line": "-10.5",
+        "handle_pct": 42,
+        "bets_pct": 83,
+        "difference": -41
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Sacramento State",
+      "home": "Santa Clara",
+      "moneyline": {
+        "away": "Sacramento State",
+        "home": "Santa Clara",
+        "line": "-3200",
+        "handle_pct": 52,
+        "bets_pct": 88,
+        "difference": -36
+      },
+      "spread": {
+        "away": "Sacramento State",
+        "home": "Santa Clara",
+        "line": "-19.5",
+        "handle_pct": 64,
+        "bets_pct": 57,
+        "difference": 7
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "San Jose State",
+      "home": "UC Irvine",
+      "moneyline": {
+        "away": "San Jose State",
+        "home": "UC Irvine",
+        "line": "-395",
+        "handle_pct": 79,
+        "bets_pct": 95,
+        "difference": -16
+      },
+      "spread": {
+        "away": "San Jose State",
+        "home": "UC Irvine",
+        "line": "-8.5",
+        "handle_pct": 99,
+        "bets_pct": 93,
+        "difference": 6
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Utah Valley",
+      "home": "Weber State",
+      "moneyline": {
+        "away": "Utah Valley",
+        "home": "Weber State",
+        "line": "+270",
+        "handle_pct": 20,
+        "bets_pct": 15,
+        "difference": 5
+      },
+      "spread": {
+        "away": "Utah Valley",
+        "home": "Weber State",
+        "line": "+7.5",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "status": "PASS"
+    }
+  ]
+}
