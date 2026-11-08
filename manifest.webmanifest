@@ -1,0 +1,19 @@
+{
+  "name": "Rick's Picks",
+  "short_name": "Rick's Picks",
+  "description": "College basketball model dashboard",
+  "id": "/college-basketball-odds-public/",
+  "start_url": "/college-basketball-odds-public/",
+  "scope": "/college-basketball-odds-public/",
+  "display": "standalone",
+  "background_color": "#0b1220",
+  "theme_color": "#0b1220",
+  "icons": [
+    {
+      "src": "icons/ricks-picks.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
