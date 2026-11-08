@@ -1,0 +1,156 @@
+{
+  "collected_at_central": "2026-11-08T16:04:48.150543-06:00",
+  "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/",
+  "sport_id": "92483",
+  "moneyline_games": 7,
+  "spread_games": 7,
+  "games": [
+    {
+      "away": "Houston",
+      "home": "California",
+      "moneyline": {
+        "away": "Houston",
+        "home": "California",
+        "line": "+1400",
+        "handle_pct": 56,
+        "bets_pct": 4,
+        "difference": 52
+      },
+      "spread": {
+        "away": "Houston",
+        "home": "California",
+        "line": "+19.5",
+        "handle_pct": 18,
+        "bets_pct": 33,
+        "difference": -15
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Incarnate Word",
+      "home": "UTEP",
+      "moneyline": {
+        "away": "Incarnate Word",
+        "home": "UTEP",
+        "line": "-850",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "spread": {
+        "away": "Incarnate Word",
+        "home": "UTEP",
+        "line": "-12.5",
+        "handle_pct": 80,
+        "bets_pct": 74,
+        "difference": 6
+      },
+      "status": "PASS"
+    },
+    {
+      "away": "Norfolk State",
+      "home": "William & Mary",
+      "moneyline": {
+        "away": "Norfolk State",
+        "home": "William & Mary",
+        "line": "-575",
+        "handle_pct": 79,
+        "bets_pct": 96,
+        "difference": -17
+      },
+      "spread": {
+        "away": "Norfolk State",
+        "home": "William & Mary",
+        "line": "-10.5",
+        "handle_pct": 11,
+        "bets_pct": 52,
+        "difference": -41
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "North Dakota State",
+      "home": "CSU Bakersfield",
+      "moneyline": {
+        "away": "North Dakota State",
+        "home": "CSU Bakersfield",
+        "line": "+120",
+        "handle_pct": 2,
+        "bets_pct": 23,
+        "difference": -21
+      },
+      "spread": {
+        "away": "North Dakota State",
+        "home": "CSU Bakersfield",
+        "line": "+2.5",
+        "handle_pct": 12,
+        "bets_pct": 36,
+        "difference": -24
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Pittsburgh",
+      "home": "Penn State",
+      "moneyline": {
+        "away": "Pittsburgh",
+        "home": "Penn State",
+        "line": "+120",
+        "handle_pct": 16,
+        "bets_pct": 31,
+        "difference": -15
+      },
+      "spread": {
+        "away": "Pittsburgh",
+        "home": "Penn State",
+        "line": "+2.5",
+        "handle_pct": 1,
+        "bets_pct": 21,
+        "difference": -20
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "USC",
+      "home": "Wichita State",
+      "moneyline": {
+        "away": "USC",
+        "home": "Wichita State",
+        "line": "+220",
+        "handle_pct": 34,
+        "bets_pct": 4,
+        "difference": 30
+      },
+      "spread": {
+        "away": "USC",
+        "home": "Wichita State",
+        "line": "+6.5",
+        "handle_pct": 44,
+        "bets_pct": 36,
+        "difference": 8
+      },
+      "status": "PASS"
+    },
+    {
+      "away": "UT Arlington",
+      "home": "Hawaii",
+      "moneyline": {
+        "away": "UT Arlington",
+        "home": "Hawaii",
+        "line": "-425",
+        "handle_pct": 56,
+        "bets_pct": 93,
+        "difference": -37
+      },
+      "spread": {
+        "away": "UT Arlington",
+        "home": "Hawaii",
+        "line": "-8.5",
+        "handle_pct": 99,
+        "bets_pct": 70,
+        "difference": 29
+      },
+      "status": "FAIL"
+    }
+  ]
+}
