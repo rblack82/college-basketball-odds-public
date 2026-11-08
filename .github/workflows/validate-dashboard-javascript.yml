@@ -21,7 +21,7 @@ jobs:
           import pathlib,re
           html=pathlib.Path('index.html').read_text(encoding='utf-8')
           scripts=re.findall(r'<script(?:\s[^>]*)?>(.*?)</script>',html,flags=re.S|re.I)
-          if len(scripts)!=2: raise SystemExit(f'Expected 2 dashboard scripts, got {len(scripts)}')
+          if len(scripts)<2: raise SystemExit(f'Expected at least 2 dashboard scripts, got {len(scripts)}')
           for i,code in enumerate(scripts,1):
               pathlib.Path(f'/tmp/ricks-dashboard-script-{i}.js').write_text(code)
           assert 'id="gregStatus"' in html
@@ -30,6 +30,5 @@ jobs:
           assert "basketball-model-refresh.rblack82.workers.dev/refresh" in html
           print('PASS: Greg availability and correct production Worker URL are wired to dashboard.')
           PY
-          node --check /tmp/ricks-dashboard-script-1.js
-          node --check /tmp/ricks-dashboard-script-2.js
-          echo "PASS: both dashboard JavaScript blocks parse successfully."
+          for script in /tmp/ricks-dashboard-script-*.js; do node --check "$script"; done
+          echo "PASS: all dashboard JavaScript blocks parse successfully."
