@@ -68,7 +68,7 @@ $('date').value=centralDate();$('refresh').addEventListener('click',load);$('dat
       const quota = result.remaining === null
         ? "Administrator: unlimited test refreshes."
         : result.remaining + " of " + result.limit + " test refreshes remaining today (Central).";
-      alert("Test successful — no real collectors started.\\n" + quota);
+      alert("Test successful — no real collectors started." + String.fromCharCode(10) + quota);
     } catch (error) {
       alert("Refresh failed: " + error.message);
     } finally {
