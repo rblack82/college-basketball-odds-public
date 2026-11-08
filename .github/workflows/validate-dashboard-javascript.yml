@@ -1,0 +1,35 @@
+name: Validate Rick's Picks dashboard JavaScript
+
+on:
+  push:
+    paths:
+      - index.html
+      - .github/workflows/validate-dashboard-javascript.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify dashboard scripts parse and Greg status wiring is intact
+        run: |
+          python3 - <<'PY'
+          import pathlib,re
+          html=pathlib.Path('index.html').read_text(encoding='utf-8')
+          scripts=re.findall(r'<script(?:\s[^>]*)?>(.*?)</script>',html,flags=re.S|re.I)
+          if len(scripts)!=2: raise SystemExit(f'Expected 2 dashboard scripts, got {len(scripts)}')
+          for i,code in enumerate(scripts,1):
+              pathlib.Path(f'/tmp/ricks-dashboard-script-{i}.js').write_text(code)
+          assert 'id="gregStatus"' in html
+          assert "greg-lines/${day}" in html
+          assert "Greg’s spreadsheet loaded" in html
+          assert "basketball-model-refresh.rblack82.workers.dev/refresh" in html
+          print('PASS: Greg availability and correct production Worker URL are wired to dashboard.')
+          PY
+          node --check /tmp/ricks-dashboard-script-1.js
+          node --check /tmp/ricks-dashboard-script-2.js
+          echo "PASS: both dashboard JavaScript blocks parse successfully."
