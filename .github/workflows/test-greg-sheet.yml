@@ -2,6 +2,9 @@ name: Collect Greg Peterson Lines
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/test-greg-sheet.yml
   schedule:
     - cron: '30 14 * * *'
     - cron: '30 15 * * *'
@@ -36,8 +39,8 @@ jobs:
 
           if os.environ["EVENT_NAME"] == "schedule":
               minutes = now.hour * 60 + now.minute
-              earliest = 9 * 60 + 30
-              latest = 10 * 60 + 15
+              earliest = 8 * 60 + 15
+              latest = 11 * 60 + 45
 
               if not (earliest <= minutes <= latest):
                   print("Outside scheduled collection window")
@@ -72,6 +75,32 @@ jobs:
           ):
               raise SystemExit("Invalid spreadsheet data")
 
+          # The shared Google URL may still serve yesterday's board in the morning.
+          # Compare the game lines, not just the bytes, before stamping a new day.
+          import re
+          def board(records):
+              entries = set()
+              for row in records[1:]:
+                  for start in range(0, len(row)-2, 3):
+                      if re.fullmatch(r"\d{3,6}", row[start].strip()) and row[start+1].strip():
+                          try:
+                              number = float(row[start+2].strip())
+                          except ValueError:
+                              continue
+                          entries.add((row[start].strip(), row[start+1].strip(), number))
+              return entries
+
+          current_board = board(rows)
+          if len(current_board) < 20:
+              raise SystemExit("Too few valid games in Greg's spreadsheet; refusing to publish")
+          earlier = sorted(pathlib.Path("greg-lines").glob("*/lines.csv"))
+          earlier = [p for p in earlier if p.parent.name < today]
+          if earlier:
+              previous_rows = list(csv.reader(io.StringIO(earlier[-1].read_text(encoding="utf-8-sig"))))
+              if current_board == board(previous_rows):
+                  print("Greg's source still has the previous day's board; not stamping stale lines as today's")
+                  raise SystemExit(0)
+
           output.parent.mkdir(parents=True, exist_ok=True)
           output.write_bytes(data)
           print(f"Saved {output}: {len(rows)} rows")
@@ -85,5 +114,6 @@ jobs:
           git add greg-lines/
           if ! git diff --cached --quiet; then
             git commit -m "Collect Greg Peterson daily lines"
-            git push
+            git pull --rebase origin main
+            git push origin HEAD:main
           fi
