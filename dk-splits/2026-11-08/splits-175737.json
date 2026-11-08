@@ -1,0 +1,114 @@
+{
+  "collected_at_central": "2026-11-08T17:57:37.730486-06:00",
+  "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/",
+  "sport_id": "92483",
+  "moneyline_games": 5,
+  "spread_games": 5,
+  "games": [
+    {
+      "away": "Houston",
+      "home": "California",
+      "moneyline": {
+        "away": "Houston",
+        "home": "California",
+        "line": "+1400",
+        "handle_pct": 61,
+        "bets_pct": 8,
+        "difference": 53
+      },
+      "spread": {
+        "away": "Houston",
+        "home": "California",
+        "line": "+19.5",
+        "handle_pct": 21,
+        "bets_pct": 36,
+        "difference": -15
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Incarnate Word",
+      "home": "UTEP",
+      "moneyline": {
+        "away": "Incarnate Word",
+        "home": "UTEP",
+        "line": "-950",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "spread": {
+        "away": "Incarnate Word",
+        "home": "UTEP",
+        "line": "-13.5",
+        "handle_pct": 87,
+        "bets_pct": 78,
+        "difference": 9
+      },
+      "status": "PASS"
+    },
+    {
+      "away": "Pittsburgh",
+      "home": "Penn State",
+      "moneyline": {
+        "away": "Pittsburgh",
+        "home": "Penn State",
+        "line": "+120",
+        "handle_pct": 39,
+        "bets_pct": 31,
+        "difference": 8
+      },
+      "spread": {
+        "away": "Pittsburgh",
+        "home": "Penn State",
+        "line": "+2.5",
+        "handle_pct": 1,
+        "bets_pct": 22,
+        "difference": -21
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "USC",
+      "home": "Wichita State",
+      "moneyline": {
+        "away": "USC",
+        "home": "Wichita State",
+        "line": "+220",
+        "handle_pct": 23,
+        "bets_pct": 3,
+        "difference": 20
+      },
+      "spread": {
+        "away": "USC",
+        "home": "Wichita State",
+        "line": "+6.5",
+        "handle_pct": 26,
+        "bets_pct": 35,
+        "difference": -9
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "UT Arlington",
+      "home": "Hawaii",
+      "moneyline": {
+        "away": "UT Arlington",
+        "home": "Hawaii",
+        "line": "-425",
+        "handle_pct": 72,
+        "bets_pct": 95,
+        "difference": -23
+      },
+      "spread": {
+        "away": "UT Arlington",
+        "home": "Hawaii",
+        "line": "-8.5",
+        "handle_pct": 99,
+        "bets_pct": 74,
+        "difference": 25
+      },
+      "status": "FAIL"
+    }
+  ]
+}
