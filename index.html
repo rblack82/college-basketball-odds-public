@@ -104,6 +104,18 @@ $('date').value=centralDate();$('refresh').addEventListener('click',load);$('dat
   const steps = document.getElementById('installSteps');
   let deferredPrompt = null;
   const isStandalone = () => window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+  const updateInstallVisibility = () => {
+    button.hidden = isStandalone();
+    button.style.display = isStandalone() ? 'none' : '';
+  };
+  updateInstallVisibility();
+  const standaloneQuery = window.matchMedia('(display-mode: standalone)');
+  if (standaloneQuery.addEventListener) {
+    standaloneQuery.addEventListener('change', updateInstallVisibility);
+  } else if (standaloneQuery.addListener) {
+    standaloneQuery.addListener(updateInstallVisibility);
+  }
+  window.addEventListener('pageshow', updateInstallVisibility);
   const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
   const isSafari = /Safari/.test(navigator.userAgent) && !/CriOS|FxiOS|EdgiOS|OPiOS/.test(navigator.userAgent);
   window.addEventListener('beforeinstallprompt', event => {
