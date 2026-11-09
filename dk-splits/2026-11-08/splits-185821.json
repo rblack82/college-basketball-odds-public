@@ -1,0 +1,72 @@
+{
+  "collected_at_central": "2026-11-08T18:58:21.294310-06:00",
+  "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/",
+  "sport_id": "92483",
+  "moneyline_games": 3,
+  "spread_games": 3,
+  "games": [
+    {
+      "away": "Houston",
+      "home": "California",
+      "moneyline": {
+        "away": "Houston",
+        "home": "California",
+        "line": "+1400",
+        "handle_pct": 82,
+        "bets_pct": 12,
+        "difference": 70
+      },
+      "spread": {
+        "away": "Houston",
+        "home": "California",
+        "line": "+19.5",
+        "handle_pct": 60,
+        "bets_pct": 36,
+        "difference": 24
+      },
+      "status": "PASS"
+    },
+    {
+      "away": "USC",
+      "home": "Wichita State",
+      "moneyline": {
+        "away": "USC",
+        "home": "Wichita State",
+        "line": "+220",
+        "handle_pct": 17,
+        "bets_pct": 4,
+        "difference": 13
+      },
+      "spread": {
+        "away": "USC",
+        "home": "Wichita State",
+        "line": "+6.5",
+        "handle_pct": 20,
+        "bets_pct": 30,
+        "difference": -10
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "UT Arlington",
+      "home": "Hawaii",
+      "moneyline": {
+        "away": "UT Arlington",
+        "home": "Hawaii",
+        "line": "-425",
+        "handle_pct": 87,
+        "bets_pct": 93,
+        "difference": -6
+      },
+      "spread": {
+        "away": "UT Arlington",
+        "home": "Hawaii",
+        "line": "-8.5",
+        "handle_pct": 94,
+        "bets_pct": 73,
+        "difference": 21
+      },
+      "status": "FAIL"
+    }
+  ]
+}
