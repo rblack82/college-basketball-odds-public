@@ -1,0 +1,93 @@
+{
+  "collected_at_central": "2026-11-08T18:49:05.117375-06:00",
+  "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/",
+  "sport_id": "92483",
+  "moneyline_games": 4,
+  "spread_games": 4,
+  "games": [
+    {
+      "away": "Houston",
+      "home": "California",
+      "moneyline": {
+        "away": "Houston",
+        "home": "California",
+        "line": "+1400",
+        "handle_pct": 82,
+        "bets_pct": 13,
+        "difference": 69
+      },
+      "spread": {
+        "away": "Houston",
+        "home": "California",
+        "line": "+19.5",
+        "handle_pct": 59,
+        "bets_pct": 36,
+        "difference": 23
+      },
+      "status": "PASS"
+    },
+    {
+      "away": "Pittsburgh",
+      "home": "Penn State",
+      "moneyline": {
+        "away": "Pittsburgh",
+        "home": "Penn State",
+        "line": "+124",
+        "handle_pct": 72,
+        "bets_pct": 34,
+        "difference": 38
+      },
+      "spread": {
+        "away": "Pittsburgh",
+        "home": "Penn State",
+        "line": "+2.5",
+        "handle_pct": 6,
+        "bets_pct": 21,
+        "difference": -15
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "USC",
+      "home": "Wichita State",
+      "moneyline": {
+        "away": "USC",
+        "home": "Wichita State",
+        "line": "+220",
+        "handle_pct": 17,
+        "bets_pct": 4,
+        "difference": 13
+      },
+      "spread": {
+        "away": "USC",
+        "home": "Wichita State",
+        "line": "+6.5",
+        "handle_pct": 21,
+        "bets_pct": 31,
+        "difference": -10
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "UT Arlington",
+      "home": "Hawaii",
+      "moneyline": {
+        "away": "UT Arlington",
+        "home": "Hawaii",
+        "line": "-425",
+        "handle_pct": 87,
+        "bets_pct": 93,
+        "difference": -6
+      },
+      "spread": {
+        "away": "UT Arlington",
+        "home": "Hawaii",
+        "line": "-8.5",
+        "handle_pct": 94,
+        "bets_pct": 73,
+        "difference": 21
+      },
+      "status": "FAIL"
+    }
+  ]
+}
