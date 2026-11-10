@@ -1,0 +1,170 @@
+{
+  "collected_at_central": "2026-11-09T19:31:40.412282-06:00",
+  "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/",
+  "sport_id": "92483",
+  "moneyline_games": 7,
+  "spread_games": 8,
+  "games": [
+    {
+      "away": "Alabama A&M",
+      "home": "DePaul",
+      "moneyline": {
+        "away": "Alabama A&M",
+        "home": "DePaul",
+        "line": "-9000",
+        "handle_pct": 30,
+        "bets_pct": 92,
+        "difference": -62
+      },
+      "spread": {
+        "away": "Alabama A&M",
+        "home": "DePaul",
+        "line": "-23.5",
+        "handle_pct": 79,
+        "bets_pct": 83,
+        "difference": -4
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Appalachian State",
+      "home": "Auburn",
+      "moneyline": {
+        "away": "Appalachian State",
+        "home": "Auburn",
+        "line": "-6500",
+        "handle_pct": 60,
+        "bets_pct": 95,
+        "difference": -35
+      },
+      "spread": {
+        "away": "Appalachian State",
+        "home": "Auburn",
+        "line": "-23.5",
+        "handle_pct": 99,
+        "bets_pct": 77,
+        "difference": 22
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Eastern Washington",
+      "home": "Oregon State",
+      "moneyline": {
+        "away": "Eastern Washington",
+        "home": "Oregon State",
+        "line": "-2400",
+        "handle_pct": 86,
+        "bets_pct": 97,
+        "difference": -11
+      },
+      "spread": {
+        "away": "Eastern Washington",
+        "home": "Oregon State",
+        "line": "-17.5",
+        "handle_pct": 16,
+        "bets_pct": 64,
+        "difference": -48
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Illinois State",
+      "home": "Purdue",
+      "moneyline": {
+        "away": "Illinois State",
+        "home": "Purdue",
+        "line": "-1800",
+        "handle_pct": 30,
+        "bets_pct": 95,
+        "difference": -65
+      },
+      "spread": {
+        "away": "Illinois State",
+        "home": "Purdue",
+        "line": "-15.5",
+        "handle_pct": 7,
+        "bets_pct": 54,
+        "difference": -47
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Mississippi Valley",
+      "home": "Washington",
+      "moneyline": null,
+      "spread": {
+        "away": "Mississippi Valley",
+        "home": "Washington",
+        "line": "-31.5",
+        "handle_pct": 11,
+        "bets_pct": 60,
+        "difference": -49
+      },
+      "status": "PENDING"
+    },
+    {
+      "away": "Portland",
+      "home": "Hawaii",
+      "moneyline": {
+        "away": "Portland",
+        "home": "Hawaii",
+        "line": "-360",
+        "handle_pct": 95,
+        "bets_pct": 95,
+        "difference": 0
+      },
+      "spread": {
+        "away": "Portland",
+        "home": "Hawaii",
+        "line": "-8.5",
+        "handle_pct": 100,
+        "bets_pct": 83,
+        "difference": 17
+      },
+      "status": "PASS"
+    },
+    {
+      "away": "Rice",
+      "home": "Stanford",
+      "moneyline": {
+        "away": "Rice",
+        "home": "Stanford",
+        "line": "-3200",
+        "handle_pct": 16,
+        "bets_pct": 95,
+        "difference": -79
+      },
+      "spread": {
+        "away": "Rice",
+        "home": "Stanford",
+        "line": "-18.5",
+        "handle_pct": 3,
+        "bets_pct": 45,
+        "difference": -42
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Seton Hall",
+      "home": "Charlotte",
+      "moneyline": {
+        "away": "Seton Hall",
+        "home": "Charlotte",
+        "line": "+164",
+        "handle_pct": 23,
+        "bets_pct": 12,
+        "difference": 11
+      },
+      "spread": {
+        "away": "Seton Hall",
+        "home": "Charlotte",
+        "line": "+4.5",
+        "handle_pct": 27,
+        "bets_pct": 27,
+        "difference": 0
+      },
+      "status": "PASS"
+    }
+  ]
+}
