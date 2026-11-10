@@ -1,0 +1,30 @@
+{
+  "collected_at_central": "2026-11-09T21:36:03.534675-06:00",
+  "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/",
+  "sport_id": "92483",
+  "moneyline_games": 1,
+  "spread_games": 1,
+  "games": [
+    {
+      "away": "Portland",
+      "home": "Hawaii",
+      "moneyline": {
+        "away": "Portland",
+        "home": "Hawaii",
+        "line": "-360",
+        "handle_pct": 87,
+        "bets_pct": 92,
+        "difference": -5
+      },
+      "spread": {
+        "away": "Portland",
+        "home": "Hawaii",
+        "line": "-8.5",
+        "handle_pct": 83,
+        "bets_pct": 74,
+        "difference": 9
+      },
+      "status": "FAIL"
+    }
+  ]
+}
