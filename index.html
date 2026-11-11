@@ -192,7 +192,11 @@ async function load(){
    const splitOK=ml?.bets_pct!=null&&ml?.handle_pct!=null&&ss?.bets_pct!=null&&ss?.handle_pct!=null;
    const splitStatus=!splitOK?'PENDING':ml.handle_pct>=ml.bets_pct&&ss.handle_pct>=ss.bets_pct?'PASS':'FAIL';
    if(stage1==='PASS'&&splitStatus==='PASS')passing++;
-   const gl=gm.get(teamKey(h.name)),gregStatus=gl==null||sp?.spread==null?'PENDING':gl<=sp.spread?'PASS':'FAIL';
+   // DraftKings determines the home side. Translate Greg's favorite-side line
+   // into the home-team perspective, even when Greg favors the visitor.
+   const gregHome=gm.get(teamKey(h.name)),gregAway=gm.get(teamKey(away.name));
+   const gl=gregHome!=null?gregHome:gregAway!=null?-gregAway:null;
+   const gregStatus=gl==null||sp?.spread==null?'PENDING':gl<=sp.spread?'PASS':'FAIL';
    const started=Date.parse(e.event_date)<=Date.now();
    const final=started?'STARTED':[stage1,splitStatus,gregStatus].includes('FAIL')?'FAIL':[stage1,splitStatus,gregStatus].every(v=>v==='PASS')?'PLAY':'PENDING';
    if(final==='PLAY')plays++;
