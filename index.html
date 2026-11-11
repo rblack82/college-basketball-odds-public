@@ -99,10 +99,11 @@ function setView(view){
 }
 document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>setView(b.dataset.view)));
 $('plays').addEventListener('click',()=>{
- if(!allRows.some(x=>x.final==='PLAY')){$('message').textContent='No fully qualifying model plays for this report.';return}
+ // Always navigate to Stage 1 matches, even if there are no full-system plays.
  sortColumn=-1;sortDirection=1;setView('model');
- currentRows.sort((a,b)=>Math.abs(a.b)-Math.abs(b.b)||a.h.localeCompare(b.h));
- renderRows(currentRows);$('model-panel').scrollIntoView({behavior:'smooth',block:'start'});
+ currentRows.sort((a,b)=>(b.final==='PLAY')-(a.final==='PLAY')||b.delta-a.delta||a.h.localeCompare(b.h));
+ renderRows(currentRows);
+ $('model-panel').scrollIntoView({behavior:'smooth',block:'start'});
 });
 const sortValue=(x,i)=>{switch(i){case 0:return x.h.toLowerCase();case 1:return x.a;case 2:return x.b;case 3:return x.sp;case 4:return x.stage1;case 5:return x.ml?.handle_pct-x.ml?.bets_pct;case 6:return x.ss?.handle_pct-x.ss?.bets_pct;case 7:return x.splitStatus;case 8:return x.gl;case 9:return x.final;default:return x.delta}};
 function sortRows(rows){if(sortColumn<0){rows.sort((a,b)=>b.delta-a.delta);return}rows.sort((a,b)=>{const av=sortValue(a,sortColumn),bv=sortValue(b,sortColumn);if(av==null&&bv==null)return 0;if(av==null)return 1;if(bv==null)return -1;return (typeof av==='number'&&typeof bv==='number'?av-bv:String(av).localeCompare(String(bv)))*sortDirection})}
