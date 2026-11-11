@@ -70,8 +70,8 @@ function setView(view){
  $('model-panel').hidden=view==='ranked';$('ranked-watch').hidden=view!=='ranked';
  if(view==='ranked')return;
  $('modelHeading').textContent=view==='model'?'Model Plays':'All Games — Stage-by-stage results';
- $('modelDescription').textContent=view==='model'?'Games passing every model stage. Choose All Games to inspect every matchup.':'Every matchup in the odds snapshot, including Model Plays. PASS, FAIL, and PENDING are evaluated independently for each stage.';
- currentRows=view==='model'?allRows.filter(r=>r.final==='PLAY'):allRows.slice();
+ $('modelDescription').textContent=view==='model'?'Stage 1 qualifying home favorites, with later-stage results shown. Choose All Games to inspect every matchup.':'Every matchup in the odds snapshot, including Model Plays. PASS, FAIL, and PENDING are evaluated independently for each stage.';
+ currentRows=view==='model'?allRows.filter(r=>r.stage1==='PASS'):allRows.slice();
  sortRows(currentRows);renderRows(currentRows);
 }
 document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>setView(b.dataset.view)));
