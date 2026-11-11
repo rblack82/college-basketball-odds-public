@@ -1,0 +1,30 @@
+{
+  "collected_at_central": "2026-11-10T20:59:06.656653-06:00",
+  "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/",
+  "sport_id": "92483",
+  "moneyline_games": 1,
+  "spread_games": 1,
+  "games": [
+    {
+      "away": "Montana",
+      "home": "San Francisco",
+      "moneyline": {
+        "away": "Montana",
+        "home": "San Francisco",
+        "line": "-750",
+        "handle_pct": 95,
+        "bets_pct": 99,
+        "difference": -4
+      },
+      "spread": {
+        "away": "Montana",
+        "home": "San Francisco",
+        "line": "-11.5",
+        "handle_pct": 12,
+        "bets_pct": 56,
+        "difference": -44
+      },
+      "status": "FAIL"
+    }
+  ]
+}
