@@ -52,7 +52,30 @@ const teamAliases={
   'wichitast':'wichitast','wichitastate':'wichitast',
   'westernillinois':'westernillinois','westernillinoisuniversity':'westernillinois',
   'williamandmary':'williammary','williammary':'williammary',
-  'lemo yne':'lemoyne','lemoyne':'lemoyne'
+  'lemo yne':'lemoyne','lemoyne':'lemoyne',
+  'soindiana':'southernindiana','southernindiana':'southernindiana',
+  'fairdickinson':'fairleighdickinson','fairleighdickinson':'fairleighdickinson',
+  'bethcookman':'bethunecookman','bethunecookman':'bethunecookman',
+  'abchristian':'abilenechristian','abilenechristian':'abilenechristian',
+  'ncasheville':'uncasheville','uncasheville':'uncasheville',
+  'calbaptist':'californiabaptist','californiabaptist':'californiabaptist',
+  'stjosephs':'saintjosephs','saintjosephs':'saintjosephs','stjoseph':'saintjosephs',
+  'loyolail':'loyolachicago','loyolachicago':'loyolachicago',
+  'iuindy':'iupui','iupui':'iupui','indianauniversityindianapolis':'iupui',
+  'uwmilwaukee':'milwaukee','milwaukee':'milwaukee',
+  'flatlantic':'floridaatlantic','floridaatlantic':'floridaatlantic','fau':'floridaatlantic',
+  'nocarolinaat':'northcarolinaat','ncat':'northcarolinaat','northcarolinaat':'northcarolinaat',
+  'easttexasam':'easttexasam','texasamcommerce':'easttexasam',
+  'massachuestts':'massachusetts','massachusetts':'massachusetts','umass':'massachusetts',
+  'arkpinebluff':'arkansaspinebluff','arkansaspinebluff':'arkansaspinebluff',
+  'missvalleyst':'mississippivalleyst','mississippivalleyst':'mississippivalleyst',
+  'so carolinast':'scst','socarolinast':'scst',
+  'so dakotast':'southdakotast','sodakotast':'southdakotast','southdakotast':'southdakotast',
+  'southernmiss':'southernmiss','southernmississippi':'southernmiss',
+  'stpeters':'saintpeters','saintpeters':'saintpeters',
+  'stbonaventure':'saintbonaventure','saintbonaventure':'saintbonaventure',
+  'longbeachst':'longbeachst','longbeachstate':'longbeachst',
+  'sfa':'stephenfaustin','stephenfaustin':'stephenfaustin'
 };
 function teamKey(s){const v=norm(s);return teamAliases[v]||v}
 function norm(s){let v=String(s||'').toLowerCase().replace(/[^a-z0-9]/g,'').replace(/university/g,'').replace(/college/g,'').replace(/state/g,'st');return alias[v]||v}
