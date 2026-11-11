@@ -1,0 +1,51 @@
+{
+  "collected_at_central": "2026-11-10T20:25:40.208082-06:00",
+  "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/",
+  "sport_id": "92483",
+  "moneyline_games": 2,
+  "spread_games": 2,
+  "games": [
+    {
+      "away": "Kansas",
+      "home": "Kentucky",
+      "moneyline": {
+        "away": "Kansas",
+        "home": "Kentucky",
+        "line": "+180",
+        "handle_pct": 41,
+        "bets_pct": 33,
+        "difference": 8
+      },
+      "spread": {
+        "away": "Kansas",
+        "home": "Kentucky",
+        "line": "+4.5",
+        "handle_pct": 33,
+        "bets_pct": 27,
+        "difference": 6
+      },
+      "status": "PASS"
+    },
+    {
+      "away": "pick for NCAAM on Tuesday 11/10/26 Montana",
+      "home": "San Francisco",
+      "moneyline": {
+        "away": "pick for NCAAM on Tuesday 11/10/26 Montana",
+        "home": "San Francisco",
+        "line": "-800",
+        "handle_pct": 93,
+        "bets_pct": 99,
+        "difference": -6
+      },
+      "spread": {
+        "away": "pick for NCAAM on Tuesday 11/10/26 Montana",
+        "home": "San Francisco",
+        "line": "-11.5",
+        "handle_pct": 3,
+        "bets_pct": 53,
+        "difference": -50
+      },
+      "status": "FAIL"
+    }
+  ]
+}
