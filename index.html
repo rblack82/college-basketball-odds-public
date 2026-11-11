@@ -101,12 +101,12 @@ document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>setV
 $('plays').addEventListener('click',()=>{
  // Always navigate to Stage 1 matches, even if there are no full-system plays.
  sortColumn=-1;sortDirection=1;setView('model');
- currentRows.sort((a,b)=>(b.final==='PLAY')-(a.final==='PLAY')||b.delta-a.delta||a.h.localeCompare(b.h));
+ // setView already applies the Model Plays default ranking.
  renderRows(currentRows);
  $('model-panel').scrollIntoView({behavior:'smooth',block:'start'});
 });
 const sortValue=(x,i)=>{switch(i){case 0:return x.h.toLowerCase();case 1:return x.a;case 2:return x.b;case 3:return x.sp;case 4:return x.stage1;case 5:return x.ml?.handle_pct-x.ml?.bets_pct;case 6:return x.ss?.handle_pct-x.ss?.bets_pct;case 7:return x.splitStatus;case 8:return x.gl;case 9:return x.final;default:return x.delta}};
-function sortRows(rows){if(sortColumn<0){rows.sort((a,b)=>b.delta-a.delta);return}rows.sort((a,b)=>{const av=sortValue(a,sortColumn),bv=sortValue(b,sortColumn);if(av==null&&bv==null)return 0;if(av==null)return 1;if(bv==null)return -1;return (typeof av==='number'&&typeof bv==='number'?av-bv:String(av).localeCompare(String(bv)))*sortDirection})}
+function sortRows(rows){if(sortColumn<0){if(activeView==='model'){rows.sort((a,b)=>(b.final==='PLAY')-(a.final==='PLAY')||(b.b??-Infinity)-(a.b??-Infinity)||a.h.localeCompare(b.h));}else{rows.sort((a,b)=>b.delta-a.delta)}return}rows.sort((a,b)=>{const av=sortValue(a,sortColumn),bv=sortValue(b,sortColumn);if(av==null&&bv==null)return 0;if(av==null)return 1;if(bv==null)return -1;return (typeof av==='number'&&typeof bv==='number'?av-bv:String(av).localeCompare(String(bv)))*sortDirection})}
 document.querySelectorAll('.sort-head').forEach(btn=>btn.addEventListener('click',()=>{const i=Number(btn.dataset.sort);sortDirection=sortColumn===i?-sortDirection:1;sortColumn=i;document.querySelectorAll('.sort-head').forEach(b=>b.removeAttribute('aria-sort'));btn.setAttribute('aria-sort',sortDirection===1?'ascending':'descending');sortRows(currentRows);renderRows(currentRows)}));
 function renderRows(rows){
  $('rows').innerHTML=rows.length?rows.map(x=>`<tr${x.final==='PLAY'?' class="model-play-row"':''}><td><b>${esc(x.h)}</b><br><small>vs ${esc(x.away)}</small><br><small class="tipoff-time">${esc(gameStartTime(x.startTime))}</small></td><td>${fmt(x.a)}</td><td>${fmt(x.b)}</td><td>${fmt(x.sp)}</td><td class="${x.stage1.toLowerCase()}">${x.stage1}</td><td>${x.ml?`${x.ml.bets_pct??'—'}% / ${x.ml.handle_pct??'—'}%`:'—'}</td><td>${x.ss?`${x.ss.bets_pct??'—'}% / ${x.ss.handle_pct??'—'}%`:'—'}</td><td class="${x.splitStatus.toLowerCase()}">${x.splitStatus}</td><td>${fmt(x.gl)} <small class="${x.gregStatus.toLowerCase()}">${x.gregStatus}</small></td><td class="${x.final==='PLAY'?'pass':x.final==='FAIL'?'fail':'pending'}">${x.final}</td></tr>`).join(''):'<tr><td colspan="10">No games in this view for the selected date.</td></tr>';
