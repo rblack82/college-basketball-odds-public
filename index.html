@@ -116,7 +116,7 @@ const sortValue=(x,i)=>{switch(i){case 0:return x.h.toLowerCase();case 1:return 
 function sortRows(rows){if(sortColumn<0){if(activeView==='model'){rows.sort((a,b)=>(b.final==='PLAY')-(a.final==='PLAY')||(b.b??-Infinity)-(a.b??-Infinity)||a.h.localeCompare(b.h));}else{rows.sort((a,b)=>b.delta-a.delta)}return}rows.sort((a,b)=>{const av=sortValue(a,sortColumn),bv=sortValue(b,sortColumn);if(av==null&&bv==null)return 0;if(av==null)return 1;if(bv==null)return -1;return (typeof av==='number'&&typeof bv==='number'?av-bv:String(av).localeCompare(String(bv)))*sortDirection})}
 document.querySelectorAll('.sort-head').forEach(btn=>btn.addEventListener('click',()=>{const i=Number(btn.dataset.sort);sortDirection=sortColumn===i?-sortDirection:1;sortColumn=i;document.querySelectorAll('.sort-head').forEach(b=>b.removeAttribute('aria-sort'));btn.setAttribute('aria-sort',sortDirection===1?'ascending':'descending');sortRows(currentRows);renderRows(currentRows)}));
 function renderRows(rows){
- $('rows').innerHTML=rows.length?rows.map(x=>`<tr${x.final==='PLAY'?' class="model-play-row"':''}><td><b>${esc(x.h)}</b><br><small>vs ${esc(x.away)}</small><br><small class="tipoff-time">${esc(gameStartTime(x.startTime))}</small></td><td>${fmt(x.a)}</td><td>${fmt(x.b)}</td><td>${fmt(x.sp)}</td><td class="${x.stage1.toLowerCase()}">${x.stage1}</td><td>${x.ml?`${x.ml.bets_pct??'—'}% / ${x.ml.handle_pct??'—'}%`:'—'}</td><td>${x.ss?`${x.ss.bets_pct??'—'}% / ${x.ss.handle_pct??'—'}%`:'—'}</td><td class="${x.splitStatus.toLowerCase()}">${x.splitStatus}</td><td>${fmt(x.gl)} <small class="${x.gregStatus.toLowerCase()}">${x.gregStatus}</small></td><td class="${x.final==='PLAY'?'pass':x.final==='FAIL'?'fail':'pending'}">${x.final}</td></tr>`).join(''):'<tr><td colspan="10">No games in this view for the selected date.</td></tr>';
+ $('rows').innerHTML=rows.length?rows.map(x=>`<tr${x.final==='PLAY'?' class="model-play-row"':''}><td><b>${esc(x.h)}</b><br><small>vs ${esc(x.away)}</small><br><small class="tipoff-time">${esc(gameStartTime(x.startTime))}</small></td><td>${fmt(x.a)}</td><td>${fmt(x.b)}</td><td>${fmt(x.sp)}</td><td class="${x.stage1.toLowerCase()}">${x.stage1}</td><td>${x.ml?`${x.ml.bets_pct??'—'}% / ${x.ml.handle_pct??'—'}%`:'—'}</td><td>${x.ss?`${x.ss.bets_pct??'—'}% / ${x.ss.handle_pct??'—'}%`:'—'}</td><td class="${x.splitStatus.toLowerCase()}">${x.splitStatus}</td><td>${fmt(x.gl)} <small class="${x.gregStatus==='DK Spread Unavailable'?'pending':x.gregStatus.toLowerCase()}">${x.gregStatus}</small></td><td class="${x.final==='PLAY'?'pass':x.final==='FAIL'?'fail':'pending'}">${x.final}</td></tr>`).join(''):'<tr><td colspan="10">No games in this view for the selected date.</td></tr>';
 }
 let rankedWatchRequest=0;
 function updateRankedAlert(count){
@@ -204,7 +204,7 @@ async function load(){
    // into the home-team perspective, even when Greg favors the visitor.
    const gregHome=gm.get(teamKey(h.name)),gregAway=gm.get(teamKey(away.name));
    const gl=gregHome!=null?gregHome:gregAway!=null?-gregAway:null;
-   const gregStatus=gl==null||sp?.spread==null?'PENDING':gl<=sp.spread?'PASS':'FAIL';
+   const gregStatus=sp?.spread==null?'DK Spread Unavailable':gl==null?'PENDING':gl<=sp.spread?'PASS':'FAIL';
    const started=Date.parse(e.event_date)<=Date.now();
    const final=started?'STARTED':[stage1,splitStatus,gregStatus].includes('FAIL')?'FAIL':[stage1,splitStatus,gregStatus].every(v=>v==='PASS')?'PLAY':'PENDING';
    if(final==='PLAY')plays++;
