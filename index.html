@@ -15,6 +15,21 @@ const owner='rblack82',repo='college-basketball-odds-public',api=`https://api.gi
 const $=id=>document.getElementById(id);const fmt=p=>p==null?'—':(p>0?'+':'')+p;
 function centralDate(d=new Date()){return new Intl.DateTimeFormat('en-CA',{timeZone:'America/Chicago',year:'numeric',month:'2-digit',day:'2-digit'}).format(d)}
 function centralTime(d){return d?new Date(d).toLocaleString('en-US',{timeZone:'America/Chicago',month:'short',day:'numeric',hour:'numeric',minute:'2-digit',timeZoneName:'short'}):'Unknown'}
+function snapshotTime(data,file){
+ const value=data?.collected_at||data?.collected_at_utc||data?.timestamp||data?.created_at||data?.collected_at_central;
+ if(value){
+  const d=new Date(value);
+  if(!Number.isNaN(d.getTime()))return centralTime(d);
+ }
+ // Filename timestamps are used only when their timezone is explicit.
+ const match=String(file?.name||'').match(/(20\d{2}-\d{2}-\d{2})[T_](\d{2})[-:](\d{2})(?:[-:](\d{2}))?(Z|[+-]\d{2}:?\d{2})/i);
+ if(match){
+  const offset=match[5].toUpperCase()==='Z'?'Z':match[5].replace(/([+-]\d{2})(\d{2})$/,'$1:$2');
+  const d=new Date(match[1]+'T'+match[2]+':'+match[3]+':'+(match[4]||'00')+offset);
+  if(!Number.isNaN(d.getTime()))return centralTime(d);
+ }
+ return 'Timestamp unavailable';
+}
 function gameStartTime(d){if(!d)return 'Tip-off TBD';const date=new Date(d);return Number.isNaN(date.getTime())?'Tip-off TBD':new Intl.DateTimeFormat('en-US',{timeZone:'America/Chicago',hour:'numeric',minute:'2-digit'}).format(date)+' CT'}
 function esc(x){return String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 async function list(path){const r=await fetch(api+path,{cache:'no-store'});if(r.status===404)return [];if(!r.ok)throw Error(`GitHub API returned ${r.status}`);return r.json()}
@@ -212,7 +227,7 @@ async function load(){
   }
   allRows=rows;setView(activeView);
   $('games').textContent=total;$('moves').textContent=moves;$('splits').textContent=passing;$('plays').textContent=plays;
-  $('times').textContent=`Baseline file: ${s[0].name} · Latest odds file: ${s.at(-1).name} · Splits: ${splitData?.collected_at_central?centralTime(splitData.collected_at_central):'unavailable'} · Greg: ${gf?'sheet available':'unavailable'} · ${comparable} games with comparable odds.`;
+  $('times').textContent=`Baseline odds: ${snapshotTime(baseline,s[0])} · Current odds: ${snapshotTime(latest,s.at(-1))} · Splits: ${splitData?.collected_at_central?centralTime(splitData.collected_at_central):'unavailable'} · Greg: ${gf?'sheet available':'unavailable'} · ${comparable} games with comparable odds.`;
   $('message').textContent=`Showing ${day} · ${rows.length} games evaluated · Last refreshed ${centralTime(new Date())}`;
  }catch(err){$('message').innerHTML=`<span class="error">Unable to load report: ${esc(err.message)}. Try refreshing in a minute.</span>`;$('rows').innerHTML='<tr><td colspan="10">Data temporarily unavailable.</td></tr>'}
 }
