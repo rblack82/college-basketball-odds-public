@@ -1,0 +1,107 @@
+{
+  "collected_at_central": "2026-11-11T20:34:32.942331-06:00",
+  "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/",
+  "sport_id": "92483",
+  "moneyline_games": 4,
+  "spread_games": 5,
+  "games": [
+    {
+      "away": "Chicago State",
+      "home": "California Baptist",
+      "moneyline": {
+        "away": "Chicago State",
+        "home": "California Baptist",
+        "line": "-850",
+        "handle_pct": 77,
+        "bets_pct": 94,
+        "difference": -17
+      },
+      "spread": {
+        "away": "Chicago State",
+        "home": "California Baptist",
+        "line": "-11.5",
+        "handle_pct": 96,
+        "bets_pct": 84,
+        "difference": 12
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Mississippi Valley",
+      "home": "Oregon",
+      "moneyline": null,
+      "spread": {
+        "away": "Mississippi Valley",
+        "home": "Oregon",
+        "line": "-33.5",
+        "handle_pct": 68,
+        "bets_pct": 69,
+        "difference": -1
+      },
+      "status": "PENDING"
+    },
+    {
+      "away": "Pacific",
+      "home": "Long Beach State",
+      "moneyline": {
+        "away": "Pacific",
+        "home": "Long Beach State",
+        "line": "+210",
+        "handle_pct": 1,
+        "bets_pct": 8,
+        "difference": -7
+      },
+      "spread": {
+        "away": "Pacific",
+        "home": "Long Beach State",
+        "line": "+5.5",
+        "handle_pct": 48,
+        "bets_pct": 25,
+        "difference": 23
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "USC",
+      "home": "California",
+      "moneyline": {
+        "away": "USC",
+        "home": "California",
+        "line": "+285",
+        "handle_pct": 25,
+        "bets_pct": 4,
+        "difference": 21
+      },
+      "spread": {
+        "away": "USC",
+        "home": "California",
+        "line": "+8.5",
+        "handle_pct": 22,
+        "bets_pct": 41,
+        "difference": -19
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "UTSA",
+      "home": "Seattle",
+      "moneyline": {
+        "away": "UTSA",
+        "home": "Seattle",
+        "line": "-2100",
+        "handle_pct": 98,
+        "bets_pct": 98,
+        "difference": 0
+      },
+      "spread": {
+        "away": "UTSA",
+        "home": "Seattle",
+        "line": "-16.5",
+        "handle_pct": 54,
+        "bets_pct": 76,
+        "difference": -22
+      },
+      "status": "FAIL"
+    }
+  ]
+}
