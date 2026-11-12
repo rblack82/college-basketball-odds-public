@@ -85,7 +85,7 @@ const teamAliases={
   'sfa':'stephenfaustin','stephenfaustin':'stephenfaustin'
 };
 function teamKey(s){const v=norm(s);return teamAliases[v]||v}
-function norm(s){let v=String(s||'').toLowerCase().replace(/[^a-z0-9]/g,'').replace(/university/g,'').replace(/college/g,'').replace(/state/g,'st');return alias[v]||v}
+function norm(s){let v=String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'').replace(/university/g,'').replace(/college/g,'').replace(/state/g,'st');return alias[v]||v}
 function events(x){return(x.results||[]).flatMap(z=>z.response?.events||[])}
 function market(e,type){const h=e.teams?.find(t=>t.is_home),m=e.markets?.find(z=>z.name===type&&z.period_id===0),p=m?.participants?.find(z=>z.id===h?.team_id),l=p?.lines?.find(z=>z.prices?.['19']?.is_main_line)||p?.lines?.find(z=>z.prices?.['19']);return l?{price:l.prices['19'].price,spread:Number(l.value)}:null}
 function imp(p){return p<0?-p/(100-p):100/(100+p)}
