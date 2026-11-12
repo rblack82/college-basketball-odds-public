@@ -1,0 +1,30 @@
+{
+  "collected_at_central": "2026-11-11T21:53:36.207403-06:00",
+  "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/",
+  "sport_id": "92483",
+  "moneyline_games": 1,
+  "spread_games": 1,
+  "games": [
+    {
+      "away": "USC",
+      "home": "California",
+      "moneyline": {
+        "away": "USC",
+        "home": "California",
+        "line": "+285",
+        "handle_pct": 20,
+        "bets_pct": 5,
+        "difference": 15
+      },
+      "spread": {
+        "away": "USC",
+        "home": "California",
+        "line": "+7.5",
+        "handle_pct": 40,
+        "bets_pct": 41,
+        "difference": -1
+      },
+      "status": "FAIL"
+    }
+  ]
+}
