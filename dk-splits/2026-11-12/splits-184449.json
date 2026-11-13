@@ -1,0 +1,177 @@
+{
+  "collected_at_central": "2026-11-12T18:44:49.122798-06:00",
+  "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/",
+  "sport_id": "92483",
+  "moneyline_games": 8,
+  "spread_games": 8,
+  "games": [
+    {
+      "away": "Loyola Marymount",
+      "home": "South Alabama",
+      "moneyline": {
+        "away": "Loyola Marymount",
+        "home": "South Alabama",
+        "line": "-108",
+        "handle_pct": 44,
+        "bets_pct": 68,
+        "difference": -24
+      },
+      "spread": {
+        "away": "Loyola Marymount",
+        "home": "South Alabama",
+        "line": "+1.5",
+        "handle_pct": 73,
+        "bets_pct": 33,
+        "difference": 40
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Montana State",
+      "home": "BYU",
+      "moneyline": {
+        "away": "Montana State",
+        "home": "BYU",
+        "line": "-5000",
+        "handle_pct": 33,
+        "bets_pct": 92,
+        "difference": -59
+      },
+      "spread": {
+        "away": "Montana State",
+        "home": "BYU",
+        "line": "-21.5",
+        "handle_pct": 92,
+        "bets_pct": 70,
+        "difference": 22
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "New Mexico State",
+      "home": "UTEP",
+      "moneyline": {
+        "away": "New Mexico State",
+        "home": "UTEP",
+        "line": "-218",
+        "handle_pct": 56,
+        "bets_pct": 74,
+        "difference": -18
+      },
+      "spread": {
+        "away": "New Mexico State",
+        "home": "UTEP",
+        "line": "-4.5",
+        "handle_pct": 2,
+        "bets_pct": 41,
+        "difference": -39
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Oklahoma State",
+      "home": "Texas A&M",
+      "moneyline": {
+        "away": "Oklahoma State",
+        "home": "Texas A&M",
+        "line": "-380",
+        "handle_pct": 94,
+        "bets_pct": 88,
+        "difference": 6
+      },
+      "spread": {
+        "away": "Oklahoma State",
+        "home": "Texas A&M",
+        "line": "-7.5",
+        "handle_pct": 21,
+        "bets_pct": 47,
+        "difference": -26
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Richmond",
+      "home": "Southern Illinois",
+      "moneyline": {
+        "away": "Richmond",
+        "home": "Southern Illinois",
+        "line": "+124",
+        "handle_pct": 3,
+        "bets_pct": 13,
+        "difference": -10
+      },
+      "spread": {
+        "away": "Richmond",
+        "home": "Southern Illinois",
+        "line": "+2.5",
+        "handle_pct": 39,
+        "bets_pct": 25,
+        "difference": 14
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Southern University",
+      "home": "Minnesota",
+      "moneyline": {
+        "away": "Southern University",
+        "home": "Minnesota",
+        "line": "-10000",
+        "handle_pct": 21,
+        "bets_pct": 93,
+        "difference": -72
+      },
+      "spread": {
+        "away": "Southern University",
+        "home": "Minnesota",
+        "line": "-26.5",
+        "handle_pct": 99,
+        "bets_pct": 90,
+        "difference": 9
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "UC Riverside",
+      "home": "San Jose State",
+      "moneyline": {
+        "away": "UC Riverside",
+        "home": "San Jose State",
+        "line": "-395",
+        "handle_pct": 99,
+        "bets_pct": 96,
+        "difference": 3
+      },
+      "spread": {
+        "away": "UC Riverside",
+        "home": "San Jose State",
+        "line": "-8.5",
+        "handle_pct": 90,
+        "bets_pct": 67,
+        "difference": 23
+      },
+      "status": "PASS"
+    },
+    {
+      "away": "West Florida",
+      "home": "Alabama A&M",
+      "moneyline": {
+        "away": "West Florida",
+        "home": "Alabama A&M",
+        "line": "-218",
+        "handle_pct": 52,
+        "bets_pct": 87,
+        "difference": -35
+      },
+      "spread": {
+        "away": "West Florida",
+        "home": "Alabama A&M",
+        "line": "-4.5",
+        "handle_pct": 32,
+        "bets_pct": 60,
+        "difference": -28
+      },
+      "status": "FAIL"
+    }
+  ]
+}
