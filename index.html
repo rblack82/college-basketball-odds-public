@@ -16,7 +16,7 @@ const $=id=>document.getElementById(id);const fmt=p=>p==null?'—':(p>0?'+':'')+
 function centralDate(d=new Date()){return new Intl.DateTimeFormat('en-CA',{timeZone:'America/Chicago',year:'numeric',month:'2-digit',day:'2-digit'}).format(d)}
 function centralTime(d){return d?new Date(d).toLocaleString('en-US',{timeZone:'America/Chicago',month:'short',day:'numeric',hour:'numeric',minute:'2-digit',timeZoneName:'short'}):'Unknown'}
 function snapshotTime(data,file){
- const value=data?.collected_at||data?.collected_at_utc||data?.timestamp||data?.created_at||data?.collected_at_central;
+ const value=data?.retrieved_at_utc||data?.retrieved_at_central||data?.collected_at||data?.collected_at_utc||data?.timestamp||data?.created_at||data?.collected_at_central;
  if(value){
   const d=new Date(value);
   if(!Number.isNaN(d.getTime()))return centralTime(d);
