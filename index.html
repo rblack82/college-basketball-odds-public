@@ -305,8 +305,7 @@ $('date').value=centralDate();$('refresh').addEventListener('click',load);$('dat
       });
       const result = await response.json();
       if (!response.ok) throw new Error(result.message || result.error || "Splits refresh failed.");
-      alert((result.message || "Betting splits collector requested.") +
-            "\\nWait for the GitHub job to finish, then tap Refresh report.");
+      alert("Collecting Current Bet Splits");
     } catch (error) {
       alert("Betting splits update failed: " + error.message);
     } finally {
