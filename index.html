@@ -203,7 +203,7 @@ async function load(){
   const [baseline,latest,splitText,gregText]=await Promise.all([raw(s[0].path).then(JSON.parse),raw(s.at(-1).path).then(JSON.parse),sf.length?raw(sf.at(-1).path):Promise.resolve(null),gf?raw(gf.path):Promise.resolve(null)]);
   loadRankedWatch(latest,day);
   const splitData=splitText?JSON.parse(splitText):null,gm=gregMap(gregText),prior=new Map(events(baseline).map(e=>[String(e.event_id),e]));
-  $('gregStatus').textContent=gf?`Greg’s spreadsheet loaded for ${day} (${gm.size} projected favorites indexed). Team-name mismatches remain PENDING.`:`Greg’s spreadsheet is not yet available for ${day}. Collect Fresh Data will request it; refresh the report after the jobs finish.`;
+  $('gregStatus').textContent=gf?`Greg’s spreadsheet loaded for ${day} (${gm.size} projected favorites indexed). Team-name mismatches remain PENDING.`:`Greg’s spreadsheet is not yet available for ${day}. Run Full Model will request it; refresh the report after the jobs finish.`;
   $('gregStatus').className=gf?'foot pass':'foot pending';
   let total=0,comparable=0,passing=0,plays=0,moves=0;const rows=[];
   for(const e of events(latest)){
@@ -242,7 +242,7 @@ $('date').value=centralDate();$('refresh').addEventListener('click',load);$('dat
   const WORKER = "https://basketball-model-refresh.rblack82.workers.dev/refresh";
 
   const button = document.createElement("button");
-  button.textContent = "🔒 Collect Fresh Data";
+  button.textContent = "🔒 Run Full Model";
   button.style.cssText =
     "position:fixed;bottom:calc(20px + env(safe-area-inset-bottom, 0px));right:16px;z-index:9999;" +
     "padding:14px 18px;border:0;border-radius:12px;" +
@@ -287,7 +287,7 @@ $('date').value=centralDate();$('refresh').addEventListener('click',load);$('dat
       alert("Refresh failed: " + error.message);
     } finally {
       button.disabled = false;
-      button.textContent = "🔒 Collect Fresh Data";
+      button.textContent = "🔒 Run Full Model";
     }
   };
 
