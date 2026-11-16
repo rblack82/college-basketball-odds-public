@@ -294,27 +294,18 @@ $('date').value=centralDate();$('refresh').addEventListener('click',load);$('dat
   document.body.appendChild(button);
   const splitsButton = document.getElementById("refreshSplits");
   splitsButton.addEventListener("click", async () => {
-    const pin = prompt("Enter your PIN to update DraftKings betting splits only (no odds API call):");
-    if (pin === null) return;
-    if (!pin) { alert("PIN required."); return; }
     splitsButton.disabled = true;
     splitsButton.textContent = "Starting splits collector…";
     try {
-      const response = await fetch(WORKER, {
+      const response = await fetch("https://basketball-model-refresh.rblack82.workers.dev/refresh-splits", {
         method: "POST",
         mode: "cors",
         headers: {"Content-Type": "text/plain"},
-        body: JSON.stringify({pin, mode: "splits"})
+        body: "{}"
       });
       const result = await response.json();
       if (!response.ok) throw new Error(result.message || result.error || "Splits refresh failed.");
-      const quota = result.remaining === null
-        ? "Administrator: unlimited daily refreshes."
-        : Number.isInteger(result.remaining) && Number.isInteger(result.limit)
-          ? result.remaining + " of " + result.limit + " refreshes remaining today (Central)."
-          : "";
       alert((result.message || "Betting splits collector requested.") +
-            (quota ? "\\n" + quota : "") +
             "\\nWait for the GitHub job to finish, then tap Refresh report.");
     } catch (error) {
       alert("Betting splits update failed: " + error.message);
