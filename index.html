@@ -107,6 +107,19 @@ function norm(s){let v=String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g
 function events(x){return(x.results||[]).flatMap(z=>z.response?.events||[])}
 function market(e,type){const h=e.teams?.find(t=>t.is_home),m=e.markets?.find(z=>z.name===type&&z.period_id===0),p=m?.participants?.find(z=>z.id===h?.team_id),l=p?.lines?.find(z=>z.prices?.['19']?.is_main_line)||p?.lines?.find(z=>z.prices?.['19']);return l?{price:l.prices['19'].price,spread:Number(l.value)}:null}
 function imp(p){return p<0?-p/(100-p):100/(100+p)}
+function teamMoneyline(e,team){
+ const m=e?.markets?.find(z=>z.name==='moneyline'&&z.period_id===0);
+ const p=m?.participants?.find(z=>String(z.id)===String(team?.team_id));
+ const l=p?.lines?.find(z=>z.prices?.['19']?.is_main_line)||p?.lines?.find(z=>z.prices?.['19']);
+ const price=l?.prices?.['19']?.price;
+ return typeof price==='number'&&Number.isFinite(price)?price:null;
+}
+function isHomeFavorite(e){
+ const home=e?.teams?.find(t=>t.is_home),away=e?.teams?.find(t=>t.is_away);
+ const hp=teamMoneyline(e,home),ap=teamMoneyline(e,away);
+ return hp==null||ap==null?null:imp(hp)>imp(ap);
+}
+
 function csvRows(text){const rows=[];let row=[],field='',quoted=false;for(let i=0;i<text.length;i++){let c=text[i];if(c==='"'){if(quoted&&text[i+1]==='"'){field+='"';i++}else quoted=!quoted}else if(c===','&&!quoted){row.push(field);field=''}else if((c==='\n'||c==='\r')&&!quoted){if(c==='\r'&&text[i+1]==='\n')i++;row.push(field);if(row.some(x=>x.trim()))rows.push(row);row=[];field=''}else field+=c}row.push(field);if(row.some(x=>x.trim()))rows.push(row);return rows}
 function gregMap(csv){const out=new Map();if(!csv)return out;const rows=csvRows(csv);for(const row of rows.slice(1)){for(let i=0;i+2<row.length;i+=3){const team=row[i+1]?.trim().replace(/\*/g,'');const value=Number(row[i+2]?.trim());if(team&&Number.isFinite(value)&&value<0)out.set(teamKey(team),value)}}return out}
 function findSplit(e,games){const home=teamKey(e.teams.find(t=>t.is_home)?.name),away=teamKey(e.teams.find(t=>t.is_away)?.name);return games.find(g=>teamKey(g.home)===home&&teamKey(g.away)===away)}
@@ -134,7 +147,7 @@ const sortValue=(x,i)=>{switch(i){case 0:return x.h.toLowerCase();case 1:return 
 function sortRows(rows){if(sortColumn<0){if(activeView==='model'){rows.sort((a,b)=>(b.final==='PLAY')-(a.final==='PLAY')||(b.b??-Infinity)-(a.b??-Infinity)||a.h.localeCompare(b.h));}else{rows.sort((a,b)=>b.delta-a.delta)}return}rows.sort((a,b)=>{const av=sortValue(a,sortColumn),bv=sortValue(b,sortColumn);if(av==null&&bv==null)return 0;if(av==null)return 1;if(bv==null)return -1;return (typeof av==='number'&&typeof bv==='number'?av-bv:String(av).localeCompare(String(bv)))*sortDirection})}
 document.querySelectorAll('.sort-head').forEach(btn=>btn.addEventListener('click',()=>{const i=Number(btn.dataset.sort);sortDirection=sortColumn===i?-sortDirection:1;sortColumn=i;document.querySelectorAll('.sort-head').forEach(b=>b.removeAttribute('aria-sort'));btn.setAttribute('aria-sort',sortDirection===1?'ascending':'descending');sortRows(currentRows);renderRows(currentRows)}));
 function renderRows(rows){
- $('rows').innerHTML=rows.length?rows.map(x=>`<tr${x.final==='PLAY'?' class="model-play-row"':''}><td><b>${esc(x.h)}</b><br><small>vs ${esc(x.away)}</small><br><small class="tipoff-time">${esc(gameStartTime(x.startTime))}</small></td><td>${fmt(x.a)}</td><td>${fmt(x.b)}</td><td><span class="${x.a==null||x.b==null?'':x.b<0&&x.b<x.a?'pass':x.b>x.a?'fail':''}">${x.a==null||x.b==null?"—":String(Math.abs(x.b-x.a))}</span>${x.a>0&&x.b<0?' <span class="dog-to-fav" title="Home team moved from underdog to favorite">DOG → FAV</span>':''}</td><td class="${x.stage1.toLowerCase()}">${x.stage1}</td><td>${x.ml?`${x.ml.bets_pct??'—'}% / ${x.ml.handle_pct??'—'}%`:'—'}</td><td>${x.ss?`${x.ss.bets_pct??'—'}% / ${x.ss.handle_pct??'—'}%`:'—'}</td><td class="${x.splitStatus.toLowerCase()}">${x.splitStatus}</td><td>${fmt(x.sp)}</td><td>${fmt(x.gl)} <small class="${x.gregStatus==='DK Spread Unavailable'?'pending':x.gregStatus.toLowerCase()}">${x.gregStatus}</small></td><td><span class="${x.sp==null||x.gl==null?'':x.sp-x.gl>0?'pass':x.sp-x.gl<0?'fail':''}">${x.sp==null||x.gl==null?"—":String(Math.abs(x.sp-x.gl))}</span></td><td class="${x.final==='PLAY'?'pass':x.final==='FAIL'?'fail':'pending'}">${x.final}</td></tr>`).join(''):'<tr><td colspan="12">No games in this view for the selected date.</td></tr>';
+ $('rows').innerHTML=rows.length?rows.map(x=>`<tr${x.final==='PLAY'?' class="model-play-row"':''}><td><b>${esc(x.h)}</b><br><small>vs ${esc(x.away)}</small><br><small class="tipoff-time">${esc(gameStartTime(x.startTime))}</small></td><td>${fmt(x.a)}</td><td>${fmt(x.b)}</td><td><span class="${x.a==null||x.b==null?'':x.b<0&&x.b<x.a?'pass':x.b>x.a?'fail':''}">${x.a==null||x.b==null?"—":String(Math.abs(x.b-x.a))}</span>${x.dogToFav?' <span class="dog-to-fav" title="Home team moved from underdog to favorite">DOG → FAV</span>':''}</td><td class="${x.stage1.toLowerCase()}">${x.stage1}</td><td>${x.ml?`${x.ml.bets_pct??'—'}% / ${x.ml.handle_pct??'—'}%`:'—'}</td><td>${x.ss?`${x.ss.bets_pct??'—'}% / ${x.ss.handle_pct??'—'}%`:'—'}</td><td class="${x.splitStatus.toLowerCase()}">${x.splitStatus}</td><td>${fmt(x.sp)}</td><td>${fmt(x.gl)} <small class="${x.gregStatus==='DK Spread Unavailable'?'pending':x.gregStatus.toLowerCase()}">${x.gregStatus}</small></td><td><span class="${x.sp==null||x.gl==null?'':x.sp-x.gl>0?'pass':x.sp-x.gl<0?'fail':''}">${x.sp==null||x.gl==null?"—":String(Math.abs(x.sp-x.gl))}</span></td><td class="${x.final==='PLAY'?'pass':x.final==='FAIL'?'fail':'pending'}">${x.final}</td></tr>`).join(''):'<tr><td colspan="12">No games in this view for the selected date.</td></tr>';
 }
 let rankedWatchRequest=0;
 function updateRankedAlert(count){
@@ -226,7 +239,7 @@ async function load(){
    const started=Date.parse(e.event_date)<=Date.now();
    const final=started?'STARTED':[stage1,splitStatus,gregStatus].includes('FAIL')?'FAIL':[stage1,splitStatus,gregStatus].every(v=>v==='PASS')?'PLAY':'PENDING';
    if(final==='PLAY')plays++;
-   rows.push({h:h.name,away:away.name,startTime:e.event_date,a:a?.price??null,b:b?.price??null,sp:sp?.spread??null,ml,ss,stage1,splitStatus,gl,gregStatus,final,delta:a&&b?imp(b.price)-imp(a.price):Number.NEGATIVE_INFINITY});
+   rows.push({dogToFav:old!=null&&isHomeFavorite(old)===false&&isHomeFavorite(e)===true,h:h.name,away:away.name,startTime:e.event_date,a:a?.price??null,b:b?.price??null,sp:sp?.spread??null,ml,ss,stage1,splitStatus,gl,gregStatus,final,delta:a&&b?imp(b.price)-imp(a.price):Number.NEGATIVE_INFINITY});
   }
   allRows=rows;setView(activeView);
   $('games').textContent=total;$('moves').textContent=moves;$('splits').textContent=passing;$('plays').textContent=plays;
