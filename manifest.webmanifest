@@ -10,10 +10,10 @@
   "theme_color": "#0b1220",
   "icons": [
     {
-      "src": "icons/ricks-picks.svg",
+      "src": "icons/E573304E-1DB3-4933-8119-DB3613D691E7.png",
       "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "type": "image/png",
+      "purpose": "any"
     }
   ]
 }
