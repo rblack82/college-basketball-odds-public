@@ -1,0 +1,100 @@
+{
+  "collected_at_central": "2026-11-16T19:32:17.194425-06:00",
+  "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/",
+  "sport_id": "92483",
+  "moneyline_games": 3,
+  "spread_games": 5,
+  "games": [
+    {
+      "away": "East Texas A&M",
+      "home": "Oregon State",
+      "moneyline": {
+        "away": "East Texas A&M",
+        "home": "Oregon State",
+        "line": "-1650",
+        "handle_pct": 10,
+        "bets_pct": 91,
+        "difference": -81
+      },
+      "spread": {
+        "away": "East Texas A&M",
+        "home": "Oregon State",
+        "line": "-16.5",
+        "handle_pct": 13,
+        "bets_pct": 55,
+        "difference": -42
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Long Beach State",
+      "home": "UCLA",
+      "moneyline": null,
+      "spread": {
+        "away": "Long Beach State",
+        "home": "UCLA",
+        "line": "-29.5",
+        "handle_pct": 96,
+        "bets_pct": 72,
+        "difference": 24
+      },
+      "status": "PENDING"
+    },
+    {
+      "away": "Portland State",
+      "home": "Saint Marys",
+      "moneyline": {
+        "away": "Portland State",
+        "home": "Saint Marys",
+        "line": "-3200",
+        "handle_pct": 99,
+        "bets_pct": 95,
+        "difference": 4
+      },
+      "spread": {
+        "away": "Portland State",
+        "home": "Saint Marys",
+        "line": "-18.5",
+        "handle_pct": 97,
+        "bets_pct": 70,
+        "difference": 27
+      },
+      "status": "PASS"
+    },
+    {
+      "away": "SE Louisiana",
+      "home": "Texas A&M",
+      "moneyline": null,
+      "spread": {
+        "away": "SE Louisiana",
+        "home": "Texas A&M",
+        "line": "-33.5",
+        "handle_pct": 58,
+        "bets_pct": 62,
+        "difference": -4
+      },
+      "status": "PENDING"
+    },
+    {
+      "away": "Texas Southern",
+      "home": "UC San Diego",
+      "moneyline": {
+        "away": "Texas Southern",
+        "home": "UC San Diego",
+        "line": "-3200",
+        "handle_pct": 39,
+        "bets_pct": 96,
+        "difference": -57
+      },
+      "spread": {
+        "away": "Texas Southern",
+        "home": "UC San Diego",
+        "line": "-18.5",
+        "handle_pct": 98,
+        "bets_pct": 52,
+        "difference": 46
+      },
+      "status": "FAIL"
+    }
+  ]
+}
