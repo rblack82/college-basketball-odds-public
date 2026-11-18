@@ -1,0 +1,51 @@
+{
+  "collected_at_central": "2026-11-17T21:58:13.769398-06:00",
+  "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/",
+  "sport_id": "92483",
+  "moneyline_games": 2,
+  "spread_games": 2,
+  "games": [
+    {
+      "away": "Montana State",
+      "home": "Gonzaga",
+      "moneyline": {
+        "away": "Montana State",
+        "home": "Gonzaga",
+        "line": "-5000",
+        "handle_pct": 100,
+        "bets_pct": 97,
+        "difference": 3
+      },
+      "spread": {
+        "away": "Montana State",
+        "home": "Gonzaga",
+        "line": "-23.5",
+        "handle_pct": 88,
+        "bets_pct": 86,
+        "difference": 2
+      },
+      "status": "PASS"
+    },
+    {
+      "away": "West Virginia",
+      "home": "Auburn",
+      "moneyline": {
+        "away": "West Virginia",
+        "home": "Auburn",
+        "line": "-112",
+        "handle_pct": 64,
+        "bets_pct": 64,
+        "difference": 0
+      },
+      "spread": {
+        "away": "West Virginia",
+        "home": "Auburn",
+        "line": "-1.5",
+        "handle_pct": 38,
+        "bets_pct": 70,
+        "difference": -32
+      },
+      "status": "FAIL"
+    }
+  ]
+}
