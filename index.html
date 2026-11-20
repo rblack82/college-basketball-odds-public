@@ -63,6 +63,7 @@ const teamAliases={
   'loyolamary':'loyolamarymount','loyolamarymount':'loyolamarymount','loyolamarymountuniversity':'loyolamarymount','lmu':'loyolamarymount','loyolamarymountlions':'loyolamarymount',
   'loyolamd':'loyolamaryland','loyolamaryland':'loyolamaryland','loyolamarylanduniversity':'loyolamaryland','loyolauniversitymaryland':'loyolamaryland','loyolamarylandgreyhounds':'loyolamaryland','loyolamarylandgrayhounds':'loyolamaryland','loyolacollegemaryland':'loyolamaryland',
   'chattanooga':'chattanooga','utc':'chattanooga',
+  'mtsu':'middletennesseest','middletennessee':'middletennesseest','middletennesseest':'middletennesseest','middletennesseestate':'middletennesseest','middletenn':'middletennesseest','middletennst':'middletennesseest','middletennesseeblueraiders':'middletennesseest',
   'pitt':'pittsburgh','cal':'california',
   'ut arlington':'utarlington','utarlington':'utarlington','texasarlington':'utarlington','texasatarlington':'utarlington','universityoftexasatarlington':'utarlington','oftexasatarlington':'utarlington','utarlingtonmavericks':'utarlington','texasarlingtonmavericks':'utarlington','utamavericks':'utarlington','uta':'utarlington',
   'floridast':'floridast','floridastate':'floridast',
@@ -104,7 +105,7 @@ const teamAliases={
   'longbeachst':'longbeachst','longbeachstate':'longbeachst',
   'sfa':'stephenfaustin','stephenfaustin':'stephenfaustin'
 };
-function teamKey(s){const v=norm(s);return teamAliases[v]||v}
+function teamKey(s){const cleaned=String(s||'').replace(/^pick for NCAAM on [^\n]*?\b(Temple)\s*$/i,'$1');const v=norm(cleaned);return teamAliases[v]||v}
 function norm(s){let v=String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'').replace(/university/g,'').replace(/college/g,'').replace(/state/g,'st');return alias[v]||v}
 function events(x){return(x.results||[]).flatMap(z=>z.response?.events||[])}
 function market(e,type){const h=e.teams?.find(t=>t.is_home),m=e.markets?.find(z=>z.name===type&&z.period_id===0),p=m?.participants?.find(z=>z.id===h?.team_id),l=p?.lines?.find(z=>z.prices?.['19']?.is_main_line)||p?.lines?.find(z=>z.prices?.['19']);return l?{price:l.prices['19'].price,spread:Number(l.value)}:null}
