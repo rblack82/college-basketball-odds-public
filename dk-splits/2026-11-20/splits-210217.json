@@ -1,0 +1,51 @@
+{
+  "collected_at_central": "2026-11-20T21:02:17.945913-06:00",
+  "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/",
+  "sport_id": "92483",
+  "moneyline_games": 2,
+  "spread_games": 2,
+  "games": [
+    {
+      "away": "Alabama State",
+      "home": "Fresno State",
+      "moneyline": {
+        "away": "Alabama State",
+        "home": "Fresno State",
+        "line": "-535",
+        "handle_pct": 99,
+        "bets_pct": 97,
+        "difference": 2
+      },
+      "spread": {
+        "away": "Alabama State",
+        "home": "Fresno State",
+        "line": "-10.5",
+        "handle_pct": 39,
+        "bets_pct": 75,
+        "difference": -36
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Saint Louis",
+      "home": "Saint Marys",
+      "moneyline": {
+        "away": "Saint Louis",
+        "home": "Saint Marys",
+        "line": "-125",
+        "handle_pct": 41,
+        "bets_pct": 66,
+        "difference": -25
+      },
+      "spread": {
+        "away": "Saint Louis",
+        "home": "Saint Marys",
+        "line": "-1.5",
+        "handle_pct": 54,
+        "bets_pct": 56,
+        "difference": -2
+      },
+      "status": "FAIL"
+    }
+  ]
+}
