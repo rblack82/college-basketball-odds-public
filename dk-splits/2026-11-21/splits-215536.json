@@ -1,0 +1,30 @@
+{
+  "collected_at_central": "2026-11-21T21:55:36.326325-06:00",
+  "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/",
+  "sport_id": "92483",
+  "moneyline_games": 1,
+  "spread_games": 1,
+  "games": [
+    {
+      "away": "Washington State",
+      "home": "Duke",
+      "moneyline": {
+        "away": "Washington State",
+        "home": "Duke",
+        "line": "-8000",
+        "handle_pct": 14,
+        "bets_pct": 92,
+        "difference": -78
+      },
+      "spread": {
+        "away": "Washington State",
+        "home": "Duke",
+        "line": "-24.5",
+        "handle_pct": 93,
+        "bets_pct": 71,
+        "difference": 22
+      },
+      "status": "FAIL"
+    }
+  ]
+}
