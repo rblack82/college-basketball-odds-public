@@ -1,0 +1,114 @@
+{
+  "collected_at_central": "2026-11-21T18:39:52.000273-06:00",
+  "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/",
+  "sport_id": "92483",
+  "moneyline_games": 5,
+  "spread_games": 5,
+  "games": [
+    {
+      "away": "A&M-Corpus Christi",
+      "home": "Oral Roberts",
+      "moneyline": {
+        "away": "A&M-Corpus Christi",
+        "home": "Oral Roberts",
+        "line": "-162",
+        "handle_pct": 93,
+        "bets_pct": 66,
+        "difference": 27
+      },
+      "spread": {
+        "away": "A&M-Corpus Christi",
+        "home": "Oral Roberts",
+        "line": "-3.5",
+        "handle_pct": 50,
+        "bets_pct": 42,
+        "difference": 8
+      },
+      "status": "PASS"
+    },
+    {
+      "away": "Bradley",
+      "home": "Pacific",
+      "moneyline": {
+        "away": "Bradley",
+        "home": "Pacific",
+        "line": "-395",
+        "handle_pct": 75,
+        "bets_pct": 95,
+        "difference": -20
+      },
+      "spread": {
+        "away": "Bradley",
+        "home": "Pacific",
+        "line": "-8.5",
+        "handle_pct": 58,
+        "bets_pct": 56,
+        "difference": 2
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "New Orleans",
+      "home": "Texas Southern",
+      "moneyline": {
+        "away": "New Orleans",
+        "home": "Texas Southern",
+        "line": "-120",
+        "handle_pct": 81,
+        "bets_pct": 43,
+        "difference": 38
+      },
+      "spread": {
+        "away": "New Orleans",
+        "home": "Texas Southern",
+        "line": "-1.5",
+        "handle_pct": 53,
+        "bets_pct": 48,
+        "difference": 5
+      },
+      "status": "PASS"
+    },
+    {
+      "away": "Troy",
+      "home": "Valparaiso",
+      "moneyline": {
+        "away": "Troy",
+        "home": "Valparaiso",
+        "line": "-192",
+        "handle_pct": 100,
+        "bets_pct": 92,
+        "difference": 8
+      },
+      "spread": {
+        "away": "Troy",
+        "home": "Valparaiso",
+        "line": "-4.5",
+        "handle_pct": 82,
+        "bets_pct": 69,
+        "difference": 13
+      },
+      "status": "PASS"
+    },
+    {
+      "away": "Washington State",
+      "home": "Duke",
+      "moneyline": {
+        "away": "Washington State",
+        "home": "Duke",
+        "line": "-8000",
+        "handle_pct": 14,
+        "bets_pct": 95,
+        "difference": -81
+      },
+      "spread": {
+        "away": "Washington State",
+        "home": "Duke",
+        "line": "-25.5",
+        "handle_pct": 97,
+        "bets_pct": 76,
+        "difference": 21
+      },
+      "status": "FAIL"
+    }
+  ]
+}
