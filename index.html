@@ -130,7 +130,17 @@ function isHomeFavorite(e){
 
 function csvRows(text){const rows=[];let row=[],field='',quoted=false;for(let i=0;i<text.length;i++){let c=text[i];if(c==='"'){if(quoted&&text[i+1]==='"'){field+='"';i++}else quoted=!quoted}else if(c===','&&!quoted){row.push(field);field=''}else if((c==='\n'||c==='\r')&&!quoted){if(c==='\r'&&text[i+1]==='\n')i++;row.push(field);if(row.some(x=>x.trim()))rows.push(row);row=[];field=''}else field+=c}row.push(field);if(row.some(x=>x.trim()))rows.push(row);return rows}
 function gregMap(csv){const out=new Map();if(!csv)return out;const rows=csvRows(csv);for(const row of rows.slice(1)){for(let i=0;i+2<row.length;i+=3){const team=row[i+1]?.trim().replace(/\*/g,'');const value=Number(row[i+2]?.trim());if(team&&Number.isFinite(value)&&value<0)out.set(teamKey(team),value)}}return out}
-function findSplit(e,games){const home=teamKey(e.teams.find(t=>t.is_home)?.name),away=teamKey(e.teams.find(t=>t.is_away)?.name);return games.find(g=>teamKey(g.home)===home&&teamKey(g.away)===away)}
+function findSplit(e,games){
+ const home=teamKey(e.teams.find(t=>t.is_home)?.name),away=teamKey(e.teams.find(t=>t.is_away)?.name);
+ const direct=games.find(g=>teamKey(g.home)===home&&teamKey(g.away)===away);
+ if(direct)return direct;
+ // Neutral-site feeds sometimes reverse home/away. Match the same two teams,
+ // then translate DK Nation's home-side percentages to our odds-feed home side.
+ const reversed=games.find(g=>teamKey(g.home)===away&&teamKey(g.away)===home);
+ if(!reversed)return null;
+ const flip=m=>!m?m:{...m,bets_pct:m.bets_pct==null?null:100-m.bets_pct,handle_pct:m.handle_pct==null?null:100-m.handle_pct};
+ return {...reversed,home:e.teams.find(t=>t.is_home)?.name,away:e.teams.find(t=>t.is_away)?.name,moneyline:flip(reversed.moneyline),spread:flip(reversed.spread)};
+}
 
 let allRows=[],currentRows=[],activeView='model',sortColumn=-1,sortDirection=1,shortcutFilter=null;
 function setView(view){
