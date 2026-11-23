@@ -140,7 +140,7 @@ function setView(view){
  if(view!=='all')shortcutFilter=null;
  $('modelHeading').textContent=view==='model'?'Model Plays':view==='dogs'?'Home Underdogs':'All Games — Stage-by-stage results';
  $('modelDescription').textContent=view==='model'?'Stage 1 qualifying home favorites, with later-stage results shown. Choose All Games to inspect every matchup.':view==='dogs'?'Home underdogs with improving moneylines. Both betting splits and Greg’s spread must pass for a Home Underdogs PLAY. These plays are separate from the main model.':'Every matchup in the odds snapshot, including Model Plays. PASS, FAIL, and PENDING are evaluated independently for each stage.';
- currentRows=view==='model'?allRows.filter(r=>r.stage1==='PASS'):view==='dogs'?allRows.filter(r=>r.homeDog&&r.dogStage1==='PASS').map(r=>({...r,stage1:r.dogStage1,final:r.dogFinal})):allRows.slice();
+ currentRows=view==='model'?allRows.filter(r=>r.stage1==='PASS'):view==='dogs'?allRows.filter(r=>r.homeDog&&r.dogStage1==='PASS').map(r=>({...r,stage1:r.dogStage1,gregStatus:r.dogGregStatus,final:r.dogFinal})):allRows.slice();
  if(view==='all'&&shortcutFilter){currentRows=currentRows.filter(r=>shortcutFilter==='moves'?r.stage1==='PASS':shortcutFilter==='splits'?r.stage1==='PASS'&&r.splitStatus==='PASS':shortcutFilter==='plays'?r.final==='PLAY':true);const names={moves:'Improving Home Favorites',splits:'Stage 1 + Both Betting Splits Passing',plays:'Full Model Plays'};$('modelHeading').textContent=names[shortcutFilter];$('modelDescription').textContent='Showing '+currentRows.length+' matching games. Select All Games to clear this shortcut filter.';}
  sortRows(currentRows);renderRows(currentRows);
 }
@@ -252,8 +252,9 @@ async function load(){
    const started=Date.parse(e.event_date)<=Date.now();
    const final=started?'STARTED':[stage1,splitStatus,gregStatus].includes('FAIL')?'FAIL':[stage1,splitStatus,gregStatus].every(v=>v==='PASS')?'PLAY':'PENDING';
    if(final==='PLAY')plays++;
-   const dogFinal=started?'STARTED':[dogStage1,splitStatus,gregStatus].includes('FAIL')?'FAIL':[dogStage1,splitStatus,gregStatus].every(v=>v==='PASS')?'PLAY':'PENDING';
-   rows.push({homeDog,dogStage1,dogFinal,dogToFav:old!=null&&market(old,'handicap')?.spread>0&&sp?.spread<0,h:h.name,away:away.name,startTime:e.event_date,a:a?.price??null,b:b?.price??null,sp:sp?.spread??null,ml,ss,stage1,splitStatus,gl,gregStatus,final,delta:a&&b?imp(b.price)-imp(a.price):Number.NEGATIVE_INFINITY});
+   const dogGregStatus=gregHome!=null?gregStatus:gl==null?'PENDING':'FAIL';
+   const dogFinal=started?'STARTED':[dogStage1,splitStatus,dogGregStatus].includes('FAIL')?'FAIL':[dogStage1,splitStatus,dogGregStatus].every(v=>v==='PASS')?'PLAY':'PENDING';
+   rows.push({homeDog,dogStage1,dogGregStatus,dogFinal,dogToFav:old!=null&&market(old,'handicap')?.spread>0&&sp?.spread<0,h:h.name,away:away.name,startTime:e.event_date,a:a?.price??null,b:b?.price??null,sp:sp?.spread??null,ml,ss,stage1,splitStatus,gl,gregStatus,final,delta:a&&b?imp(b.price)-imp(a.price):Number.NEGATIVE_INFINITY});
   }
   allRows=rows;setView(activeView);
   $('games').textContent=total;$('moves').textContent=moves;$('splits').textContent=passing;$('plays').textContent=plays;
