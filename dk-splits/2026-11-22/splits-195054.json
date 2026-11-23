@@ -1,0 +1,51 @@
+{
+  "collected_at_central": "2026-11-22T19:50:54.542218-06:00",
+  "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/",
+  "sport_id": "92483",
+  "moneyline_games": 2,
+  "spread_games": 2,
+  "games": [
+    {
+      "away": "San Jose State",
+      "home": "Loyola Chicago",
+      "moneyline": {
+        "away": "San Jose State",
+        "home": "Loyola Chicago",
+        "line": "-185",
+        "handle_pct": 59,
+        "bets_pct": 76,
+        "difference": -17
+      },
+      "spread": {
+        "away": "San Jose State",
+        "home": "Loyola Chicago",
+        "line": "-4.5",
+        "handle_pct": 14,
+        "bets_pct": 83,
+        "difference": -69
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Seattle",
+      "home": "UC San Diego",
+      "moneyline": {
+        "away": "Seattle",
+        "home": "UC San Diego",
+        "line": "-110",
+        "handle_pct": 93,
+        "bets_pct": 60,
+        "difference": 33
+      },
+      "spread": {
+        "away": "Seattle",
+        "home": "UC San Diego",
+        "line": "-1.5",
+        "handle_pct": 94,
+        "bets_pct": 83,
+        "difference": 11
+      },
+      "status": "PASS"
+    }
+  ]
+}
