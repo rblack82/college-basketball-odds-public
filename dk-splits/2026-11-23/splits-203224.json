@@ -1,0 +1,135 @@
+{
+  "collected_at_central": "2026-11-23T20:32:24.780579-06:00",
+  "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/",
+  "sport_id": "92483",
+  "moneyline_games": 6,
+  "spread_games": 6,
+  "games": [
+    {
+      "away": "Alabama State",
+      "home": "California",
+      "moneyline": {
+        "away": "Alabama State",
+        "home": "California",
+        "line": "-5000",
+        "handle_pct": 39,
+        "bets_pct": 93,
+        "difference": -54
+      },
+      "spread": {
+        "away": "Alabama State",
+        "home": "California",
+        "line": "-18.5",
+        "handle_pct": 74,
+        "bets_pct": 77,
+        "difference": -3
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Colorado State",
+      "home": "Arizona",
+      "moneyline": {
+        "away": "Colorado State",
+        "home": "Arizona",
+        "line": "-2100",
+        "handle_pct": 100,
+        "bets_pct": 96,
+        "difference": 4
+      },
+      "spread": {
+        "away": "Colorado State",
+        "home": "Arizona",
+        "line": "-16.5",
+        "handle_pct": 89,
+        "bets_pct": 76,
+        "difference": 13
+      },
+      "status": "PASS"
+    },
+    {
+      "away": "Eastern Washington",
+      "home": "UNLV",
+      "moneyline": {
+        "away": "Eastern Washington",
+        "home": "UNLV",
+        "line": "-355",
+        "handle_pct": 99,
+        "bets_pct": 97,
+        "difference": 2
+      },
+      "spread": {
+        "away": "Eastern Washington",
+        "home": "UNLV",
+        "line": "-8.5",
+        "handle_pct": 97,
+        "bets_pct": 68,
+        "difference": 29
+      },
+      "status": "PASS"
+    },
+    {
+      "away": "Loyola Chicago",
+      "home": "Seattle",
+      "moneyline": {
+        "away": "Loyola Chicago",
+        "home": "Seattle",
+        "line": "-120",
+        "handle_pct": 87,
+        "bets_pct": 55,
+        "difference": 32
+      },
+      "spread": {
+        "away": "Loyola Chicago",
+        "home": "Seattle",
+        "line": "-1.5",
+        "handle_pct": 20,
+        "bets_pct": 49,
+        "difference": -29
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "San Jose State",
+      "home": "UC San Diego",
+      "moneyline": {
+        "away": "San Jose State",
+        "home": "UC San Diego",
+        "line": "-125",
+        "handle_pct": 89,
+        "bets_pct": 64,
+        "difference": 25
+      },
+      "spread": {
+        "away": "San Jose State",
+        "home": "UC San Diego",
+        "line": "-1.5",
+        "handle_pct": 93,
+        "bets_pct": 53,
+        "difference": 40
+      },
+      "status": "PASS"
+    },
+    {
+      "away": "UNC Greensboro",
+      "home": "Pepperdine",
+      "moneyline": {
+        "away": "UNC Greensboro",
+        "home": "Pepperdine",
+        "line": "-600",
+        "handle_pct": 52,
+        "bets_pct": 92,
+        "difference": -40
+      },
+      "spread": {
+        "away": "UNC Greensboro",
+        "home": "Pepperdine",
+        "line": "-10.5",
+        "handle_pct": 17,
+        "bets_pct": 47,
+        "difference": -30
+      },
+      "status": "FAIL"
+    }
+  ]
+}
