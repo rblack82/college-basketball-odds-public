@@ -1,0 +1,205 @@
+{
+  "collected_at_central": "2026-11-24T19:45:46.347089-06:00",
+  "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/",
+  "sport_id": "92483",
+  "moneyline_games": 8,
+  "spread_games": 10,
+  "games": [
+    {
+      "away": "Baylor",
+      "home": "Alabama",
+      "moneyline": {
+        "away": "Baylor",
+        "home": "Alabama",
+        "line": "-125",
+        "handle_pct": 75,
+        "bets_pct": 87,
+        "difference": -12
+      },
+      "spread": {
+        "away": "Baylor",
+        "home": "Alabama",
+        "line": "-1.5",
+        "handle_pct": 84,
+        "bets_pct": 77,
+        "difference": 7
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Evansville",
+      "home": "Missouri",
+      "moneyline": null,
+      "spread": {
+        "away": "Evansville",
+        "home": "Missouri",
+        "line": "-30.5",
+        "handle_pct": 6,
+        "bets_pct": 44,
+        "difference": -38
+      },
+      "status": "PENDING"
+    },
+    {
+      "away": "Grand Canyon",
+      "home": "Saint Louis",
+      "moneyline": {
+        "away": "Grand Canyon",
+        "home": "Saint Louis",
+        "line": "+110",
+        "handle_pct": 48,
+        "bets_pct": 54,
+        "difference": -6
+      },
+      "spread": {
+        "away": "Grand Canyon",
+        "home": "Saint Louis",
+        "line": "+1.5",
+        "handle_pct": 2,
+        "bets_pct": 39,
+        "difference": -37
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Idaho State",
+      "home": "Boise State",
+      "moneyline": {
+        "away": "Idaho State",
+        "home": "Boise State",
+        "line": "-2800",
+        "handle_pct": 100,
+        "bets_pct": 98,
+        "difference": 2
+      },
+      "spread": {
+        "away": "Idaho State",
+        "home": "Boise State",
+        "line": "-19.5",
+        "handle_pct": 74,
+        "bets_pct": 49,
+        "difference": 25
+      },
+      "status": "PASS"
+    },
+    {
+      "away": "pick for NCAAM on Tuesday 11/24/26 Oregon",
+      "home": "St. Johns",
+      "moneyline": {
+        "away": "pick for NCAAM on Tuesday 11/24/26 Oregon",
+        "home": "St. Johns",
+        "line": "-600",
+        "handle_pct": 86,
+        "bets_pct": 99,
+        "difference": -13
+      },
+      "spread": {
+        "away": "pick for NCAAM on Tuesday 11/24/26 Oregon",
+        "home": "St. Johns",
+        "line": "-10.5",
+        "handle_pct": 66,
+        "bets_pct": 77,
+        "difference": -11
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Sam Houston",
+      "home": "Washington State",
+      "moneyline": {
+        "away": "Sam Houston",
+        "home": "Washington State",
+        "line": "-230",
+        "handle_pct": 99,
+        "bets_pct": 94,
+        "difference": 5
+      },
+      "spread": {
+        "away": "Sam Houston",
+        "home": "Washington State",
+        "line": "-5.5",
+        "handle_pct": 54,
+        "bets_pct": 57,
+        "difference": -3
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Stanford",
+      "home": "Colorado",
+      "moneyline": {
+        "away": "Stanford",
+        "home": "Colorado",
+        "line": "+154",
+        "handle_pct": 4,
+        "bets_pct": 14,
+        "difference": -10
+      },
+      "spread": {
+        "away": "Stanford",
+        "home": "Colorado",
+        "line": "+3.5",
+        "handle_pct": 12,
+        "bets_pct": 37,
+        "difference": -25
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "UNC Asheville",
+      "home": "Florida State",
+      "moneyline": null,
+      "spread": {
+        "away": "UNC Asheville",
+        "home": "Florida State",
+        "line": "-30.5",
+        "handle_pct": 4,
+        "bets_pct": 40,
+        "difference": -36
+      },
+      "status": "PENDING"
+    },
+    {
+      "away": "UNC Greensboro",
+      "home": "UC Santa Barbara",
+      "moneyline": {
+        "away": "UNC Greensboro",
+        "home": "UC Santa Barbara",
+        "line": "-2800",
+        "handle_pct": 99,
+        "bets_pct": 97,
+        "difference": 2
+      },
+      "spread": {
+        "away": "UNC Greensboro",
+        "home": "UC Santa Barbara",
+        "line": "-18.5",
+        "handle_pct": 6,
+        "bets_pct": 35,
+        "difference": -29
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "VCU",
+      "home": "Colorado State",
+      "moneyline": {
+        "away": "VCU",
+        "home": "Colorado State",
+        "line": "+200",
+        "handle_pct": 1,
+        "bets_pct": 2,
+        "difference": -1
+      },
+      "spread": {
+        "away": "VCU",
+        "home": "Colorado State",
+        "line": "+6.5",
+        "handle_pct": 89,
+        "bets_pct": 41,
+        "difference": 48
+      },
+      "status": "FAIL"
+    }
+  ]
+}
