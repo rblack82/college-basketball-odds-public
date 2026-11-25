@@ -1,0 +1,45 @@
+name: Collect Wrong Team Favored Projections
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 8:30, 11:30, and 2:30 Central in either standard or daylight time.
+    - cron: '30 13,14,16,17,19,20 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: collect-wrong-team-projections
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Collect game projections
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          if [ "$EVENT_NAME" = "schedule" ]; then
+            HOUR=$(TZ=America/Chicago date +%H)
+            if [ "$HOUR" != "08" ] && [ "$HOUR" != "11" ] && [ "$HOUR" != "14" ]; then
+              echo 'Outside Central scheduled projection collection windows'
+              exit 0
+            fi
+          fi
+          node collect_wrong_team_projections.js
+      - name: Publish projection snapshots
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add wrong-team-projections/
+          if ! git diff --cached --quiet; then
+            git commit -m 'Collect Torvik and Haslametrics projections'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
