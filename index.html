@@ -147,10 +147,19 @@ function findSplit(e,games){
 }
 
 
+// Additional cross-source abbreviations used only by this independent tab.
+function wrongTeamKey(name){
+ const value=teamKey(name);
+ const aliases={'ncolorado':'northerncolorado','ekentucky':'easternkentucky','abilchristian':'abilenechristian',
+  'arpinebluff':'arkansaspinebluff','mississippi':'olemiss','fiu':'floridainternational',
+  'fgcu':'floridagulfcoast','calstnorthridge':'csunorthridge','calstbakersfield':'csubakersfield',
+  'connecticut':'uconn','nebraskaomaha':'omaha','emichigan':'easternmichigan','ewashington':'easternwashington'};
+ return aliases[value]||value;
+}
 function findProjection(games,home,away){
- const direct=games.find(g=>teamKey(g.home)===teamKey(home)&&teamKey(g.away)===teamKey(away));
+ const direct=games.find(g=>wrongTeamKey(g.home)===wrongTeamKey(home)&&wrongTeamKey(g.away)===wrongTeamKey(away));
  if(direct)return {game:direct,flip:false};
- const reverse=games.find(g=>teamKey(g.home)===teamKey(away)&&teamKey(g.away)===teamKey(home));
+ const reverse=games.find(g=>wrongTeamKey(g.home)===wrongTeamKey(away)&&wrongTeamKey(g.away)===wrongTeamKey(home));
  return reverse?{game:reverse,flip:true}:null;
 }
 function renderWrongTeam(latest,day,gm,projections){
