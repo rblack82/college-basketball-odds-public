@@ -1,0 +1,51 @@
+{
+  "collected_at_central": "2026-11-24T21:44:46.409811-06:00",
+  "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/",
+  "sport_id": "92483",
+  "moneyline_games": 2,
+  "spread_games": 2,
+  "games": [
+    {
+      "away": "Oregon",
+      "home": "St. Johns",
+      "moneyline": {
+        "away": "Oregon",
+        "home": "St. Johns",
+        "line": "-650",
+        "handle_pct": 80,
+        "bets_pct": 97,
+        "difference": -17
+      },
+      "spread": {
+        "away": "Oregon",
+        "home": "St. Johns",
+        "line": "-11.5",
+        "handle_pct": 77,
+        "bets_pct": 77,
+        "difference": 0
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Stanford",
+      "home": "Colorado",
+      "moneyline": {
+        "away": "Stanford",
+        "home": "Colorado",
+        "line": "+150",
+        "handle_pct": 4,
+        "bets_pct": 14,
+        "difference": -10
+      },
+      "spread": {
+        "away": "Stanford",
+        "home": "Colorado",
+        "line": "+4.5",
+        "handle_pct": 14,
+        "bets_pct": 35,
+        "difference": -21
+      },
+      "status": "FAIL"
+    }
+  ]
+}
