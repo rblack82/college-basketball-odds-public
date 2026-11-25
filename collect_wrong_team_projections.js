@@ -85,10 +85,14 @@ async function main(){
     fetchText('https://haslametrics.com/ratings.xml')]);
   const torvik=torvikScores(JSON.parse(torvikText),day);
   const haslam=haslamScores(haslamHtml,haslamXml,day);
-  const output={date:day,generated_at_utc:new Date().toISOString(),torvik,haslam};
+  const generated=new Date();
+  const output={date:day,generated_at_utc:generated.toISOString(),torvik,haslam};
   const filename=path.join('wrong-team-projections',day,'projections.json');
   fs.mkdirSync(path.dirname(filename),{recursive:true});
-  fs.writeFileSync(filename,JSON.stringify(output,null,2)+'\n');
-  console.log(`Saved ${filename}: ${torvik.length} Torvik, ${haslam.length} Haslametrics games`);
+  const body=JSON.stringify(output,null,2)+'\n';
+  fs.writeFileSync(filename,body);
+  const stamped=path.join(path.dirname(filename),generated.toISOString().replace(/[-:]/g,'').replace(/\.\d{3}Z$/,'Z')+'.json');
+  fs.writeFileSync(stamped,body);
+  console.log(`Saved ${filename} and ${stamped}: ${torvik.length} Torvik, ${haslam.length} Haslametrics games`);
 }
 main().catch(err=>{console.error(err);process.exitCode=1;});
