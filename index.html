@@ -199,7 +199,7 @@ function renderWrongTeam(latest,day,gm,projections){
  const margin=(value)=>value==null?'—':(value>0?'+':'')+value.toFixed(2);
  $('wrongRows').innerHTML=gameRows.length?gameRows.map(x=>'<tr'+(x.result==='PLAY'?' class="model-play-row"':'')+'><td><b>'+
   esc(x.h)+'</b><br><small>vs '+esc(x.a)+'</small><br><small>'+esc(gameStartTime(x.time))+'</small></td><td>'+
-  esc(x.fav)+'</td><td><b>'+esc(x.dog)+'</b> '+(x.dogSpread==null?'—':(x.dogSpread>0?'+':'')+fmt(x.dogSpread))+
+  esc(x.fav)+'</td><td><b>'+esc(x.dog)+'</b> '+(x.dogSpread==null?'—':fmt(x.dogSpread))+
   '</td><td>'+(x.greg?esc(x.greg):'—')+'</td><td>'+margin(x.tm)+'</td><td>'+margin(x.hm)+'</td><td>'+badge(x.result)+'</td></tr>').join(''):
   '<tr><td colspan="7">No games with an unambiguous DK moneyline favorite for this date.</td></tr>';
  const plays=gameRows.filter(x=>x.result==='PLAY').length;
