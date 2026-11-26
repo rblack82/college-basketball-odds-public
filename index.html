@@ -281,6 +281,13 @@ function allGamesConsensus(x){
  const gregAway=teamKey(x.gregFavorite)===teamKey(x.away);
  if(!gregHome&&!gregAway)return false;
  if((x.torvikHomeMargin>0)!==gregHome||(x.haslamHomeMargin>0)!==gregHome)return false;
+ // Moneyline movement is directional: home implied probability must rise
+ // for a home pick, or fall for an away pick. Flat/missing odds do not qualify.
+ if(x.a==null||x.b==null||!Number.isFinite(x.a)||!Number.isFinite(x.b)||
+    x.a===0||x.b===0)return false;
+ const baselineHomeProbability=imp(x.a),currentHomeProbability=imp(x.b);
+ if(gregHome?currentHomeProbability<=baselineHomeProbability:
+             currentHomeProbability>=baselineHomeProbability)return false;
  const supportsSide=split=>split?.bets_pct!=null&&split?.handle_pct!=null&&
    Number.isFinite(Number(split.bets_pct))&&Number.isFinite(Number(split.handle_pct))&&
    (gregHome?Number(split.handle_pct)>=Number(split.bets_pct):
