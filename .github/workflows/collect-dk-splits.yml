@@ -87,6 +87,12 @@ jobs:
                   r"^(?:(?:Advertisement|AM ET|PM ET)\s+)+",
                   "", name, flags=re.I
               )
+              name = re.sub(
+                  r"^(?:.*?\b)?pick\s+for\s+NCAAM\s+on\s+"
+                  r"(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday|Mon|Tue|Wed|Thu|Fri|Sat|Sun)"
+                  r"\s+\d{1,2}/\d{1,2}/\d{2,4}\s+",
+                  "", name, flags=re.I
+              )
               return " ".join(name.split())
 
           def parse(text, market):
