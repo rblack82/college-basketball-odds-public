@@ -1,0 +1,51 @@
+{
+  "collected_at_central": "2026-11-25T22:50:59.741105-06:00",
+  "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/",
+  "sport_id": "92483",
+  "moneyline_games": 2,
+  "spread_games": 2,
+  "games": [
+    {
+      "away": "Incarnate Word",
+      "home": "Hawaii",
+      "moneyline": {
+        "away": "Incarnate Word",
+        "home": "Hawaii",
+        "line": "-2100",
+        "handle_pct": 80,
+        "bets_pct": 90,
+        "difference": -10
+      },
+      "spread": {
+        "away": "Incarnate Word",
+        "home": "Hawaii",
+        "line": "-17.5",
+        "handle_pct": 74,
+        "bets_pct": 70,
+        "difference": 4
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Stanford",
+      "home": "Saint Louis",
+      "moneyline": {
+        "away": "Stanford",
+        "home": "Saint Louis",
+        "line": "-175",
+        "handle_pct": 96,
+        "bets_pct": 76,
+        "difference": 20
+      },
+      "spread": {
+        "away": "Stanford",
+        "home": "Saint Louis",
+        "line": "-3.5",
+        "handle_pct": 82,
+        "bets_pct": 63,
+        "difference": 19
+      },
+      "status": "PASS"
+    }
+  ]
+}
