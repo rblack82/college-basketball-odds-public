@@ -32,7 +32,21 @@ function snapshotTime(data,file){
 }
 function gameStartTime(d){if(!d)return 'Tip-off TBD';const date=new Date(d);return Number.isNaN(date.getTime())?'Tip-off TBD':new Intl.DateTimeFormat('en-US',{timeZone:'America/Chicago',hour:'numeric',minute:'2-digit'}).format(date)+' CT'}
 function esc(x){return String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-async function list(path){const r=await fetch(api+path,{cache:'no-store'});if(r.status===404)return [];if(!r.ok)throw Error(`GitHub API returned ${r.status}`);return r.json()}
+async function list(path){
+  const url='https://basketball-model-refresh.rblack82.workers.dev/public-files?path='+encodeURIComponent(path);
+  try{
+    const r=await fetch(url,{cache:'no-store'});
+    if(r.status===404)return [];
+    if(!r.ok)throw Error(`File listing returned ${r.status}`);
+    return await r.json();
+  }catch(workerError){
+    // Public API fallback keeps the dashboard usable during Worker maintenance.
+    const r=await fetch(api+path,{cache:'no-store'});
+    if(r.status===404)return [];
+    if(!r.ok)throw Error(`Unable to load public game files (GitHub ${r.status}; listing service unavailable)`);
+    return r.json();
+  }
+}
 async function raw(path){const r=await fetch(`https://raw.githubusercontent.com/${owner}/${repo}/main/${path}`,{cache:'no-store'});if(!r.ok)throw Error(`Cannot load ${path}`);return r.text()}
 const alias={'liu':'longisland','longislanduniversity':'longisland','longisland':'longisland','liusharks':'longisland','stthomasminnesota':'stthomas','westmichigan':'westernmichigan','westkentucky':'westernkentucky','nodakotast':'northdakotast','kansascity':'umkc','tarleton':'tarletonst','tarletonstate':'tarletonst','californiabaptist':'californiabaptist','ut arlington':'utarlington','oregonstate':'oregonst','sanfrancisco':'sanfrancisco','wrightstate':'wrightst','westvirginia':'westvirginia','georgemason':'georgemason','southernillinois':'southernillinois','louisiana':'louisiana','presbyteriancollege':'presbyterian','presbyterian':'presbyterian'};
 // Cross-source NCAA school aliases: only confirmed equivalents; never fuzzy-match unrelated schools.
