@@ -1,0 +1,450 @@
+{
+  "collected_at_central": "2026-11-26T09:30:24.719154-06:00",
+  "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/",
+  "sport_id": "92483",
+  "moneyline_games": 21,
+  "spread_games": 21,
+  "games": [
+    {
+      "away": "Arkansas",
+      "home": "Michigan State",
+      "moneyline": {
+        "away": "Arkansas",
+        "home": "Michigan State",
+        "line": "-225",
+        "handle_pct": 99,
+        "bets_pct": 99,
+        "difference": 0
+      },
+      "spread": {
+        "away": "Arkansas",
+        "home": "Michigan State",
+        "line": "-5.5",
+        "handle_pct": 42,
+        "bets_pct": 55,
+        "difference": -13
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Army",
+      "home": "UTSA",
+      "moneyline": {
+        "away": "Army",
+        "home": "UTSA",
+        "line": "-850",
+        "handle_pct": 77,
+        "bets_pct": 97,
+        "difference": -20
+      },
+      "spread": {
+        "away": "Army",
+        "home": "UTSA",
+        "line": "-11.5",
+        "handle_pct": 90,
+        "bets_pct": 76,
+        "difference": 14
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Baylor",
+      "home": "Gonzaga",
+      "moneyline": {
+        "away": "Baylor",
+        "home": "Gonzaga",
+        "line": "-175",
+        "handle_pct": 74,
+        "bets_pct": 73,
+        "difference": 1
+      },
+      "spread": {
+        "away": "Baylor",
+        "home": "Gonzaga",
+        "line": "-3.5",
+        "handle_pct": 83,
+        "bets_pct": 67,
+        "difference": 16
+      },
+      "status": "PASS"
+    },
+    {
+      "away": "Boston College",
+      "home": "UCF",
+      "moneyline": {
+        "away": "Boston College",
+        "home": "UCF",
+        "line": "-120",
+        "handle_pct": 55,
+        "bets_pct": 41,
+        "difference": 14
+      },
+      "spread": {
+        "away": "Boston College",
+        "home": "UCF",
+        "line": "-1.5",
+        "handle_pct": 83,
+        "bets_pct": 57,
+        "difference": 26
+      },
+      "status": "PASS"
+    },
+    {
+      "away": "DePaul",
+      "home": "Pittsburgh",
+      "moneyline": {
+        "away": "DePaul",
+        "home": "Pittsburgh",
+        "line": "-102",
+        "handle_pct": 83,
+        "bets_pct": 60,
+        "difference": 23
+      },
+      "spread": {
+        "away": "DePaul",
+        "home": "Pittsburgh",
+        "line": "+1.5",
+        "handle_pct": 98,
+        "bets_pct": 83,
+        "difference": 15
+      },
+      "status": "PASS"
+    },
+    {
+      "away": "Georgetown",
+      "home": "Texas",
+      "moneyline": {
+        "away": "Georgetown",
+        "home": "Texas",
+        "line": "-355",
+        "handle_pct": 96,
+        "bets_pct": 98,
+        "difference": -2
+      },
+      "spread": {
+        "away": "Georgetown",
+        "home": "Texas",
+        "line": "-7.5",
+        "handle_pct": 87,
+        "bets_pct": 54,
+        "difference": 33
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Georgia",
+      "home": "Cincinnati",
+      "moneyline": {
+        "away": "Georgia",
+        "home": "Cincinnati",
+        "line": "-125",
+        "handle_pct": 47,
+        "bets_pct": 50,
+        "difference": -3
+      },
+      "spread": {
+        "away": "Georgia",
+        "home": "Cincinnati",
+        "line": "-1.5",
+        "handle_pct": 16,
+        "bets_pct": 32,
+        "difference": -16
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Jacksonville State",
+      "home": "UC Davis",
+      "moneyline": {
+        "away": "Jacksonville State",
+        "home": "UC Davis",
+        "line": "+130",
+        "handle_pct": 47,
+        "bets_pct": 43,
+        "difference": 4
+      },
+      "spread": {
+        "away": "Jacksonville State",
+        "home": "UC Davis",
+        "line": "+2.5",
+        "handle_pct": 0,
+        "bets_pct": 0,
+        "difference": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "away": "Kansas State",
+      "home": "Alabama",
+      "moneyline": {
+        "away": "Kansas State",
+        "home": "Alabama",
+        "line": "-1350",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "spread": {
+        "away": "Kansas State",
+        "home": "Alabama",
+        "line": "-14.5",
+        "handle_pct": 88,
+        "bets_pct": 92,
+        "difference": -4
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Maryland",
+      "home": "San Diego State",
+      "moneyline": {
+        "away": "Maryland",
+        "home": "San Diego State",
+        "line": "+160",
+        "handle_pct": 43,
+        "bets_pct": 18,
+        "difference": 25
+      },
+      "spread": {
+        "away": "Maryland",
+        "home": "San Diego State",
+        "line": "+4.5",
+        "handle_pct": 34,
+        "bets_pct": 51,
+        "difference": -17
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Oklahoma",
+      "home": "Purdue",
+      "moneyline": {
+        "away": "Oklahoma",
+        "home": "Purdue",
+        "line": "-218",
+        "handle_pct": 76,
+        "bets_pct": 80,
+        "difference": -4
+      },
+      "spread": {
+        "away": "Oklahoma",
+        "home": "Purdue",
+        "line": "-4.5",
+        "handle_pct": 53,
+        "bets_pct": 49,
+        "difference": 4
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Pacific",
+      "home": "Omaha",
+      "moneyline": {
+        "away": "Pacific",
+        "home": "Omaha",
+        "line": "+310",
+        "handle_pct": 0,
+        "bets_pct": 6,
+        "difference": -6
+      },
+      "spread": {
+        "away": "Pacific",
+        "home": "Omaha",
+        "line": "+8.5",
+        "handle_pct": 0,
+        "bets_pct": 0,
+        "difference": 0
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "pick for NCAAM on Thursday 11/26/26 Advertisement Miami FL",
+      "home": "Michigan",
+      "moneyline": {
+        "away": "pick for NCAAM on Thursday 11/26/26 Advertisement Miami FL",
+        "home": "Michigan",
+        "line": "+110",
+        "handle_pct": 14,
+        "bets_pct": 20,
+        "difference": -6
+      },
+      "spread": {
+        "away": "pick for NCAAM on Thursday 11/26/26 Advertisement Miami FL",
+        "home": "Michigan",
+        "line": "+2.5",
+        "handle_pct": 35,
+        "bets_pct": 48,
+        "difference": -13
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "pick for NCAAM on Thursday 11/26/26 Tennessee",
+      "home": "Iowa State",
+      "moneyline": {
+        "away": "pick for NCAAM on Thursday 11/26/26 Tennessee",
+        "home": "Iowa State",
+        "line": "-180",
+        "handle_pct": 51,
+        "bets_pct": 35,
+        "difference": 16
+      },
+      "spread": {
+        "away": "pick for NCAAM on Thursday 11/26/26 Tennessee",
+        "home": "Iowa State",
+        "line": "-3.5",
+        "handle_pct": 30,
+        "bets_pct": 23,
+        "difference": 7
+      },
+      "status": "PASS"
+    },
+    {
+      "away": "Saint Marys",
+      "home": "UCLA",
+      "moneyline": {
+        "away": "Saint Marys",
+        "home": "UCLA",
+        "line": "-325",
+        "handle_pct": 100,
+        "bets_pct": 98,
+        "difference": 2
+      },
+      "spread": {
+        "away": "Saint Marys",
+        "home": "UCLA",
+        "line": "-7.5",
+        "handle_pct": 69,
+        "bets_pct": 79,
+        "difference": -10
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "SMU",
+      "home": "LSU",
+      "moneyline": {
+        "away": "SMU",
+        "home": "LSU",
+        "line": "-305",
+        "handle_pct": 85,
+        "bets_pct": 96,
+        "difference": -11
+      },
+      "spread": {
+        "away": "SMU",
+        "home": "LSU",
+        "line": "-7.5",
+        "handle_pct": 65,
+        "bets_pct": 77,
+        "difference": -12
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "South Carolina",
+      "home": "Arizona State",
+      "moneyline": {
+        "away": "South Carolina",
+        "home": "Arizona State",
+        "line": "-205",
+        "handle_pct": 91,
+        "bets_pct": 71,
+        "difference": 20
+      },
+      "spread": {
+        "away": "South Carolina",
+        "home": "Arizona State",
+        "line": "-5.5",
+        "handle_pct": 46,
+        "bets_pct": 56,
+        "difference": -10
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "St. Johns",
+      "home": "Louisville",
+      "moneyline": {
+        "away": "St. Johns",
+        "home": "Louisville",
+        "line": "+110",
+        "handle_pct": 32,
+        "bets_pct": 30,
+        "difference": 2
+      },
+      "spread": {
+        "away": "St. Johns",
+        "home": "Louisville",
+        "line": "+2.5",
+        "handle_pct": 4,
+        "bets_pct": 29,
+        "difference": -25
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "TCU",
+      "home": "Creighton",
+      "moneyline": {
+        "away": "TCU",
+        "home": "Creighton",
+        "line": "-115",
+        "handle_pct": 28,
+        "bets_pct": 59,
+        "difference": -31
+      },
+      "spread": {
+        "away": "TCU",
+        "home": "Creighton",
+        "line": "-1.5",
+        "handle_pct": 10,
+        "bets_pct": 25,
+        "difference": -15
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Texas Tech",
+      "home": "Oregon",
+      "moneyline": {
+        "away": "Texas Tech",
+        "home": "Oregon",
+        "line": "+400",
+        "handle_pct": 4,
+        "bets_pct": 4,
+        "difference": 0
+      },
+      "spread": {
+        "away": "Texas Tech",
+        "home": "Oregon",
+        "line": "+9.5",
+        "handle_pct": 0,
+        "bets_pct": 6,
+        "difference": -6
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Utah State",
+      "home": "USC",
+      "moneyline": {
+        "away": "Utah State",
+        "home": "USC",
+        "line": "-142",
+        "handle_pct": 60,
+        "bets_pct": 64,
+        "difference": -4
+      },
+      "spread": {
+        "away": "Utah State",
+        "home": "USC",
+        "line": "-2.5",
+        "handle_pct": 15,
+        "bets_pct": 33,
+        "difference": -18
+      },
+      "status": "FAIL"
+    }
+  ]
+}
