@@ -44,15 +44,15 @@ function haslamScores(html,xml,day) {
   const rows=[];
   for(const g of data.tg.filter(g=>g.d===wanted)) {
     const awayId=data.mr.findIndex(m=>m.t===g.t),homeId=data.mr.findIndex(m=>m.t===g.o);
-    if(awayId<0||homeId<0)throw new Error('Haslametrics team not resolved: '+g.t+' / '+g.o);
+    if(awayId<0||homeId<0){console.warn('Unresolved Haslametrics team:',g.t,g.o);continue;}
     const home=data.mr[homeId],away=data.mr[awayId];
     const avgAP=(Number(away.ap)+Number(home.ap))/2;
     const result=context.refreshThisUpcomingGame(g.o,homeId,g.t,awayId,1,g.s==='A'?1:0,Number(g.pc),Number(g.sht),avgAP,'Winner');
-    if(!Number.isFinite(result?.ts)||!Number.isFinite(result?.os))throw new Error('Invalid Haslametrics scores: '+g.t+' / '+g.o);
+    if(!Number.isFinite(result?.ts)||!Number.isFinite(result?.os)){console.warn('Invalid Haslametrics scores:',g.t,g.o);continue;}
     rows.push({date:day,away:g.t,home:g.o,neutral:g.s!=='A',away_score:+result.os.toFixed(2),home_score:+result.ts.toFixed(2),
       home_margin:+(result.ts-result.os).toFixed(2)});
   }
-  if(rows.length<5)throw new Error('Too few Haslametrics games for '+day);
+  if(rows.length===0)throw new Error('Too few Haslametrics games for '+day);
   return rows;
 }
 function torvikScores(raw,day) {
@@ -72,7 +72,7 @@ function torvikScores(raw,day) {
     rows.push({date:day,away,home,neutral:g[7]===1,projected_favorite:favorite,
       home_margin:+(homeFavorite?margin:-margin).toFixed(2),win_probability:Number(match[5])/100});
   }
-  if(rows.length<5)throw new Error('Too few Torvik games for '+day);
+  if(rows.length===0)throw new Error('Too few Torvik games for '+day);
   return rows;
 }
 async function main(){
@@ -80,17 +80,32 @@ async function main(){
   if(!/^\d{4}-\d{2}-\d{2}$/.test(day))throw new Error('Expected YYYY-MM-DD date');
   const season=Number(day.slice(0,4))+(Number(day.slice(5,7))>=7?1:0);
   const timedFetch=url=>fetchText(url).then(body=>({body,retrieved_at_utc:new Date().toISOString()}));
-  const [torvikResponse,haslamHtmlResponse,haslamXmlResponse]=await Promise.all([
-    timedFetch(`https://barttorvik.com/${season}_super_sked.json`),
-    timedFetch('https://haslametrics.com/ratings.php'),
-    timedFetch('https://haslametrics.com/ratings.xml')]);
-  const torvik=torvikScores(JSON.parse(torvikResponse.body),day);
-  const haslam=haslamScores(haslamHtmlResponse.body,haslamXmlResponse.body,day);
-  const generated=new Date();
-  const output={date:day,generated_at_utc:generated.toISOString(),
-    torvik_retrieved_at_utc:torvikResponse.retrieved_at_utc,
-    haslam_retrieved_at_utc:haslamXmlResponse.retrieved_at_utc,torvik,haslam};
   const filename=path.join('wrong-team-projections',day,'projections.json');
+  const previous=fs.existsSync(filename)?JSON.parse(fs.readFileSync(filename,'utf8')):{};
+  async function retry(fn){
+    let error;
+    for(let i=0;i<3;i++){
+      try{return await fn();}catch(e){error=e;if(i<2)await new Promise(r=>setTimeout(r,2000*(i+1)));}
+    }
+    throw error;
+  }
+  const results=await Promise.allSettled([
+    retry(async()=>{const r=await timedFetch(`https://barttorvik.com/${season}_super_sked.json`);return {rows:torvikScores(JSON.parse(r.body),day),time:r.retrieved_at_utc};}),
+    retry(async()=>{const [h,x]=await Promise.all([timedFetch('https://haslametrics.com/ratings.php'),timedFetch('https://haslametrics.com/ratings.xml')]);return {rows:haslamScores(h.body,x.body,day),time:x.retrieved_at_utc};})
+  ]);
+  const generated=new Date();
+  const output={date:day,generated_at_utc:generated.toISOString()};
+  for(const [i,key] of ['torvik','haslam'].entries()){
+    const result=results[i], timeKey=key+'_retrieved_at_utc';
+    if(result.status==='fulfilled'){
+      output[key]=result.value.rows;output[timeKey]=result.value.time;
+    }else{
+      console.warn('::warning::'+key+' collection failed: '+result.reason);
+      output[key]=previous[key]||[];output[timeKey]=previous[timeKey]||null;
+    }
+  }
+  if(results.every(r=>r.status==='rejected'))throw new Error('Both projection sources failed; existing snapshot preserved');
+  const {torvik,haslam}=output;
   fs.mkdirSync(path.dirname(filename),{recursive:true});
   const body=JSON.stringify(output,null,2)+'\n';
   fs.writeFileSync(filename,body);
