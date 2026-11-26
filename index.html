@@ -261,22 +261,18 @@ function allGamesDKSpread(home,away,homeSpread){
  if(homeSpread===0)return 'Pick’em';
  return esc(homeSpread<0?home:away)+' '+fmt(-Math.abs(homeSpread));
 }
-function allGamesGreg(home,away,gregFavorite,gregMaxLine,dkFavHome){
+function allGamesGreg(home,away,gregFavorite,gregMaxLine){
  if(gregFavorite==null||gregMaxLine==null)return '—';
- const favoriteHome=teamKey(gregFavorite)===teamKey(home);
- const color=dkFavHome==null?'pending':favoriteHome===dkFavHome?'fail':'pass';
- return '<span class="'+color+'">'+esc(gregFavorite)+' '+fmt(gregMaxLine)+'</span>';
+ return esc(gregFavorite)+' '+fmt(gregMaxLine);
 }
-function allGamesProjection(home,away,homeMargin,dkFavHome){
+function allGamesProjection(home,away,homeMargin){
  if(homeMargin==null||!Number.isFinite(homeMargin))return '—';
- if(homeMargin===0)return '<span class="pending">Pick’em</span>';
- const projectedHome=homeMargin>0;
- const favorite=projectedHome?home:away;
- const color=dkFavHome==null?'pending':projectedHome===dkFavHome?'fail':'pass';
- return '<span class="'+color+'">'+esc(favorite)+' -'+Math.abs(homeMargin).toFixed(2)+'</span>';
+ if(homeMargin===0)return 'Pick’em';
+ const favorite=homeMargin>0?home:away;
+ return esc(favorite)+' -'+Math.abs(homeMargin).toFixed(2);
 }
 function renderRows(rows){
- $('rows').innerHTML=rows.length?rows.map(x=>`<tr${x.final==='PLAY'?' class="model-play-row"':''}><td><b>${esc(x.h)}</b><br><small>vs ${esc(x.away)}</small><br><small class="tipoff-time">${esc(gameStartTime(x.startTime))}</small></td><td>${fmt(x.a)}</td><td>${fmt(x.b)}</td><td><span class="${mlDelta(x.a,x.b)==null?'':mlDelta(x.a,x.b)<0?'pass':mlDelta(x.a,x.b)>0?'fail':''}">${mlDelta(x.a,x.b)==null?"—":String(Math.abs(mlDelta(x.a,x.b)))}</span>${x.dogToFav?' <span class="dog-to-fav" title="Home spread moved from positive at baseline to negative currently">DOG → FAV</span>':''}</td><td class="hide-all ${x.stage1.toLowerCase()}">${x.stage1}</td><td><span class="${splitResult(x.ml).toLowerCase()}">${splitResult(x.ml)}</span><br><small>${x.ml?`${x.ml.bets_pct??'—'}% / ${x.ml.handle_pct??'—'}%`:'—'}</small></td><td><span class="${splitResult(x.ss).toLowerCase()}">${splitResult(x.ss)}</span><br><small>${x.ss?`${x.ss.bets_pct??'—'}% / ${x.ss.handle_pct??'—'}%`:'—'}</small></td><td>${activeView==='all'?allGamesDKSpread(x.h,x.away,x.sp):fmt(x.sp)}</td><td>${activeView==='all'?allGamesGreg(x.h,x.away,x.gregFavorite,x.gregMaxLine,x.dkFavHome):fmt(x.gl)} <small class="greg-result ${x.gregStatus==='DK Spread Unavailable'?'pending':x.gregStatus.toLowerCase()}">${x.gregStatus}</small></td><td class="all-only">${allGamesProjection(x.h,x.away,x.torvikHomeMargin,x.dkFavHome)}</td><td class="all-only">${allGamesProjection(x.h,x.away,x.haslamHomeMargin,x.dkFavHome)}</td><td class="hide-all"><span class="${x.sp==null||x.gl==null?'':x.sp-x.gl>0?'pass':x.sp-x.gl<0?'fail':''}">${x.sp==null||x.gl==null?"—":String(Math.abs(x.sp-x.gl))}</span></td><td class="${x.final==='PLAY'?'pass':x.final==='FAIL'?'fail':'pending'}">${x.final}</td></tr>`).join(''):'<tr><td colspan="'+11+'">No games in this view for the selected date.</td></tr>';
+ $('rows').innerHTML=rows.length?rows.map(x=>`<tr${x.final==='PLAY'?' class="model-play-row"':''}><td><b>${esc(x.h)}</b><br><small>vs ${esc(x.away)}</small><br><small class="tipoff-time">${esc(gameStartTime(x.startTime))}</small></td><td>${fmt(x.a)}</td><td>${fmt(x.b)}</td><td><span class="${mlDelta(x.a,x.b)==null?'':mlDelta(x.a,x.b)<0?'pass':mlDelta(x.a,x.b)>0?'fail':''}">${mlDelta(x.a,x.b)==null?"—":String(Math.abs(mlDelta(x.a,x.b)))}</span>${x.dogToFav?' <span class="dog-to-fav" title="Home spread moved from positive at baseline to negative currently">DOG → FAV</span>':''}</td><td class="hide-all ${x.stage1.toLowerCase()}">${x.stage1}</td><td><span class="${splitResult(x.ml).toLowerCase()}">${splitResult(x.ml)}</span><br><small>${x.ml?`${x.ml.bets_pct??'—'}% / ${x.ml.handle_pct??'—'}%`:'—'}</small></td><td><span class="${splitResult(x.ss).toLowerCase()}">${splitResult(x.ss)}</span><br><small>${x.ss?`${x.ss.bets_pct??'—'}% / ${x.ss.handle_pct??'—'}%`:'—'}</small></td><td>${activeView==='all'?allGamesDKSpread(x.h,x.away,x.sp):fmt(x.sp)}</td><td>${activeView==='all'?allGamesGreg(x.h,x.away,x.gregFavorite,x.gregMaxLine):fmt(x.gl)} <small class="greg-result ${x.gregStatus==='DK Spread Unavailable'?'pending':x.gregStatus.toLowerCase()}">${x.gregStatus}</small></td><td class="all-only">${allGamesProjection(x.h,x.away,x.torvikHomeMargin)}</td><td class="all-only">${allGamesProjection(x.h,x.away,x.haslamHomeMargin)}</td><td class="hide-all"><span class="${x.sp==null||x.gl==null?'':x.sp-x.gl>0?'pass':x.sp-x.gl<0?'fail':''}">${x.sp==null||x.gl==null?"—":String(Math.abs(x.sp-x.gl))}</span></td><td class="${x.final==='PLAY'?'pass':x.final==='FAIL'?'fail':'pending'}">${x.final}</td></tr>`).join(''):'<tr><td colspan="'+11+'">No games in this view for the selected date.</td></tr>';
 }
 let rankedWatchRequest=0;
 function updateRankedAlert(count){
