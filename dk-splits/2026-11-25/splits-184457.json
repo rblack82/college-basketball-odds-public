@@ -1,0 +1,254 @@
+{
+  "collected_at_central": "2026-11-25T18:44:57.150352-06:00",
+  "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/",
+  "sport_id": "92483",
+  "moneyline_games": 11,
+  "spread_games": 12,
+  "games": [
+    {
+      "away": "CSU Bakersfield",
+      "home": "Pepperdine",
+      "moneyline": {
+        "away": "CSU Bakersfield",
+        "home": "Pepperdine",
+        "line": "-485",
+        "handle_pct": 50,
+        "bets_pct": 94,
+        "difference": -44
+      },
+      "spread": {
+        "away": "CSU Bakersfield",
+        "home": "Pepperdine",
+        "line": "-9.5",
+        "handle_pct": 97,
+        "bets_pct": 62,
+        "difference": 35
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Eastern Michigan",
+      "home": "UTEP",
+      "moneyline": {
+        "away": "Eastern Michigan",
+        "home": "UTEP",
+        "line": "-112",
+        "handle_pct": 83,
+        "bets_pct": 54,
+        "difference": 29
+      },
+      "spread": {
+        "away": "Eastern Michigan",
+        "home": "UTEP",
+        "line": "-1.5",
+        "handle_pct": 55,
+        "bets_pct": 43,
+        "difference": 12
+      },
+      "status": "PASS"
+    },
+    {
+      "away": "Eastern Washington",
+      "home": "Loyola Marymount",
+      "moneyline": {
+        "away": "Eastern Washington",
+        "home": "Loyola Marymount",
+        "line": "-310",
+        "handle_pct": 100,
+        "bets_pct": 100,
+        "difference": 0
+      },
+      "spread": {
+        "away": "Eastern Washington",
+        "home": "Loyola Marymount",
+        "line": "-7.5",
+        "handle_pct": 89,
+        "bets_pct": 63,
+        "difference": 26
+      },
+      "status": "PASS"
+    },
+    {
+      "away": "Grand Canyon",
+      "home": "Colorado",
+      "moneyline": {
+        "away": "Grand Canyon",
+        "home": "Colorado",
+        "line": "+380",
+        "handle_pct": 23,
+        "bets_pct": 5,
+        "difference": 18
+      },
+      "spread": {
+        "away": "Grand Canyon",
+        "home": "Colorado",
+        "line": "+9.5",
+        "handle_pct": 34,
+        "bets_pct": 54,
+        "difference": -20
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Incarnate Word",
+      "home": "Hawaii",
+      "moneyline": {
+        "away": "Incarnate Word",
+        "home": "Hawaii",
+        "line": "-2100",
+        "handle_pct": 37,
+        "bets_pct": 94,
+        "difference": -57
+      },
+      "spread": {
+        "away": "Incarnate Word",
+        "home": "Hawaii",
+        "line": "-16.5",
+        "handle_pct": 88,
+        "bets_pct": 62,
+        "difference": 26
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Mississippi Valley",
+      "home": "New Mexico",
+      "moneyline": null,
+      "spread": {
+        "away": "Mississippi Valley",
+        "home": "New Mexico",
+        "line": "-36.5",
+        "handle_pct": 16,
+        "bets_pct": 50,
+        "difference": -34
+      },
+      "status": "PENDING"
+    },
+    {
+      "away": "Omaha",
+      "home": "UC Davis",
+      "moneyline": {
+        "away": "Omaha",
+        "home": "UC Davis",
+        "line": "-192",
+        "handle_pct": 70,
+        "bets_pct": 82,
+        "difference": -12
+      },
+      "spread": {
+        "away": "Omaha",
+        "home": "UC Davis",
+        "line": "-3.5",
+        "handle_pct": 81,
+        "bets_pct": 44,
+        "difference": 37
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Pacific",
+      "home": "Jacksonville State",
+      "moneyline": {
+        "away": "Pacific",
+        "home": "Jacksonville State",
+        "line": "+154",
+        "handle_pct": 3,
+        "bets_pct": 26,
+        "difference": -23
+      },
+      "spread": {
+        "away": "Pacific",
+        "home": "Jacksonville State",
+        "line": "+3.5",
+        "handle_pct": 45,
+        "bets_pct": 48,
+        "difference": -3
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "SMU",
+      "home": "Utah State",
+      "moneyline": {
+        "away": "SMU",
+        "home": "Utah State",
+        "line": "-175",
+        "handle_pct": 95,
+        "bets_pct": 83,
+        "difference": 12
+      },
+      "spread": {
+        "away": "SMU",
+        "home": "Utah State",
+        "line": "-3.5",
+        "handle_pct": 62,
+        "bets_pct": 58,
+        "difference": 4
+      },
+      "status": "PASS"
+    },
+    {
+      "away": "Stanford",
+      "home": "Saint Louis",
+      "moneyline": {
+        "away": "Stanford",
+        "home": "Saint Louis",
+        "line": "-180",
+        "handle_pct": 60,
+        "bets_pct": 63,
+        "difference": -3
+      },
+      "spread": {
+        "away": "Stanford",
+        "home": "Saint Louis",
+        "line": "-3.5",
+        "handle_pct": 59,
+        "bets_pct": 57,
+        "difference": 2
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Wake Forest",
+      "home": "Mississippi State",
+      "moneyline": {
+        "away": "Wake Forest",
+        "home": "Mississippi State",
+        "line": "-175",
+        "handle_pct": 65,
+        "bets_pct": 68,
+        "difference": -3
+      },
+      "spread": {
+        "away": "Wake Forest",
+        "home": "Mississippi State",
+        "line": "-3.5",
+        "handle_pct": 90,
+        "bets_pct": 64,
+        "difference": 26
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Washington",
+      "home": "VCU",
+      "moneyline": {
+        "away": "Washington",
+        "home": "VCU",
+        "line": "-185",
+        "handle_pct": 83,
+        "bets_pct": 72,
+        "difference": 11
+      },
+      "spread": {
+        "away": "Washington",
+        "home": "VCU",
+        "line": "-3.5",
+        "handle_pct": 79,
+        "bets_pct": 56,
+        "difference": 23
+      },
+      "status": "PASS"
+    }
+  ]
+}
