@@ -93,6 +93,7 @@ jobs:
                   r"\s+\d{1,2}/\d{1,2}/\d{2,4}\s+",
                   "", name, flags=re.I
               )
+              name = re.sub(r"^(?:Advertisement\s+)+", "", name, flags=re.I)
               return " ".join(name.split())
 
           def parse(text, market):
