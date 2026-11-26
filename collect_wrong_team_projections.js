@@ -79,14 +79,17 @@ async function main(){
   const day=process.argv[2]||centralDay();
   if(!/^\d{4}-\d{2}-\d{2}$/.test(day))throw new Error('Expected YYYY-MM-DD date');
   const season=Number(day.slice(0,4))+(Number(day.slice(5,7))>=7?1:0);
-  const [torvikText,haslamHtml,haslamXml]=await Promise.all([
-    fetchText(`https://barttorvik.com/${season}_super_sked.json`),
-    fetchText('https://haslametrics.com/ratings.php'),
-    fetchText('https://haslametrics.com/ratings.xml')]);
-  const torvik=torvikScores(JSON.parse(torvikText),day);
-  const haslam=haslamScores(haslamHtml,haslamXml,day);
+  const timedFetch=url=>fetchText(url).then(body=>({body,retrieved_at_utc:new Date().toISOString()}));
+  const [torvikResponse,haslamHtmlResponse,haslamXmlResponse]=await Promise.all([
+    timedFetch(`https://barttorvik.com/${season}_super_sked.json`),
+    timedFetch('https://haslametrics.com/ratings.php'),
+    timedFetch('https://haslametrics.com/ratings.xml')]);
+  const torvik=torvikScores(JSON.parse(torvikResponse.body),day);
+  const haslam=haslamScores(haslamHtmlResponse.body,haslamXmlResponse.body,day);
   const generated=new Date();
-  const output={date:day,generated_at_utc:generated.toISOString(),torvik,haslam};
+  const output={date:day,generated_at_utc:generated.toISOString(),
+    torvik_retrieved_at_utc:torvikResponse.retrieved_at_utc,
+    haslam_retrieved_at_utc:haslamXmlResponse.retrieved_at_utc,torvik,haslam};
   const filename=path.join('wrong-team-projections',day,'projections.json');
   fs.mkdirSync(path.dirname(filename),{recursive:true});
   const body=JSON.stringify(output,null,2)+'\n';
