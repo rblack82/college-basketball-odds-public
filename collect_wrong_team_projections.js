@@ -128,9 +128,12 @@ async function main(){
     const result=results[i], timeKey=key+'_retrieved_at_utc';
     if(result.status==='fulfilled'){
       output[key]=result.value.rows;output[timeKey]=result.value.time;
+      output[key+'_source']='automated';output[key+'_collection_status']='fresh';
     }else{
       console.warn('::warning::'+key+' collection failed: '+result.reason);
       output[key]=previous[key]||[];output[timeKey]=previous[timeKey]||null;
+      output[key+'_source']=previous[key+'_source']||null;
+      output[key+'_collection_status']=output[key].length?'retained':'unavailable';
     }
   }
   if(results.every(r=>r.status==='rejected'))throw new Error('Both projection sources failed; existing snapshot preserved');
