@@ -1,0 +1,72 @@
+{
+  "collected_at_central": "2026-11-26T20:15:43.504696-06:00",
+  "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/",
+  "sport_id": "92483",
+  "moneyline_games": 3,
+  "spread_games": 3,
+  "games": [
+    {
+      "away": "Baylor",
+      "home": "Gonzaga",
+      "moneyline": {
+        "away": "Baylor",
+        "home": "Gonzaga",
+        "line": "-166",
+        "handle_pct": 61,
+        "bets_pct": 82,
+        "difference": -21
+      },
+      "spread": {
+        "away": "Baylor",
+        "home": "Gonzaga",
+        "line": "-3.5",
+        "handle_pct": 59,
+        "bets_pct": 59,
+        "difference": 0
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Pacific",
+      "home": "Omaha",
+      "moneyline": {
+        "away": "Pacific",
+        "home": "Omaha",
+        "line": "+275",
+        "handle_pct": 9,
+        "bets_pct": 11,
+        "difference": -2
+      },
+      "spread": {
+        "away": "Pacific",
+        "home": "Omaha",
+        "line": "+6.5",
+        "handle_pct": 24,
+        "bets_pct": 39,
+        "difference": -15
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Texas Tech",
+      "home": "Oregon",
+      "moneyline": {
+        "away": "Texas Tech",
+        "home": "Oregon",
+        "line": "+410",
+        "handle_pct": 5,
+        "bets_pct": 4,
+        "difference": 1
+      },
+      "spread": {
+        "away": "Texas Tech",
+        "home": "Oregon",
+        "line": "+10.5",
+        "handle_pct": 10,
+        "bets_pct": 18,
+        "difference": -8
+      },
+      "status": "FAIL"
+    }
+  ]
+}
