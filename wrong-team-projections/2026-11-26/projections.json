@@ -1,8 +1,6 @@
 {
   "date": "2026-11-26",
-  "generated_at_utc": "2026-11-26T19:06:11.413Z",
-  "torvik_retrieved_at_utc": "2026-11-26T19:06:10.913Z",
-  "haslam_retrieved_at_utc": "2026-11-26T19:06:11.359Z",
+  "generated_at_utc": "2026-11-27T02:15:49.439Z",
   "torvik": [
     {
       "date": "2026-11-26",
@@ -10,7 +8,7 @@
       "home": "UTSA",
       "neutral": false,
       "projected_favorite": "UTSA",
-      "home_margin": 11.7,
+      "home_margin": 11.3,
       "win_probability": 0.86
     },
     {
@@ -19,8 +17,8 @@
       "home": "Texas",
       "neutral": true,
       "projected_favorite": "Texas",
-      "home_margin": 5.7,
-      "win_probability": 0.7
+      "home_margin": 6.3,
+      "win_probability": 0.71
     },
     {
       "date": "2026-11-26",
@@ -28,7 +26,7 @@
       "home": "SMU",
       "neutral": true,
       "projected_favorite": "LSU",
-      "home_margin": -6,
+      "home_margin": -5.9,
       "win_probability": 0.7
     },
     {
@@ -37,8 +35,8 @@
       "home": "Utah St.",
       "neutral": true,
       "projected_favorite": "USC",
-      "home_margin": -1.3,
-      "win_probability": 0.55
+      "home_margin": -0.6,
+      "win_probability": 0.52
     },
     {
       "date": "2026-11-26",
@@ -46,8 +44,8 @@
       "home": "Purdue",
       "neutral": true,
       "projected_favorite": "Purdue",
-      "home_margin": 6.3,
-      "win_probability": 0.74
+      "home_margin": 4.7,
+      "win_probability": 0.69
     },
     {
       "date": "2026-11-26",
@@ -55,8 +53,8 @@
       "home": "South Carolina",
       "neutral": true,
       "projected_favorite": "Arizona St.",
-      "home_margin": -2.6,
-      "win_probability": 0.61
+      "home_margin": -1.5,
+      "win_probability": 0.56
     },
     {
       "date": "2026-11-26",
@@ -64,8 +62,8 @@
       "home": "UCLA",
       "neutral": true,
       "projected_favorite": "UCLA",
-      "home_margin": 5.7,
-      "win_probability": 0.7
+      "home_margin": 3.1,
+      "win_probability": 0.61
     },
     {
       "date": "2026-11-26",
@@ -73,8 +71,8 @@
       "home": "Pittsburgh",
       "neutral": true,
       "projected_favorite": "DePaul",
-      "home_margin": -1.9,
-      "win_probability": 0.58
+      "home_margin": -1.8,
+      "win_probability": 0.57
     },
     {
       "date": "2026-11-26",
@@ -91,8 +89,8 @@
       "home": "Michigan St.",
       "neutral": true,
       "projected_favorite": "Michigan St.",
-      "home_margin": 4.7,
-      "win_probability": 0.67
+      "home_margin": 5.3,
+      "win_probability": 0.7
     },
     {
       "date": "2026-11-26",
@@ -109,8 +107,8 @@
       "home": "UCF",
       "neutral": true,
       "projected_favorite": "UCF",
-      "home_margin": 4.5,
-      "win_probability": 0.67
+      "home_margin": 2,
+      "win_probability": 0.58
     },
     {
       "date": "2026-11-26",
@@ -127,8 +125,8 @@
       "home": "Michigan",
       "neutral": true,
       "projected_favorite": "Miami FL",
-      "home_margin": -1.8,
-      "win_probability": 0.56
+      "home_margin": -4.8,
+      "win_probability": 0.66
     },
     {
       "date": "2026-11-26",
@@ -136,8 +134,8 @@
       "home": "TCU",
       "neutral": true,
       "projected_favorite": "Creighton",
-      "home_margin": -2.3,
-      "win_probability": 0.59
+      "home_margin": -2.7,
+      "win_probability": 0.6
     },
     {
       "date": "2026-11-26",
@@ -145,7 +143,7 @@
       "home": "Kansas St.",
       "neutral": true,
       "projected_favorite": "Alabama",
-      "home_margin": -9.9,
+      "home_margin": -9.8,
       "win_probability": 0.79
     },
     {
@@ -155,7 +153,7 @@
       "neutral": true,
       "projected_favorite": "Gonzaga",
       "home_margin": 4.1,
-      "win_probability": 0.65
+      "win_probability": 0.64
     },
     {
       "date": "2026-11-26",
@@ -163,16 +161,16 @@
       "home": "San Diego St.",
       "neutral": true,
       "projected_favorite": "San Diego St.",
-      "home_margin": 1.1,
-      "win_probability": 0.54
+      "home_margin": 1.4,
+      "win_probability": 0.55
     },
     {
       "date": "2026-11-26",
       "away": "Iowa St.",
       "home": "Tennessee",
       "neutral": true,
-      "projected_favorite": "Iowa St.",
-      "home_margin": -1.1,
+      "projected_favorite": "Tennessee",
+      "home_margin": 1.2,
       "win_probability": 0.55
     },
     {
@@ -192,17 +190,9 @@
       "projected_favorite": "Texas Tech",
       "home_margin": 7.2,
       "win_probability": 0.75
-    },
-    {
-      "date": "2026-11-26",
-      "away": "Loyola Chicago",
-      "home": "Massachusetts",
-      "neutral": false,
-      "projected_favorite": "Massachusetts",
-      "home_margin": 3,
-      "win_probability": 0.62
     }
   ],
+  "torvik_retrieved_at_utc": "2026-11-27T02:15:48.890Z",
   "haslam": [
     {
       "date": "2026-11-26",
@@ -393,5 +383,6 @@
       "home_score": 74.36,
       "home_margin": -0.88
     }
-  ]
+  ],
+  "haslam_retrieved_at_utc": "2026-11-27T02:15:49.360Z"
 }
