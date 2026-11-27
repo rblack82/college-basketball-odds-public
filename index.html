@@ -51,6 +51,21 @@ async function raw(path){const r=await fetch(`https://raw.githubusercontent.com/
 const alias={'liu':'longisland','longislanduniversity':'longisland','longisland':'longisland','liusharks':'longisland','stthomasminnesota':'stthomas','westmichigan':'westernmichigan','westkentucky':'westernkentucky','nodakotast':'northdakotast','kansascity':'umkc','tarleton':'tarletonst','tarletonstate':'tarletonst','californiabaptist':'californiabaptist','ut arlington':'utarlington','oregonstate':'oregonst','sanfrancisco':'sanfrancisco','wrightstate':'wrightst','westvirginia':'westvirginia','georgemason':'georgemason','southernillinois':'southernillinois','louisiana':'louisiana','presbyteriancollege':'presbyterian','presbyterian':'presbyterian'};
 // Cross-source NCAA school aliases: only confirmed equivalents; never fuzzy-match unrelated schools.
 const teamAliases={
+ 'virgina':'virginia',
+ 'inidana':'indiana',
+ 'ncwilmington':'uncwilmington',
+ 'saintmarys':'stmarys',
+ 'saintthomasmn':'stthomas',
+ 'stthomasminnesota':'stthomas',
+ 'penn':'pennsylvania',
+ 'wkentucky':'westernkentucky',
+ 'gwashington':'georgewashington',
+ 'ucsb':'ucsantabarbara',
+ 'santabarbara':'ucsantabarbara',
+ 'easttennessee':'easttennesseest',
+ 'etsu':'easttennesseest',
+ 'nebraskaomaha':'omaha',
+ 'omaha':'omaha',
   'northernkentucky':'northernkentucky','northkentucky':'northernkentucky','nkentucky':'northernkentucky','nku':'northernkentucky','northernkentuckynorse':'northernkentucky','northkentuckynorse':'northernkentucky',
   'ulmonroe':'ulmonroe','louisianamonroe':'ulmonroe','lamonroe':'ulmonroe','ulm':'ulmonroe','ulmwarhawks':'ulmonroe','ulmonroewarhawks':'ulmonroe','louisianamonroewarhawks':'ulmonroe','universityoflouisianaatmonroe':'ulmonroe',
   'louisianatech':'louisianatech','louisianatechnology':'louisianatech','louisianatechbulldogs':'louisianatech','latech':'louisianatech','latechbulldogs':'louisianatech','louisanatech':'louisianatech','louisanatechnology':'louisianatech',
@@ -128,7 +143,7 @@ const teamAliases={
   'longbeachst':'longbeachst','longbeachstate':'longbeachst',
   'sfa':'stephenfaustin','sfaustin':'stephenfaustin','stephfaustin':'stephenfaustin','stephenfaustin':'stephenfaustin','stephenfaustinstate':'stephenfaustin','stephenfaustinuniversity':'stephenfaustin','stephenfaustinstateuniversity':'stephenfaustin','stephenfaustinlumberjacks':'stephenfaustin','stephenfaustinlumberjacks':'stephenfaustin'
 };
-function teamKey(s){const cleaned=String(s||'').replace(/^(?:.*?\b)?pick\s+for\s+NCAAM\s+on\s+(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday|Mon|Tue|Wed|Thu|Fri|Sat|Sun)\s+\d{1,2}\/\d{1,2}\/\d{2,4}\s+/i,'').replace(/^(?:Advertisement\s+)+/i,'');const raw=cleaned.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'');if(['miamifl','miamiflorida','universityofmiamifl','universityofmiamiflorida','universityofmiami','miamihurricanes','miamiflhurricanes','miamifloridahurricanes'].includes(raw))return 'miamifl';if(['bostonuniversity','bostonuniv','bostonu','buterriers','bostonuterriers','bostonunivterriers','bostonuniversityterriers'].includes(raw))return 'bostonuniv';if(['bostoncollege','bostoncollegeeagles','bceagles'].includes(raw))return 'bostoncollege';const v=norm(cleaned);return teamAliases[v]||v}
+function teamKey(s){const cleaned=String(s||'').replace(/^(?:.*?\b)?pick\s+for\s+NCAAM\s+on\s+(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday|Mon|Tue|Wed|Thu|Fri|Sat|Sun)\s+\d{1,2}\/\d{1,2}\/\d{2,4}\s+/i,'').replace(/^(?:Advertisement\s+)+/i,'');const raw=cleaned.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'');if(['miamifl','miamiflorida','universityofmiamifl','universityofmiamiflorida','universityofmiami','miamihurricanes','miamiflhurricanes','miamifloridahurricanes'].includes(raw))return 'miamifl';if(['bostonuniversity','bostonuniv','bostonu','buterriers','bostonuterriers','bostonunivterriers','bostonuniversityterriers'].includes(raw))return 'bostonuniv';if(['bostoncollege','bostoncollegeeagles','bceagles'].includes(raw))return 'bostoncollege';const v=norm(cleaned);return teamAliases[raw]||teamAliases[v]||v}
 function norm(s){let v=String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'').replace(/university/g,'').replace(/college/g,'').replace(/state/g,'st');return alias[v]||v}
 function events(x){return(x.results||[]).flatMap(z=>z.response?.events||[])}
 function market(e,type){const h=e.teams?.find(t=>t.is_home),m=e.markets?.find(z=>z.name===type&&z.period_id===0),p=m?.participants?.find(z=>z.id===h?.team_id),l=p?.lines?.find(z=>z.prices?.['19']?.is_main_line)||p?.lines?.find(z=>z.prices?.['19']);return l?{price:l.prices['19'].price,spread:Number(l.value)}:null}
@@ -147,7 +162,7 @@ function isHomeFavorite(e){
 }
 
 function csvRows(text){const rows=[];let row=[],field='',quoted=false;for(let i=0;i<text.length;i++){let c=text[i];if(c==='"'){if(quoted&&text[i+1]==='"'){field+='"';i++}else quoted=!quoted}else if(c===','&&!quoted){row.push(field);field=''}else if((c==='\n'||c==='\r')&&!quoted){if(c==='\r'&&text[i+1]==='\n')i++;row.push(field);if(row.some(x=>x.trim()))rows.push(row);row=[];field=''}else field+=c}row.push(field);if(row.some(x=>x.trim()))rows.push(row);return rows}
-function gregMap(csv){const out=new Map();if(!csv)return out;const rows=csvRows(csv);for(const row of rows.slice(1)){for(let i=0;i+2<row.length;i+=3){const team=row[i+1]?.trim().replace(/\*/g,'');const value=Number(row[i+2]?.trim());if(team&&Number.isFinite(value)&&value<0)out.set(teamKey(team),value)}}return out}
+function gregMap(csv){const out=new Map();if(!csv)return out;const rows=csvRows(csv);for(const row of rows.slice(1)){for(let i=0;i+2<row.length;i+=3){const team=row[i+1]?.trim().replace(/\*/g,'');const value=Number(row[i+2]?.trim());if(team&&Number.isFinite(value)&&value<0)out.set(teamKey(team==='Miami'?'Miami (FL)':team),value)}}return out}
 function findSplit(e,games){
  const home=teamKey(e.teams.find(t=>t.is_home)?.name),away=teamKey(e.teams.find(t=>t.is_away)?.name);
  const direct=games.find(g=>teamKey(g.home)===home&&teamKey(g.away)===away);
