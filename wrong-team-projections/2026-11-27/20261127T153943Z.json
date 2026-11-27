@@ -1,0 +1,802 @@
+{
+  "date": "2026-11-27",
+  "generated_at_utc": "2026-11-27T15:39:43.591Z",
+  "torvik": [
+    {
+      "date": "2026-11-27",
+      "away": "Alabama",
+      "home": "Miami FL",
+      "neutral": true,
+      "projected_favorite": "Miami FL",
+      "home_margin": 2.1,
+      "win_probability": 0.57
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Marquette",
+      "home": "Texas A&M",
+      "neutral": true,
+      "projected_favorite": "Texas A&M",
+      "home_margin": 0.3,
+      "win_probability": 0.51
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Louisville",
+      "home": "Tennessee",
+      "neutral": true,
+      "projected_favorite": "Tennessee",
+      "home_margin": 0.8,
+      "win_probability": 0.53
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Iowa St.",
+      "home": "St. John's",
+      "neutral": true,
+      "projected_favorite": "St. John's",
+      "home_margin": 1.9,
+      "win_probability": 0.57
+    },
+    {
+      "date": "2026-11-27",
+      "away": "North Carolina",
+      "home": "West Virginia",
+      "neutral": true,
+      "projected_favorite": "North Carolina",
+      "home_margin": -0.2,
+      "win_probability": 0.51
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Saint Mary's",
+      "home": "Texas",
+      "neutral": true,
+      "projected_favorite": "Texas",
+      "home_margin": 2.9,
+      "win_probability": 0.6
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Creighton",
+      "home": "Gonzaga",
+      "neutral": true,
+      "projected_favorite": "Gonzaga",
+      "home_margin": 5.9,
+      "win_probability": 0.7
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Maryland",
+      "home": "Oregon",
+      "neutral": true,
+      "projected_favorite": "Oregon",
+      "home_margin": 0.2,
+      "win_probability": 0.51
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Virginia",
+      "home": "Xavier",
+      "neutral": true,
+      "projected_favorite": "Virginia",
+      "home_margin": -7,
+      "win_probability": 0.73
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Memphis",
+      "home": "Wake Forest",
+      "neutral": true,
+      "projected_favorite": "Memphis",
+      "home_margin": -0.4,
+      "win_probability": 0.51
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Baylor",
+      "home": "TCU",
+      "neutral": true,
+      "projected_favorite": "Baylor",
+      "home_margin": -3.7,
+      "win_probability": 0.64
+    },
+    {
+      "date": "2026-11-27",
+      "away": "San Diego St.",
+      "home": "Texas Tech",
+      "neutral": true,
+      "projected_favorite": "Texas Tech",
+      "home_margin": 5.5,
+      "win_probability": 0.71
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Georgetown",
+      "home": "UCLA",
+      "neutral": true,
+      "projected_favorite": "UCLA",
+      "home_margin": 5.9,
+      "win_probability": 0.71
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Georgia",
+      "home": "UCF",
+      "neutral": true,
+      "projected_favorite": "Georgia",
+      "home_margin": -4.3,
+      "win_probability": 0.64
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Wichita St.",
+      "home": "Kentucky",
+      "neutral": false,
+      "projected_favorite": "Kentucky",
+      "home_margin": 4.1,
+      "win_probability": 0.64
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Kansas St.",
+      "home": "Michigan",
+      "neutral": true,
+      "projected_favorite": "Michigan",
+      "home_margin": 7.3,
+      "win_probability": 0.73
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Villanova",
+      "home": "Kansas",
+      "neutral": false,
+      "projected_favorite": "Kansas",
+      "home_margin": 14.7,
+      "win_probability": 0.9
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Western Kentucky",
+      "home": "Illinois",
+      "neutral": false,
+      "projected_favorite": "Illinois",
+      "home_margin": 21.2,
+      "win_probability": 0.94
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Mississippi St.",
+      "home": "Penn St.",
+      "neutral": true,
+      "projected_favorite": "Mississippi St.",
+      "home_margin": -5.4,
+      "win_probability": 0.69
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Liberty",
+      "home": "St. Thomas",
+      "neutral": true,
+      "projected_favorite": "Liberty",
+      "home_margin": -0.4,
+      "win_probability": 0.51
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Boston College",
+      "home": "Cincinnati",
+      "neutral": true,
+      "projected_favorite": "Cincinnati",
+      "home_margin": 6.9,
+      "win_probability": 0.76
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Fresno St.",
+      "home": "South Alabama",
+      "neutral": true,
+      "projected_favorite": "Fresno St.",
+      "home_margin": -0.5,
+      "win_probability": 0.52
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Boise St.",
+      "home": "Drake",
+      "neutral": true,
+      "projected_favorite": "Boise St.",
+      "home_margin": -7.3,
+      "win_probability": 0.75
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Towson",
+      "home": "Penn",
+      "neutral": false,
+      "projected_favorite": "Penn",
+      "home_margin": 5.3,
+      "win_probability": 0.7
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Hampton",
+      "home": "UMass Lowell",
+      "neutral": true,
+      "projected_favorite": "UMass Lowell",
+      "home_margin": 0.3,
+      "win_probability": 0.51
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Texas St.",
+      "home": "Louisiana Tech",
+      "neutral": false,
+      "projected_favorite": "Texas St.",
+      "home_margin": -5.7,
+      "win_probability": 0.72
+    },
+    {
+      "date": "2026-11-27",
+      "away": "North Dakota St.",
+      "home": "North Texas",
+      "neutral": true,
+      "projected_favorite": "North Texas",
+      "home_margin": 5,
+      "win_probability": 0.69
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Princeton",
+      "home": "UNC Wilmington",
+      "neutral": false,
+      "projected_favorite": "UNC Wilmington",
+      "home_margin": 7.7,
+      "win_probability": 0.77
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Merrimack",
+      "home": "Vermont",
+      "neutral": true,
+      "projected_favorite": "Vermont",
+      "home_margin": 1.5,
+      "win_probability": 0.57
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Old Dominion",
+      "home": "Virginia Tech",
+      "neutral": false,
+      "projected_favorite": "Virginia Tech",
+      "home_margin": 16.2,
+      "win_probability": 0.92
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Oakland",
+      "home": "Houston",
+      "neutral": false,
+      "projected_favorite": "Houston",
+      "home_margin": 35.5,
+      "win_probability": 0.99
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Bowling Green",
+      "home": "Indiana",
+      "neutral": false,
+      "projected_favorite": "Indiana",
+      "home_margin": 20.9,
+      "win_probability": 0.95
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Pacific",
+      "home": "UC Davis",
+      "neutral": true,
+      "projected_favorite": "Pacific",
+      "home_margin": -6.4,
+      "win_probability": 0.74
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Missouri St.",
+      "home": "Oral Roberts",
+      "neutral": false,
+      "projected_favorite": "Oral Roberts",
+      "home_margin": 4.7,
+      "win_probability": 0.68
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Colgate",
+      "home": "Hofstra",
+      "neutral": false,
+      "projected_favorite": "Hofstra",
+      "home_margin": 5,
+      "win_probability": 0.7
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Le Moyne",
+      "home": "Maine",
+      "neutral": true,
+      "projected_favorite": "Le Moyne",
+      "home_margin": -1,
+      "win_probability": 0.54
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Idaho",
+      "home": "Washington St.",
+      "neutral": false,
+      "projected_favorite": "Washington St.",
+      "home_margin": 8.5,
+      "win_probability": 0.79
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Southern",
+      "home": "Vanderbilt",
+      "neutral": false,
+      "projected_favorite": "Vanderbilt",
+      "home_margin": 33,
+      "win_probability": 0.99
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Radford",
+      "home": "American",
+      "neutral": false,
+      "projected_favorite": "American",
+      "home_margin": 7.6,
+      "win_probability": 0.77
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Lehigh",
+      "home": "UC Santa Barbara",
+      "neutral": true,
+      "projected_favorite": "UC Santa Barbara",
+      "home_margin": 13,
+      "win_probability": 0.88
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Bellarmine",
+      "home": "Butler",
+      "neutral": false,
+      "projected_favorite": "Butler",
+      "home_margin": 14.8,
+      "win_probability": 0.9
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Northeastern",
+      "home": "Northwestern",
+      "neutral": false,
+      "projected_favorite": "Northwestern",
+      "home_margin": 15.1,
+      "win_probability": 0.91
+    },
+    {
+      "date": "2026-11-27",
+      "away": "UMBC",
+      "home": "George Washington",
+      "neutral": false,
+      "projected_favorite": "George Washington",
+      "home_margin": 21.7,
+      "win_probability": 0.96
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Jacksonville St.",
+      "home": "Nebraska Omaha",
+      "neutral": true,
+      "projected_favorite": "Jacksonville St.",
+      "home_margin": -6.8,
+      "win_probability": 0.75
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Niagara",
+      "home": "Lafayette",
+      "neutral": false,
+      "projected_favorite": "Lafayette",
+      "home_margin": 5.5,
+      "win_probability": 0.71
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Bucknell",
+      "home": "La Salle",
+      "neutral": true,
+      "projected_favorite": "La Salle",
+      "home_margin": 9.8,
+      "win_probability": 0.82
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Navy",
+      "home": "Fairfield",
+      "neutral": false,
+      "projected_favorite": "Fairfield",
+      "home_margin": 6.2,
+      "win_probability": 0.74
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Charleston Southern",
+      "home": "East Tennessee St.",
+      "neutral": false,
+      "projected_favorite": "East Tennessee St.",
+      "home_margin": 11.7,
+      "win_probability": 0.87
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Arkansas Pine Bluff",
+      "home": "Missouri",
+      "neutral": false,
+      "projected_favorite": "Missouri",
+      "home_margin": 45,
+      "win_probability": 1
+    }
+  ],
+  "torvik_retrieved_at_utc": "2026-11-27T14:46:08.281Z",
+  "haslam": [
+    {
+      "date": "2026-11-27",
+      "away": "Oakland",
+      "home": "Houston",
+      "neutral": false,
+      "away_score": 57.44,
+      "home_score": 94.11,
+      "home_margin": 36.67
+    },
+    {
+      "date": "2026-11-27",
+      "away": "W. Kentucky",
+      "home": "Illinois",
+      "neutral": false,
+      "away_score": 71.87,
+      "home_score": 98.93,
+      "home_margin": 27.06
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Villanova",
+      "home": "Kansas",
+      "neutral": false,
+      "away_score": 65.95,
+      "home_score": 82.8,
+      "home_margin": 16.85
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Southern",
+      "home": "Vanderbilt",
+      "neutral": false,
+      "away_score": 59.45,
+      "home_score": 95.55,
+      "home_margin": 36.1
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Virginia",
+      "home": "Xavier",
+      "neutral": true,
+      "away_score": 81.2,
+      "home_score": 72.72,
+      "home_margin": -8.48
+    },
+    {
+      "date": "2026-11-27",
+      "away": "AR-Pine Bluff",
+      "home": "Missouri",
+      "neutral": false,
+      "away_score": 52.02,
+      "home_score": 98.71,
+      "home_margin": 46.68
+    },
+    {
+      "date": "2026-11-27",
+      "away": "West Virginia",
+      "home": "North Carolina",
+      "neutral": true,
+      "away_score": 71.2,
+      "home_score": 74.11,
+      "home_margin": 2.91
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Bowling Green",
+      "home": "Indiana",
+      "neutral": false,
+      "away_score": 66.69,
+      "home_score": 88.55,
+      "home_margin": 21.86
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Cincinnati",
+      "home": "Boston College",
+      "neutral": true,
+      "away_score": 77.83,
+      "home_score": 66.76,
+      "home_margin": -11.07
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Marquette",
+      "home": "Texas A&M",
+      "neutral": true,
+      "away_score": 77.02,
+      "home_score": 75.63,
+      "home_margin": -1.39
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Penn State",
+      "home": "Mississippi St.",
+      "neutral": true,
+      "away_score": 76.09,
+      "home_score": 84.41,
+      "home_margin": 8.32
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Wichita State",
+      "home": "Kentucky",
+      "neutral": false,
+      "away_score": 75.56,
+      "home_score": 81.12,
+      "home_margin": 5.57
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Old Dominion",
+      "home": "Virginia Tech",
+      "neutral": false,
+      "away_score": 69.27,
+      "home_score": 87.3,
+      "home_margin": 18.03
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Wake Forest",
+      "home": "Memphis",
+      "neutral": true,
+      "away_score": 78.81,
+      "home_score": 79.68,
+      "home_margin": 0.87
+    },
+    {
+      "date": "2026-11-27",
+      "away": "UCF",
+      "home": "Georgia",
+      "neutral": true,
+      "away_score": 81,
+      "home_score": 84.04,
+      "home_margin": 3.04
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Drake",
+      "home": "Boise State",
+      "neutral": true,
+      "away_score": 73.6,
+      "home_score": 82.33,
+      "home_margin": 8.73
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Bellarmine",
+      "home": "Butler",
+      "neutral": false,
+      "away_score": 66.27,
+      "home_score": 83.8,
+      "home_margin": 17.54
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Lehigh",
+      "home": "UCSB",
+      "neutral": true,
+      "away_score": 67.58,
+      "home_score": 81.36,
+      "home_margin": 13.79
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Northeastern",
+      "home": "Northwestern",
+      "neutral": false,
+      "away_score": 68.46,
+      "home_score": 82.74,
+      "home_margin": 14.28
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Texas State",
+      "home": "LA Tech",
+      "neutral": false,
+      "away_score": 74.2,
+      "home_score": 67.37,
+      "home_margin": -6.83
+    },
+    {
+      "date": "2026-11-27",
+      "away": "UMBC",
+      "home": "G. Washington",
+      "neutral": false,
+      "away_score": 67.81,
+      "home_score": 87.03,
+      "home_margin": 19.22
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Idaho",
+      "home": "Washington St.",
+      "neutral": false,
+      "away_score": 70.31,
+      "home_score": 84.6,
+      "home_margin": 14.29
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Liberty",
+      "home": "St. Thomas",
+      "neutral": true,
+      "away_score": 74.61,
+      "home_score": 74.83,
+      "home_margin": 0.22
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Princeton",
+      "home": "UNC Wilmington",
+      "neutral": false,
+      "away_score": 72.41,
+      "home_score": 77.23,
+      "home_margin": 4.81
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Towson",
+      "home": "Penn",
+      "neutral": false,
+      "away_score": 68.75,
+      "home_score": 75.7,
+      "home_margin": 6.95
+    },
+    {
+      "date": "2026-11-27",
+      "away": "North Dakota St.",
+      "home": "North Texas",
+      "neutral": true,
+      "away_score": 69.65,
+      "home_score": 72.58,
+      "home_margin": 2.93
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Radford",
+      "home": "American",
+      "neutral": false,
+      "away_score": 72.29,
+      "home_score": 82.16,
+      "home_margin": 9.87
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Colgate",
+      "home": "Hofstra",
+      "neutral": false,
+      "away_score": 68.78,
+      "home_score": 75.41,
+      "home_margin": 6.63
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Charleston So.",
+      "home": "ETSU",
+      "neutral": false,
+      "away_score": 66.28,
+      "home_score": 77.73,
+      "home_margin": 11.46
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Pacific",
+      "home": "UC Davis",
+      "neutral": true,
+      "away_score": 74.15,
+      "home_score": 72.31,
+      "home_margin": -1.84
+    },
+    {
+      "date": "2026-11-27",
+      "away": "La Salle",
+      "home": "Bucknell",
+      "neutral": true,
+      "away_score": 78.35,
+      "home_score": 69.22,
+      "home_margin": -9.13
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Jacksonville St.",
+      "home": "Omaha",
+      "neutral": true,
+      "away_score": 75.07,
+      "home_score": 70.68,
+      "home_margin": -4.39
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Missouri State",
+      "home": "Oral Roberts",
+      "neutral": false,
+      "away_score": 72.22,
+      "home_score": 77.2,
+      "home_margin": 4.98
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Vermont",
+      "home": "Merrimack",
+      "neutral": true,
+      "away_score": 67.76,
+      "home_score": 65.25,
+      "home_margin": -2.5
+    },
+    {
+      "date": "2026-11-27",
+      "away": "South Alabama",
+      "home": "Fresno State",
+      "neutral": true,
+      "away_score": 74.16,
+      "home_score": 74.89,
+      "home_margin": 0.73
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Navy",
+      "home": "Fairfield",
+      "neutral": false,
+      "away_score": 67.01,
+      "home_score": 74.94,
+      "home_margin": 7.93
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Hampton",
+      "home": "UMass Lowell",
+      "neutral": true,
+      "away_score": 71.13,
+      "home_score": 74.46,
+      "home_margin": 3.33
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Niagara",
+      "home": "Lafayette",
+      "neutral": false,
+      "away_score": 69,
+      "home_score": 76.45,
+      "home_margin": 7.45
+    },
+    {
+      "date": "2026-11-27",
+      "away": "Maine",
+      "home": "Le Moyne",
+      "neutral": true,
+      "away_score": 72.6,
+      "home_score": 69.64,
+      "home_margin": -2.95
+    }
+  ],
+  "haslam_retrieved_at_utc": "2026-11-27T15:39:37.282Z"
+}

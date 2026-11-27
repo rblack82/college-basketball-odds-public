@@ -1,6 +1,6 @@
 {
   "date": "2026-11-27",
-  "generated_at_utc": "2026-11-27T14:46:08.282Z",
+  "generated_at_utc": "2026-11-27T15:39:43.591Z",
   "torvik": [
     {
       "date": "2026-11-27",
@@ -798,6 +798,5 @@
       "home_margin": -2.95
     }
   ],
-  "haslam_retrieved_at_utc": "2026-11-27T14:31:36.388Z",
-  "torvik_source": "Manual import of user-provided Bart Torvik daily schedule"
+  "haslam_retrieved_at_utc": "2026-11-27T15:39:37.282Z"
 }
