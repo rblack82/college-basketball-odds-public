@@ -1,0 +1,51 @@
+{
+  "collected_at_central": "2026-11-26T21:49:54.379841-06:00",
+  "source": "https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/",
+  "sport_id": "92483",
+  "moneyline_games": 2,
+  "spread_games": 2,
+  "games": [
+    {
+      "away": "Baylor",
+      "home": "Gonzaga",
+      "moneyline": {
+        "away": "Baylor",
+        "home": "Gonzaga",
+        "line": "-166",
+        "handle_pct": 60,
+        "bets_pct": 81,
+        "difference": -21
+      },
+      "spread": {
+        "away": "Baylor",
+        "home": "Gonzaga",
+        "line": "-2.5",
+        "handle_pct": 27,
+        "bets_pct": 58,
+        "difference": -31
+      },
+      "status": "FAIL"
+    },
+    {
+      "away": "Texas Tech",
+      "home": "Oregon",
+      "moneyline": {
+        "away": "Texas Tech",
+        "home": "Oregon",
+        "line": "+410",
+        "handle_pct": 5,
+        "bets_pct": 5,
+        "difference": 0
+      },
+      "spread": {
+        "away": "Texas Tech",
+        "home": "Oregon",
+        "line": "+10.5",
+        "handle_pct": 15,
+        "bets_pct": 19,
+        "difference": -4
+      },
+      "status": "FAIL"
+    }
+  ]
+}
