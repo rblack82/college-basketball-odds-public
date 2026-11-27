@@ -1,6 +1,6 @@
 {
   "date": "2026-11-27",
-  "generated_at_utc": "2026-11-27T14:28:04.433Z",
+  "generated_at_utc": "2026-11-27T14:31:42.386Z",
   "torvik": [],
   "torvik_retrieved_at_utc": null,
   "haslam": [
@@ -356,5 +356,5 @@
       "home_margin": -2.95
     }
   ],
-  "haslam_retrieved_at_utc": "2026-11-27T14:27:58.223Z"
+  "haslam_retrieved_at_utc": "2026-11-27T14:31:36.388Z"
 }
