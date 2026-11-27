@@ -55,6 +55,24 @@ function haslamScores(html,xml,day) {
   if(rows.length===0)throw new Error('Too few Haslametrics games for '+day);
   return rows;
 }
+function parseTorvikCsv(text) {
+  const rows=[];let row=[],field='',quoted=false;
+  for(let i=0;i<text.length;i++){
+    const c=text[i];
+    if(quoted){
+      if(c==='"'&&text[i+1]==='"'){field+='"';i++;}
+      else if(c==='"')quoted=false;
+      else field+=c;
+    }else if(c==='"'&&field==='')quoted=true;
+    else if(c===','){row.push(field);field='';}
+    else if(c==='\n'){row.push(field.replace(/\r$/,''));if(row.length>1)rows.push(row);row=[];field='';}
+    else field+=c;
+  }
+  if(quoted)throw new Error('Malformed Torvik CSV: unclosed quote');
+  if(row.length||field){row.push(field.replace(/\r$/,''));rows.push(row);}
+  if(!rows.some(r=>r.length>=15&&/^\d{1,2}\/\d{1,2}\/\d{2}$/.test(r[1])))throw new Error('Unexpected Torvik CSV schema');
+  return rows;
+}
 function torvikScores(raw,day) {
   const [year,mon,date]=day.split('-');const wanted=`${Number(mon)}/${Number(date)}/${year.slice(2)}`;
   const rows=[];
@@ -69,7 +87,7 @@ function torvikScores(raw,day) {
     const homeFavorite=favKey(home)===favKey(favorite);
     const awayFavorite=favKey(away)===favKey(favorite);
     if(!homeFavorite&&!awayFavorite)continue;
-    rows.push({date:day,away,home,neutral:g[7]===1,projected_favorite:favorite,
+    rows.push({date:day,away,home,neutral:Number(g[7])===1,projected_favorite:favorite,
       home_margin:+(homeFavorite?margin:-margin).toFixed(2),win_probability:Number(match[5])/100});
   }
   if(rows.length===0)throw new Error('Too few Torvik games for '+day);
@@ -90,7 +108,18 @@ async function main(){
     throw error;
   }
   const results=await Promise.allSettled([
-    retry(async()=>{const r=await timedFetch(`https://barttorvik.com/${season}_super_sked.json`);return {rows:torvikScores(JSON.parse(r.body),day),time:r.retrieved_at_utc};}),
+    retry(async()=>{
+      const errors=[];
+      for(const format of ['json','csv']){
+        try{
+          const r=await timedFetch(`https://barttorvik.com/${season}_super_sked.${format}`);
+          const rows=torvikScores(format==='json'?JSON.parse(r.body):parseTorvikCsv(r.body),day);
+          console.log('Torvik source:',format,rows.length,'games');
+          return {rows,time:r.retrieved_at_utc};
+        }catch(e){errors.push(format+': '+e.message);}
+      }
+      throw new Error(errors.join(' | '));
+    }),
     retry(async()=>{const [h,x]=await Promise.all([timedFetch('https://haslametrics.com/ratings.php'),timedFetch('https://haslametrics.com/ratings.xml')]);return {rows:haslamScores(h.body,x.body,day),time:x.retrieved_at_utc};})
   ]);
   const generated=new Date();
